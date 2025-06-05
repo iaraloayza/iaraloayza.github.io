@@ -39,5 +39,5 @@
 </template>
 
 <script setup>
-const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 </script>

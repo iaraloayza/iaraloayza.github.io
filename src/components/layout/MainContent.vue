@@ -1,34 +1,34 @@
 <template>
   <div class="relative z-10">
-    <Header />
+    <HeaderLayout />
     <HeroSection />
     <AboutSection />
     <ProjectsSection />
     <SkillsSection />
     <ContactSection />
-    <Footer />
+    <FooterLayout />
   </div>
 </template>
 
 <script>
-import Header from './Header.vue'
+import HeaderLayout from './Header.vue'
 import HeroSection from '../sections/HeroSection.vue'
 import AboutSection from '../sections/AboutSection.vue'
 import ProjectsSection from '../sections/ProjectsSection.vue'
 import SkillsSection from '../sections/SkillsSection.vue'
 import ContactSection from '../sections/ContactSection.vue'
-import Footer from './Footer.vue'
+import FooterLayout from './FooterLayout.vue'
 
 export default {
   name: 'MainContent',
   components: {
-    Header,
+    HeaderLayout,
     HeroSection,
     AboutSection,
     ProjectsSection,
     SkillsSection,
     ContactSection,
-    Footer
+    FooterLayout
   }
 }
 </script>

@@ -107,22 +107,22 @@ export default {
 </script>
 
 <style scoped>
-.nav-link {
-  @apply text-gray-300 hover:text-purple-400 transition-all duration-300 relative;
-}
+  .nav-link {
+    @apply text-gray-300 hover:text-purple-400 transition-all duration-300 relative;
+  }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #8b5cf6, #ec4899);
-  transition: width 0.3s ease;
-}
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    transition: width 0.3s ease;
+  }
 
-.nav-link:hover::after {
-  width: 100%;
-}
+  .nav-link:hover::after {
+    width: 100%;
+  }
 </style>
