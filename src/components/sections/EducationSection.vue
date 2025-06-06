@@ -12,24 +12,22 @@
         <!-- Education Items -->
         <div class="space-y-16">
           <EducationCard
-            :position="'right'"
+            :position="'left'"
             :institution="'Universidade Federal do Maranhão'"
-            :degree="'Bacharelado em Ciência da Computação'"
-            :period="'2016 - 2020'"
+            :degree="'Bacharelado em Engenharia da Computação'"
+            :period="'2024 - Presente'"
             :location="'São Luís, MA'"
-            :status="'Concluído'"
-            :description="'Formação sólida em fundamentos da computação, algoritmos, estruturas de dados, engenharia de software e desenvolvimento web. Participação ativa em projetos de pesquisa e extensão.'"
+            :status="'Em andamento'"
+            :description="'Formação sólida em Visão Computacional, Machine Learning, Deep Learning, Redes e Automação Industrial. Participação ativa em projetos de pesquisa e extensão.'"
             :highlights="[
-              'TCC: Sistema Web para Gestão Acadêmica',
-              'Bolsista de Iniciação Científica por 2 anos',
-              'Participação em 5+ eventos técnicos',
-              'CRA: 8.5/10.0'
+              'Entrega de Portal da Rede de Aplicação de Ciência e Tecnologia (REACT)',
+              'Entrega da versão 2.0 do app PlanDox'
             ]"
-            :subjects="['Algoritmos', 'Banco de Dados', 'Eng. Software', 'Redes', 'IA']"
+            :subjects="['Machine Learning', 'Computação Gráfica', 'Eng Controle', 'Redes', 'Compiladores']"
             :type="'graduation'"
           />
           
-          <EducationCard
+          <!-- <EducationCard
             :position="'left'"
             :institution="'Rocketseat'"
             :degree="'Ignite - Trilha ReactJS'"
@@ -45,60 +43,30 @@
             ]"
             :subjects="['React', 'Next.js', 'TypeScript', 'Jest', 'Styled Components']"
             :type="'bootcamp'"
-          />
+          /> -->
           
           <EducationCard
             :position="'right'"
-            :institution="'Alura'"
-            :degree="'Formação Vue.js'"
-            :period="'2022'"
-            :location="'Online'"
-            :status="'Certificado'"
-            :description="'Especialização completa em Vue.js, abordando desde conceitos básicos até técnicas avançadas de desenvolvimento, incluindo Vuex, Vue Router e composição de aplicações complexas.'"
+            :institution="'Universidade Federal do Maranhão'"
+            :degree="'Bacharelado em Ciência e Tecnologia'"
+            :period="'2021 - 2024'"
+            :location="'São Luís -MA'"
+            :status="'Concluído'"
+            :description="'Formação sólida em fundamentos da computação, algoritmos, estruturas de dados, engenharia de software e desenvolvimento web. Participação ativa em projetos de pesquisa e extensão.'"
             :highlights="[
-              'Projetos com Vue 3 e Composition API',
-              'Gerenciamento de estado com Vuex',
-              'Integração com APIs RESTful',
-              'Otimização de performance'
+              'Projetos com Python, C, Java e PHP'
             ]"
-            :subjects="['Vue.js', 'Vuex', 'Vue Router', 'Composition API', 'Nuxt.js']"
-            :type="'course'"
-          />
-          
-          <EducationCard
-            :position="'left'"
-            :institution="'AWS'"
-            :degree="'AWS Solutions Architect Associate'"
-            :period="'2023'"
-            :location="'Online'"
-            :status="'Certificado'"
-            :description="'Certificação oficial AWS focada em arquitetura de soluções na nuvem, incluindo design de sistemas escaláveis, segurança, e otimização de custos.'"
-            :highlights="[
-              'Arquitetura de aplicações na nuvem',
-              'Segurança e compliance AWS',
-              'Otimização de custos e performance',
-              'Certificação válida até 2026'
-            ]"
-            :subjects="['EC2', 'S3', 'RDS', 'Lambda', 'CloudFormation']"
-            :type="'certification'"
-          />
-          
-          <EducationCard
-            :position="'right'"
-            :institution="'Udemy'"
-            :degree="'Machine Learning e Data Science'"
-            :period="'2023 - 2024'"
-            :location="'Online'"
-            :status="'Em Andamento'"
-            :description="'Curso abrangente sobre Machine Learning, análise de dados e inteligência artificial, com foco em aplicações práticas usando Python e suas principais bibliotecas.'"
-            :highlights="[
-              'Algoritmos de ML supervisionado e não supervisionado',
-              'Análise e visualização de dados',
-              'Deep Learning com TensorFlow',
-              'Projetos com datasets reais'
-            ]"
-            :subjects="['Python', 'Pandas', 'Scikit-learn', 'TensorFlow', 'Matplotlib']"
-            :type="'course'"
+            :subjects="['Algoritmos', 'Banco de Dados', 'Eng. Software', 'Paradigmas de Programação', 'IA']"
+            :type="'graduation'"
+            :tcc-info="{
+              title: 'Hans+: Uma Ferramenta de Acompanhamento e Informações Sobre a Hanseníase',
+              grade: '10',
+              advisor: 'Prof. Dr. Davi Viana dos Santos'
+            }"
+            :academic-performance="{
+              cra: '8.6',
+              maxCra: '10.0'
+            }"
           />
         </div>
       </div>
