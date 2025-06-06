@@ -8,6 +8,16 @@ html {
   box-sizing: border-box;
 }
 
+/* Fix para textos com gradiente não serem cortados */
+.bg-clip-text {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  /* Garante que descendentes não sejam cortados */
+  line-height: 1.1 !important;
+  padding-bottom: 0.1em;
+}
+
 /* Floating Background Shapes */
 .floating-shapes {
   position: absolute;
