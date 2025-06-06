@@ -12,27 +12,11 @@
         <!-- Experience Items -->
         <div class="space-y-16">
           <ExperienceCard
-            :position="'right'"
-            :company="'TechCorp Solutions'"
-            :role="'Desenvolvedora Full Stack Sênior'"
-            :period="'Jan 2023 - Presente'"
-            :location="'São Paulo, SP'"
-            :description="'Lidero o desenvolvimento de aplicações web complexas utilizando Vue.js, Node.js e PostgreSQL. Responsável por arquitetar soluções escaláveis e mentorear desenvolvedores juniores.'"
-            :achievements="[
-              'Aumentei a performance das aplicações em 40%',
-              'Implementei arquitetura de microserviços',
-              'Liderei equipe de 5 desenvolvedores',
-              'Reduzi bugs em produção em 60%'
-            ]"
-            :technologies="['Vue.js', 'Node.js', 'PostgreSQL', 'Docker', 'AWS']"
-          />
-          
-          <ExperienceCard
             :position="'left'"
-            :company="'Digital Innovations'"
-            :role="'Desenvolvedora Full Stack'"
-            :period="'Mar 2021 - Dez 2022'"
-            :location="'São Paulo, SP'"
+            :company="'Saúde Digital - SES/MA'"
+            :role="'Desenvolvedora Full Stack Junior'"
+            :period="'Jan 2024 - Presente'"
+            :location="'São Luís, MA'"
             :description="'Desenvolvi aplicações web responsivas e APIs RESTful, colaborando diretamente com equipes de design e produto para entregar soluções de alta qualidade.'"
             :achievements="[
               'Desenvolvi 15+ projetos web completos',
@@ -45,9 +29,9 @@
           
           <ExperienceCard
             :position="'right'"
-            :company="'StartupTech'"
-            :role="'Desenvolvedora Frontend'"
-            :period="'Ago 2019 - Fev 2021'"
+            :company="'UFMA'"
+            :role="'Monitora de Projeto e Desenvolvimento de Software'"
+            :period="'Mar 2024 - Jul 2024'"
             :location="'Remote'"
             :description="'Focada no desenvolvimento de interfaces modernas e experiências de usuário excepcionais, trabalhando em close collaboration com designers UX/UI.'"
             :achievements="[
@@ -61,9 +45,9 @@
           
           <ExperienceCard
             :position="'left'"
-            :company="'WebStudio Creative'"
-            :role="'Desenvolvedora Junior'"
-            :period="'Jan 2018 - Jul 2019'"
+            :company="'Saúde Digital - SES/MA'"
+            :role="'Estagiária de Desenvolvimento Web'"
+            :period="'Jun 2023 - Dez 2023'"
             :location="'São Luís, MA'"
             :description="'Início da carreira desenvolvendo websites institucionais e sistemas web básicos, aprendendo as melhores práticas de desenvolvimento.'"
             :achievements="[
