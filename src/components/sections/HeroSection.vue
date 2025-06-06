@@ -1,4 +1,3 @@
-<!-- src/components/HeroSection.vue -->
 <template>
   <section id="home" class="relative pt-20 min-h-screen flex items-center justify-center z-10">
     <div class="text-center px-6">

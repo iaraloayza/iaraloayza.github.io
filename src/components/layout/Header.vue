@@ -77,10 +77,13 @@ export default {
     const navItems = reactive([
       { id: 'home', label: 'Início', href: '#home' },
       { id: 'about', label: 'Sobre', href: '#about' },
+      { id: 'experience', label: 'Experiência', href: '#experience' },
+      { id: 'education', label: 'Formação', href: '#education' },
       { id: 'projects', label: 'Projetos', href: '#projects' },
       { id: 'skills', label: 'Habilidades', href: '#skills' },
       { id: 'contact', label: 'Contato', href: '#contact' }
     ])
+
 
     const toggleMobileMenu = () => {
       isMobileMenuOpen.value = !isMobileMenuOpen.value
