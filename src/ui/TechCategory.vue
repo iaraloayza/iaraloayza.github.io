@@ -24,7 +24,7 @@ export default {
     color: {
       type: String,
       default: 'purple',
-      validator: (value) => ['purple', 'pink'].includes(value)
+      validator: (value) => ['purple', 'pink', 'blue'].includes(value)
     },
     technologies: {
       type: Array,
@@ -33,7 +33,12 @@ export default {
   },
   computed: {
     titleClasses() {
-      return this.color === 'purple' ? 'text-purple-400' : 'text-pink-400'
+      const colorMap = {
+        purple: 'text-purple-400',
+        pink: 'text-pink-400',
+        blue: 'text-blue-400'
+      }
+      return colorMap[this.color] || 'text-purple-400'
     }
   }
 }
