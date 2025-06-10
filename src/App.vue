@@ -1,23 +1,17 @@
 <template>
   <div id="app" class="app-container">
-    <!-- Animated Background -->
     <BackgroundAnimation />
-
-    <!-- Main Content -->
-    <MainContent />
+    <router-view /> <!-- Aqui vai aparecer a view baseada na rota atual -->
   </div>
 </template>
 
 <script>
-  import BackgroundAnimation from './ui/BackgroundAnimation.vue'
-  import MainContent from './components/layout/MainContent.vue'
+import BackgroundAnimation from './ui/BackgroundAnimation.vue'
 
-  // Versão com Lazy Loading (Performance melhorada)
-  export default {
-    name: 'App',
-    components: {
-      BackgroundAnimation,
-      MainContent
-    }
+export default {
+  name: 'App',
+  components: {
+    BackgroundAnimation
   }
+}
 </script>
