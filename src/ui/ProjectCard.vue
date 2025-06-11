@@ -8,13 +8,15 @@
       <span class="development-text">Em Desenvolvimento</span>
     </div>
 
-    <div :class="projectImageClasses" class="project-image">
+    <div :class="projectImageClasses" class="project-image" @click="goToProjectDetails">
       <div class="project-overlay">
         <div class="text-white text-xl font-bold">Ver Detalhes</div>
       </div>
     </div>
     <div class="project-content">
-      <h3 class="text-2xl font-bold text-white mb-3">{{ project.title }}</h3>
+      <h3 class="text-2xl font-bold text-white mb-3 cursor-pointer hover:text-purple-400 transition-colors duration-300" @click="goToProjectDetails">
+        {{ project.title }}
+      </h3>
       <p class="text-gray-400 mb-6 leading-relaxed">
         {{ project.description }}
       </p>
@@ -55,6 +57,12 @@ export default {
     projectImageClasses() {
       return `bg-gradient-to-br ${this.project.gradient}`
     }
+  },
+  methods: {
+    goToProjectDetails() {
+      // Navegar para a página de detalhes do projeto
+      this.$router.push(`/projeto/${this.project.id}`)
+    }
   }
 }
 </script>
@@ -94,7 +102,7 @@ export default {
 }
 
 .project-image {
-  @apply h-64 relative overflow-hidden;
+  @apply h-64 relative overflow-hidden cursor-pointer;
 }
 
 .project-overlay {
@@ -110,7 +118,7 @@ export default {
 }
 
 .project-link {
-  @apply text-purple-400 hover:text-pink-400 font-semibold transition-colors duration-300 relative;
+  @apply text-white font-semibold transition-all duration-300 relative text-center;
 }
 
 .project-link::after {
