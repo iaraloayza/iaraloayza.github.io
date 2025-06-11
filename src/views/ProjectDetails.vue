@@ -1,0 +1,725 @@
+<template>
+  <div class="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+    <!-- Background animado -->
+    <!-- <div class="fixed inset-0 bg-gradient-to-br from-purple-900/20 to-pink-900/20 pointer-events-none">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cg fill-opacity="0.03"%3E%3Cpolygon fill="%23ffffff" points="50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40"/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+    </div> -->
+
+    <!-- Header com navegação -->
+    <header class="relative z-10 bg-black/30 backdrop-blur-lg border-b border-purple-500/20">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <button 
+            @click="goBack" 
+            class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors duration-300 group"
+          >
+            <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span class="font-semibold">Voltar aos Projetos</span>
+          </button>
+          
+          <div class="flex items-center gap-4">
+            <span v-if="project?.inDevelopment" class="development-badge">
+              <div class="pulse-dot"></div>
+              Em Desenvolvimento
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Loading state -->
+    <div v-if="loading" class="flex items-center justify-center min-h-screen">
+      <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
+    </div>
+
+    <!-- Projeto não encontrado -->
+    <div v-else-if="!project" class="flex items-center justify-center min-h-screen">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-red-400 mb-4">Projeto não encontrado</h1>
+        <p class="text-gray-400 mb-8">O projeto que você está procurando não existe ou foi removido.</p>
+        <button @click="goBack" class="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 rounded-full font-semibold hover:from-purple-500 hover:to-pink-500 transition-all duration-300">
+          Voltar aos Projetos
+        </button>
+      </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <main v-else class="relative z-10 pt-8">
+      <!-- Hero Section -->
+      <section class="px-6 py-12">
+        <div class="container mx-auto max-w-6xl">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Informações principais -->
+            <div>
+              <h1 class="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                {{ project.title }}
+              </h1>
+              
+              <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                {{ project.description }}
+              </p>
+
+              <!-- Tecnologias -->
+              <div class="flex flex-wrap gap-3 mb-8">
+                <span 
+                  v-for="tech in project.technologies" 
+                  :key="tech.name"
+                  :class="tech.color"
+                  class="tech-tag"
+                >
+                  {{ tech.name }}
+                </span>
+              </div>
+
+              <!-- Links de ação -->
+              <div class="flex flex-wrap gap-4">
+                <a 
+                  v-if="project.projectUrl && project.projectUrl !== '#'"
+                  :href="project.projectUrl" 
+                  target="_blank"
+                  class="action-btn primary"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Ver Projeto Live
+                </a>
+                
+                <a 
+                  v-if="project.githubUrl && project.githubUrl !== '#'"
+                  :href="project.githubUrl" 
+                  target="_blank"
+                  class="action-btn secondary"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Ver no GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Imagem/Preview do projeto -->
+            <div class="order-first lg:order-last">
+              <div :class="project.gradient" class="project-preview bg-gradient-to-br rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
+                <!-- Área para screenshot/preview do projeto -->
+                <div class="bg-black/20 rounded-2xl h-64 flex items-center justify-center backdrop-blur-sm">
+                  <div class="text-center">
+                    <svg class="w-16 h-16 mx-auto mb-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <p class="text-white/60">Preview do Projeto</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seções de detalhes -->
+      <section class="px-6 py-12">
+        <div class="container mx-auto max-w-6xl">
+          <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Informações técnicas -->
+            <div class="lg:col-span-2 space-y-8">
+              <!-- Sobre o projeto -->
+              <div class="detail-card">
+                <h2 class="section-title">Sobre o Projeto</h2>
+                <div class="prose prose-invert max-w-none">
+                  <p class="text-gray-300 leading-relaxed">
+                    {{ project.detailedDescription || project.description }}
+                  </p>
+                  
+                  <!-- Área para conteúdo adicional que pode ser personalizado por projeto -->
+                  <div v-if="project.features" class="mt-6">
+                    <h3 class="text-xl font-bold text-white mb-4">Principais Funcionalidades</h3>
+                    <ul class="space-y-2">
+                      <li v-for="feature in project.features" :key="feature" class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-300">{{ feature }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Processo de desenvolvimento -->
+              <div class="detail-card" v-if="project.developmentProcess">
+                <h2 class="section-title">Processo de Desenvolvimento</h2>
+                <div class="space-y-4">
+                  <div v-for="(step, index) in project.developmentProcess" :key="index" class="flex gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-sm font-bold">
+                      {{ index + 1 }}
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-white mb-2">{{ step.title }}</h3>
+                      <p class="text-gray-300">{{ step.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Galeria de imagens -->
+              <div class="detail-card" v-if="project.gallery && project.gallery.length > 0">
+                <h2 class="section-title">Galeria</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div v-for="(image, index) in project.gallery" :key="index" class="aspect-video bg-gray-800 rounded-lg overflow-hidden">
+                    <img :src="image.url" :alt="image.alt" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar com informações adicionais -->
+            <div class="space-y-6">
+              <!-- Status do projeto -->
+              <div class="detail-card">
+                <h3 class="text-lg font-bold text-white mb-4">Status</h3>
+                <div class="flex items-center gap-3">
+                  <div :class="project.inDevelopment ? 'bg-yellow-500' : 'bg-green-500'" class="w-3 h-3 rounded-full"></div>
+                  <span class="text-gray-300">{{ project.inDevelopment ? 'Em Desenvolvimento' : 'Concluído' }}</span>
+                </div>
+              </div>
+
+              <!-- Tecnologias detalhadas -->
+              <div class="detail-card">
+                <h3 class="text-lg font-bold text-white mb-4">Tecnologias</h3>
+                <div class="space-y-3">
+                  <div v-for="tech in project.technologies" :key="tech.name" class="flex items-center gap-3">
+                    <div :class="tech.color" class="w-4 h-4 rounded"></div>
+                    <span class="text-gray-300">{{ tech.name }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Informações do projeto -->
+              <div class="detail-card" v-if="project.projectInfo">
+                <h3 class="text-lg font-bold text-white mb-4">Informações</h3>
+                <div class="space-y-3">
+                  <div v-if="project.projectInfo.duration">
+                    <span class="text-purple-400 font-semibold">Duração:</span>
+                    <p class="text-gray-300">{{ project.projectInfo.duration }}</p>
+                  </div>
+                  <div v-if="project.projectInfo.team">
+                    <span class="text-purple-400 font-semibold">Equipe:</span>
+                    <p class="text-gray-300">{{ project.projectInfo.team }}</p>
+                  </div>
+                  <div v-if="project.projectInfo.client">
+                    <span class="text-purple-400 font-semibold">Cliente:</span>
+                    <p class="text-gray-300">{{ project.projectInfo.client }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Impacto -->
+              <div class="detail-card" v-if="project.impact">
+                <h3 class="text-lg font-bold text-white mb-4">Impacto</h3>
+                <div class="space-y-3">
+                  <div v-for="stat in project.impact" :key="stat.label" class="text-center">
+                    <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                      {{ stat.value }}
+                    </div>
+                    <div class="text-sm text-gray-400">{{ stat.label }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projetos relacionados -->
+      <section class="px-6 py-12 bg-black/20">
+        <div class="container mx-auto max-w-6xl">
+          <h2 class="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Outros Projetos
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div v-for="relatedProject in relatedProjects" :key="relatedProject.id" 
+                 @click="goToProject(relatedProject.id)"
+                 class="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 cursor-pointer transform hover:scale-105">
+              <h3 class="text-xl font-bold text-white mb-2">{{ relatedProject.title }}</h3>
+              <p class="text-gray-400 text-sm mb-4">{{ relatedProject.description.substring(0, 100) }}...</p>
+              <div class="flex flex-wrap gap-2">
+                <span v-for="tech in relatedProject.technologies.slice(0, 2)" :key="tech.name" 
+                      :class="tech.color" class="tech-tag-small">
+                  {{ tech.name }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ProjectDetails',
+  data() {
+    return {
+      loading: true,
+      project: null,
+      relatedProjects: [],
+      allProjects: [
+        {
+          id: 1,
+          title: 'Monitora Saúde',
+          description: 'Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.',
+          detailedDescription: 'O Monitora Saúde é uma plataforma web robusta desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real, relatórios customizáveis e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.',
+          gradient: 'from-purple-600 to-purple-800',
+          technologies: [
+            { name: 'Laravel', color: 'bg-red-600' },
+            { name: 'PostgreSQL', color: 'bg-blue-600' }
+          ],
+          projectUrl: 'https://monitora.saude.ma.gov.br/',
+          githubUrl: '#',
+          inDevelopment: false,
+          features: [
+            'Dashboard interativo com indicadores em tempo real',
+            'Sistema de relatórios customizáveis',
+            'Gestão de usuários com diferentes níveis de acesso',
+            'Integração com bases de dados governamentais',
+            'Interface responsiva para dispositivos móveis'
+          ],
+          developmentProcess: [
+            {
+              title: 'Análise de Requisitos',
+              description: 'Levantamento detalhado das necessidades da Secretaria de Saúde e definição dos indicadores prioritários.'
+            },
+            {
+              title: 'Arquitetura do Sistema',
+              description: 'Desenvolvimento da arquitetura MVC utilizando Laravel, com foco em escalabilidade e performance.'
+            },
+            {
+              title: 'Desenvolvimento Backend',
+              description: 'Implementação das APIs, integração com PostgreSQL e desenvolvimento dos algoritmos de cálculo de indicadores.'
+            },
+            {
+              title: 'Interface do Usuário',
+              description: 'Criação de dashboards intuitivos utilizando tecnologias modernas de visualização de dados.'
+            },
+            {
+              title: 'Testes e Deploy',
+              description: 'Realização de testes extensivos e implantação em ambiente de produção com alta disponibilidade.'
+            }
+          ],
+          projectInfo: {
+            duration: '8 meses',
+            team: '4 desenvolvedores',
+            client: 'Secretaria de Estado da Saúde do Maranhão'
+          },
+          impact: [
+            { value: '50+', label: 'Indicadores Monitorados' },
+            { value: '200+', label: 'Usuários Ativos' },
+            { value: '99.9%', label: 'Uptime' }
+          ]
+        },
+        {
+          id: 2,
+          title: 'App Hans+',
+          description: 'O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença.',
+          detailedDescription: 'O Hans+ é uma solução inovadora desenvolvida para apoiar pacientes e profissionais de saúde no tratamento e acompanhamento da hanseníase. A plataforma oferece funcionalidades tanto para pacientes quanto para profissionais de saúde, incluindo lembretes de medicação, acompanhamento de sintomas, informações educativas e comunicação direta com a equipe médica.',
+          gradient: 'from-pink-600 to-purple-800',
+          technologies: [
+            { name: 'Flutter', color: 'bg-purple-600' },
+            { name: 'Dart', color: 'bg-blue-600' },
+            { name: 'Firebase', color: 'bg-yellow-600' }
+          ],
+          projectUrl: 'https://hansmais.netlify.app/',
+          githubUrl: '#',
+          inDevelopment: false,
+          features: [
+            'Aplicativo móvel nativo para Android',
+            'Versão web responsiva',
+            'Sistema de lembretes para medicação',
+            'Monitoramento de sintomas e evolução do tratamento',
+            'Base de conhecimento sobre hanseníase',
+            'Chat com profissionais de saúde',
+            'Relatórios para acompanhamento médico'
+          ],
+          developmentProcess: [
+            {
+              title: 'Pesquisa e Validação',
+              description: 'Estudo aprofundado sobre hanseníase e validação da proposta com profissionais de saúde especializados.'
+            },
+            {
+              title: 'Design UX/UI',
+              description: 'Criação de uma interface amigável e acessível, considerando diferentes perfis de usuários.'
+            },
+            {
+              title: 'Desenvolvimento Flutter',
+              description: 'Implementação do aplicativo utilizando Flutter para garantir performance nativa em Android e web.'
+            },
+            {
+              title: 'Integração Firebase',
+              description: 'Configuração do backend Firebase para autenticação, banco de dados e notificações push.'
+            },
+            {
+              title: 'Testes com Usuários',
+              description: 'Validação com pacientes reais e profissionais de saúde para refinamento da experiência.'
+            }
+          ],
+          projectInfo: {
+            duration: '6 meses',
+            team: '3 desenvolvedores + 1 designer',
+            client: 'Programa de Controle da Hanseníase'
+          },
+          impact: [
+            { value: '500+', label: 'Downloads' },
+            { value: '95%', label: 'Satisfação' },
+            { value: '80%', label: 'Adesão ao Tratamento' }
+          ]
+        },
+        {
+          id: 3,
+          title: 'RENAVEH',
+          description: 'Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões.',
+          detailedDescription: 'O RENAVEH (Rede Nacional de Emergências Hospitalares) é um sistema web desenvolvido para otimizar a gestão de emergências hospitalares no Maranhão. A plataforma permite o cadastro e acompanhamento de pacientes em situações de emergência, facilitando a comunicação entre hospitais e agilizando processos de transferência e notificação.',
+          gradient: 'from-purple-500 to-pink-600',
+          technologies: [
+            { name: 'Laravel', color: 'bg-red-600' },
+            { name: 'MySQL', color: 'bg-cyan-600' }
+          ],
+          projectUrl: 'https://renaveh.saude.ma.gov.br/',
+          githubUrl: '#',
+          inDevelopment: false,
+          features: [
+            'Cadastro rápido de pacientes em emergências',
+            'Sistema de transferências entre hospitais',
+            'Módulo especializado para acidentes de trânsito',
+            'Controle de acesso por papéis e permissões',
+            'Notificações automáticas entre unidades',
+            'Relatórios estatísticos de emergências',
+            'Interface otimizada para uso em pronto-socorro'
+          ],
+          projectInfo: {
+            duration: '10 meses',
+            team: '5 desenvolvedores',
+            client: 'Rede de Hospitais do Maranhão'
+          },
+          impact: [
+            { value: '25+', label: 'Hospitais Conectados' },
+            { value: '1000+', label: 'Pacientes/Mês' },
+            { value: '40%', label: 'Redução no Tempo de Transferência' }
+          ]
+        },
+        {
+          id: 4,
+          title: 'Maranhão Livre da Fome',
+          description: 'O sistema Maranhão Livre da Fome (eixo saúde) combate a insegurança alimentar com o cadastro e acompanhamento de famílias em situação de vulnerabilidade, permitindo registrar avaliações e monitorar o histórico de cada indivíduo.',
+          detailedDescription: 'O sistema Maranhão Livre da Fome representa uma iniciativa fundamental no combate à insegurança alimentar no estado. Desenvolvido como parte de uma política pública abrangente, o sistema permite identificar, cadastrar e acompanhar famílias em situação de vulnerabilidade alimentar, oferecendo ferramentas para monitoramento nutricional e coordenação de ações de assistência.',
+          gradient: 'from-green-500 to-blue-600',
+          technologies: [
+            { name: 'Laravel', color: 'bg-red-600' },
+            { name: 'MySQL', color: 'bg-cyan-600' },
+            { name: 'Docker', color: 'bg-blue-600' }
+          ],
+          projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/',
+          githubUrl: '#',
+          inDevelopment: false,
+          features: [
+            'Cadastro completo de famílias vulneráveis',
+            'Avaliação nutricional individualizada',
+            'Monitoramento de indicadores de segurança alimentar',
+            'Histórico detalhado de acompanhamentos',
+            'Geração de relatórios para gestão pública',
+            'Integração com programas sociais',
+            'Dashboard com indicadores regionais'
+          ],
+          developmentProcess: [
+            {
+              title: 'Mapeamento Social',
+              description: 'Identificação das áreas e famílias em situação de vulnerabilidade alimentar no estado.'
+            },
+            {
+              title: 'Desenvolvimento do Sistema',
+              description: 'Criação de plataforma robusta para cadastro e acompanhamento familiar.'
+            },
+            {
+              title: 'Capacitação de Equipes',
+              description: 'Treinamento de profissionais para utilização adequada do sistema.'
+            },
+            {
+              title: 'Implementação Gradual',
+              description: 'Deploy progressivo em diferentes regiões do estado.'
+            }
+          ],
+          projectInfo: {
+            duration: '12 meses',
+            team: '6 desenvolvedores + equipe multidisciplinar',
+            client: 'Governo do Estado do Maranhão'
+          },
+          impact: [
+            { value: '10000+', label: 'Famílias Cadastradas' },
+            { value: '217', label: 'Municípios Atendidos' },
+            { value: '85%', label: 'Eficácia no Acompanhamento' }
+          ]
+        },
+        {
+          id: 5,
+          title: 'CadServ',
+          description: 'Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta.',
+          detailedDescription: 'O CadServ é um sistema de gestão de recursos humanos desenvolvido especificamente para a Secretaria Adjunta de Políticas para Adolescentes e Pessoas Vivendo com HIV/AIDS (SAPAPVS). A plataforma centraliza informações funcionais, facilitando a administração de pessoal e otimizando processos internos da secretaria.',
+          gradient: 'from-blue-500 to-indigo-600',
+          technologies: [
+            { name: 'Laravel', color: 'bg-red-600' },
+            { name: 'MySQL', color: 'bg-cyan-600' }
+          ],
+          projectUrl: 'https://cadserv.saude.ma.gov.br/',
+          githubUrl: '#',
+          inDevelopment: false,
+          features: [
+            'Cadastro completo de servidores',
+            'Gestão de dados funcionais e pessoais',
+            'Controle de férias e licenças',
+            'Sistema de permissões hierárquicas',
+            'Relatórios gerenciais',
+            'Histórico funcional completo',
+            'Interface administrativa intuitiva'
+          ],
+          projectInfo: {
+            duration: '4 meses',
+            team: '3 desenvolvedores',
+            client: 'SAPAPVS - Secretaria de Saúde do Maranhão'
+          },
+          impact: [
+            { value: '300+', label: 'Servidores Cadastrados' },
+            { value: '90%', label: 'Redução de Processos Manuais' },
+            { value: '100%', label: 'Satisfação dos Gestores' }
+          ]
+        },
+        {
+          id: 6,
+          title: 'PlanDox 2.0',
+          description: 'PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços.',
+          detailedDescription: 'O PlanDox 2.0 representa uma evolução significativa do software original, incorporando tecnologias modernas e arquitetura de microserviços. Este projeto visa modernizar completamente a experiência de planejamento experimental para análise de biodiesel, oferecendo maior flexibilidade, escalabilidade e acessibilidade através de múltiplas plataformas.',
+          gradient: 'from-yellow-500 to-orange-600',
+          technologies: [
+            { name: 'Python', color: 'bg-yellow-600' },
+            { name: 'Docker', color: 'bg-blue-600' },
+            { name: 'Microserviços', color: 'bg-purple-600' }
+          ],
+          projectUrl: '#',
+          githubUrl: '#',
+          inDevelopment: true,
+          features: [
+            'Interface moderna e intuitiva',
+            'Arquitetura baseada em microserviços',
+            'Versão mobile complementar',
+            'Análise avançada de dados',
+            'Integração com equipamentos de laboratório',
+            'Relatórios científicos automatizados',
+            'Colaboração entre pesquisadores'
+          ],
+          developmentProcess: [
+            {
+              title: 'Análise da Versão Anterior',
+              description: 'Estudo detalhado do PlanDox original para identificar pontos de melhoria.'
+            },
+            {
+              title: 'Redesign da Arquitetura',
+              description: 'Migração para arquitetura de microserviços com Python e Docker.'
+            },
+            {
+              title: 'Desenvolvimento Iterativo',
+              description: 'Implementação em sprints com feedback contínuo de pesquisadores.'
+            },
+            {
+              title: 'Testes Laboratoriais',
+              description: 'Validação em ambiente real de laboratório de biodiesel.'
+            }
+          ],
+          projectInfo: {
+            duration: 'Em andamento (6 meses)',
+            team: '4 desenvolvedores + 2 pesquisadores',
+            client: 'Laboratório de Biodiesel - Universidade'
+          }
+        },
+        {
+          id: 7,
+          title: 'Portal REACT',
+          description: 'O portal REACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (REACT), fortalecendo a colaboração acadêmica e profissional.',
+          detailedDescription: 'O Portal REACT está sendo desenvolvido como uma plataforma central para a Rede de Aplicação de Ciência e Tecnologia, com o objetivo de conectar pesquisadores, facilitar a colaboração em projetos e centralizar informações acadêmicas. A plataforma servirá como hub de conhecimento e colaboração para a comunidade acadêmica.',
+          gradient: 'from-teal-500 to-cyan-600',
+          technologies: [
+            { name: 'Laravel', color: 'bg-red-600' },
+            { name: 'PostgreSQL', color: 'bg-blue-600' }
+          ],
+          projectUrl: '#',
+          githubUrl: '#',
+          inDevelopment: true,
+          features: [
+            'Gestão completa de projetos de pesquisa',
+            'Sistema de notícias e comunicação',
+            'Gestão de editais e processos seletivos',
+            'Diretório de pesquisadores e equipes',
+            'Biblioteca de recursos acadêmicos',
+            'Sistema de colaboração entre instituições',
+            'Dashboard analítico para gestores'
+          ],
+          developmentProcess: [
+            {
+              title: 'Levantamento de Requisitos',
+              description: 'Entrevistas com coordenadores e pesquisadores para definir funcionalidades.'
+            },
+            {
+              title: 'Prototipagem',
+              description: 'Criação de protótipos interativos para validação com usuários.'
+            },
+            {
+              title: 'Desenvolvimento Backend',
+              description: 'Implementação da API e estrutura de dados com Laravel.'
+            },
+            {
+              title: 'Desenvolvimento Frontend',
+              description: 'Criação da interface do usuário focada na experiência do pesquisador.'
+            }
+          ],
+          projectInfo: {
+            duration: 'Em andamento (4 meses)',
+            team: '5 desenvolvedores + 1 designer',
+            client: 'Rede REACT - Universidades Parceiras'
+          }
+        }
+      ]
+    }
+  },
+  mounted() {
+    this.loadProject()
+  },
+  methods: {
+    loadProject() {
+      const projectId = parseInt(this.$route.params.id)
+      
+      // Simular loading
+      setTimeout(() => {
+        this.project = this.allProjects.find(p => p.id === projectId)
+        this.relatedProjects = this.allProjects
+          .filter(p => p.id !== projectId)
+          .slice(0, 3)
+        this.loading = false
+      }, 1000)
+    },
+    goBack() {
+      this.$router.go(-1)
+    },
+    goToProject(projectId) {
+      this.$router.push(`/projeto/${projectId}`)
+    }
+  },
+  watch: {
+    '$route'() {
+      this.loading = true
+      this.loadProject()
+    }
+  }
+}
+</script>
+
+<style scoped>
+.development-badge {
+  @apply bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2;
+}
+
+.pulse-dot {
+  @apply w-2 h-2 bg-white rounded-full;
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+.tech-tag {
+  @apply text-white px-4 py-2 rounded-full text-sm font-semibold;
+}
+
+.tech-tag-small {
+  @apply text-white px-2 py-1 rounded-full text-xs font-semibold;
+}
+
+.action-btn {
+  @apply px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 hover:transform hover:scale-105;
+}
+
+.action-btn.primary {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-500 hover:to-pink-500;
+}
+
+.action-btn.secondary {
+  @apply border-2 border-purple-500/50 text-purple-400 hover:border-purple-400 hover:text-pink-400 hover:bg-purple-500/10;
+}
+
+.project-preview {
+  @apply relative overflow-hidden;
+}
+
+.detail-card {
+  @apply bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/30 transition-all duration-300;
+}
+
+.section-title {
+  @apply text-2xl font-bold text-white mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+}
+
+.prose {
+  @apply text-gray-300 leading-relaxed;
+}
+
+.prose h3 {
+  @apply text-xl font-bold text-white mb-4 mt-6;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply space-y-2;
+}
+
+.prose li {
+  @apply flex items-start gap-3;
+}
+
+/* Animações personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detail-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .action-btn {
+    @apply w-full justify-center;
+  }
+  
+  .tech-tag {
+    @apply text-xs px-3 py-1;
+  }
+}
+</style>
