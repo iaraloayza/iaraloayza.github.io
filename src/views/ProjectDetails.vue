@@ -103,9 +103,12 @@
 
             <!-- Imagem/Preview do projeto -->
             <div class="order-first lg:order-last">
-              <div :class="project.gradient" class="project-preview bg-gradient-to-br rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
+              <div class="project-preview transform hover:scale-105 transition-all duration-500 relative">
+                <!-- Small gradient accent -->
+                <div :class="project.gradient" class="absolute top-4 right-4 w-4 h-4 rounded-full bg-gradient-to-br"></div>
+                
                 <!-- Área para screenshot/preview do projeto -->
-                <div class="bg-black/20 rounded-2xl h-64 overflow-hidden backdrop-blur-sm relative">
+                <div class="bg-black/20 rounded-2xl overflow-hidden backdrop-blur-sm relative" style="height: 220px;">
                   <img 
                     v-if="project.previewImage" 
                     :src="project.previewImage" 
@@ -180,9 +183,84 @@
               <!-- Galeria de imagens -->
               <div class="detail-card" v-if="project.gallery && project.gallery.length > 0">
                 <h2 class="section-title">Galeria</h2>
-                <div class="grid md:grid-cols-2 gap-4">
-                  <div v-for="(image, index) in project.gallery" :key="index" class="aspect-video bg-gray-800 rounded-lg overflow-hidden">
-                    <img :src="image.url" :alt="image.alt" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div 
+                    v-for="(image, index) in project.gallery" 
+                    :key="index" 
+                    class="gallery-item aspect-video bg-gray-800 rounded-lg overflow-hidden cursor-pointer group relative"
+                    @click="openGalleryModal(image, index)"
+                  >
+                    <img 
+                      :src="image.url" 
+                      :alt="image.alt" 
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                      @error="handleGalleryImageError($event, index)"
+                    >
+                    <!-- Overlay de hover -->
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                      <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                      </svg>
+                    </div>
+                    <!-- Contador de imagens -->
+                    <div class="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                      {{ index + 1 }}/{{ project.gallery.length }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal da Galeria -->
+              <div 
+                v-if="showGalleryModal && selectedImage" 
+                class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+                @click="closeGalleryModal"
+              >
+                <div class="relative max-w-4xl max-h-full" @click.stop>
+                  <!-- Botão fechar -->
+                  <button 
+                    @click="closeGalleryModal"
+                    class="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors z-10"
+                  >
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </button>
+                  
+                  <!-- Navegação anterior -->
+                  <button 
+                    v-if="selectedImageIndex > 0"
+                    @click="previousImage"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
+                  >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                  </button>
+                  
+                  <!-- Navegação próxima -->
+                  <button 
+                    v-if="selectedImageIndex < project.gallery.length - 1"
+                    @click="nextImage"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
+                  >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </button>
+                  
+                  <!-- Imagem principal -->
+                  <img 
+                    :src="selectedImage.url" 
+                    :alt="selectedImage.alt"
+                    class="max-w-full max-h-full object-contain rounded-lg"
+                  >
+                  
+                  <!-- Descrição da imagem -->
+                  <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-lg">
+                    <p class="text-white text-sm">{{ selectedImage.alt }}</p>
+                    <p class="text-gray-300 text-xs mt-1">{{ selectedImageIndex + 1 }} de {{ project.gallery.length }}</p>
                   </div>
                 </div>
               </div>
@@ -280,12 +358,33 @@ export default {
       loading: true,
       project: null,
       relatedProjects: [],
+      showGalleryModal: false,
+      selectedImage: null,
+      selectedImageIndex: 0,
       allProjects: [
         {
           id: 1,
           title: 'Monitora Saúde',
           description: 'Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.',
-          previewImage: '../../public/images/monitora_saude.png',
+          previewImage: '../../public/images/logo_monitora_saude.png',
+          gallery: [
+          {
+            url: '../../public/images/monitora_saude.png',
+            alt: 'Dashboard principal com indicadores de saúde'
+          },
+          {
+            url: '../../public/images/monitora_saude.png',
+            alt: 'Tela de relatórios customizáveis'
+          },
+          {
+            url: '../../public/images/monitora_saude.png',
+            alt: 'Gestão de usuários e permissões'
+          },
+          {
+            url: '../../public/images/monitora_saude.png',
+            alt: 'Visualização de dados em gráficos interativos'
+          }
+        ],
           detailedDescription: 'O Monitora Saúde é uma plataforma web robusta desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real, relatórios customizáveis e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.',
           gradient: 'from-purple-600 to-purple-800',
           technologies: [
@@ -613,6 +712,13 @@ export default {
   },
   mounted() {
     this.loadProject()
+
+    // Listener para navegação por teclado
+    window.addEventListener('keydown', this.handleKeydown)
+  },
+  beforeUnmount() {
+    window.removeEventListener('keydown', this.handleKeydown)
+    document.body.style.overflow = 'auto' // Garante que o scroll volte ao normal
   },
   methods: {
     loadProject() {
@@ -634,16 +740,68 @@ export default {
       this.$router.push(`/projeto/${projectId}`)
     },
     handleImageError(event) {
-    // Remove a imagem com erro
-    event.target.style.display = 'none'
+      // Remove a imagem com erro
+      event.target.style.display = 'none'
+      
+      // Mostra o placeholder se ele existir
+      const nextElement = event.target.nextElementSibling
+      if (nextElement) {
+        nextElement.style.display = 'flex'
+      }
+    },
+      openGalleryModal(image, index) {
+      this.selectedImage = image
+      this.selectedImageIndex = index
+      this.showGalleryModal = true
+      // Previne scroll do body quando modal está aberto
+      document.body.style.overflow = 'hidden'
+    },
     
-    // Mostra o placeholder se ele existir
-    const nextElement = event.target.nextElementSibling
-    if (nextElement) {
-      nextElement.style.display = 'flex'
+    closeGalleryModal() {
+      this.showGalleryModal = false
+      this.selectedImage = null
+      document.body.style.overflow = 'auto'
+    },
+    
+    nextImage() {
+      if (this.selectedImageIndex < this.project.gallery.length - 1) {
+        this.selectedImageIndex++
+        this.selectedImage = this.project.gallery[this.selectedImageIndex]
+      }
+    },
+    
+    previousImage() {
+      if (this.selectedImageIndex > 0) {
+        this.selectedImageIndex--
+        this.selectedImage = this.project.gallery[this.selectedImageIndex]
+      }
+    },
+    
+    handleKeydown(event) {
+      if (!this.showGalleryModal) return
+      
+      switch(event.key) {
+        case 'Escape':
+          this.closeGalleryModal()
+          break
+        case 'ArrowRight':
+          this.nextImage()
+          break
+        case 'ArrowLeft':
+          this.previousImage()
+          break
+      }
     }
-  }
   },
+
+  // MÉTODO PARA TRATAR ERRO DE IMAGEM DA GALERIA
+  handleGalleryImageError(event, index) {
+    // Remove a imagem com erro da galeria
+    console.warn(`Erro ao carregar imagem da galeria: ${this.project.gallery[index].url}`)
+    // Você pode opcionalmente remover a imagem da galeria ou mostrar um placeholder
+    event.target.src = '../../public/images/monitora_saude.png' // imagem placeholder
+  },
+
   watch: {
     '$route'() {
       this.loading = true
@@ -726,6 +884,25 @@ export default {
   @apply flex items-start gap-3;
 }
 
+.gallery-item {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação de fade para o modal */
+.modal-enter-active, .modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-enter, .modal-leave-to {
+  opacity: 0;
+}
+
 /* Animações personalizadas */
 @keyframes fadeInUp {
   from {
@@ -750,6 +927,15 @@ export default {
   
   .tech-tag {
     @apply text-xs px-3 py-1;
+  }
+
+  /* Responsividade da galeria */
+  .grid.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .grid.md\\:grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 </style>
