@@ -105,12 +105,25 @@
             <div class="order-first lg:order-last">
               <div :class="project.gradient" class="project-preview bg-gradient-to-br rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
                 <!-- Área para screenshot/preview do projeto -->
-                <div class="bg-black/20 rounded-2xl h-64 flex items-center justify-center backdrop-blur-sm">
-                  <div class="text-center">
-                    <svg class="w-16 h-16 mx-auto mb-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    <p class="text-white/60">Preview do Projeto</p>
+                <div class="bg-black/20 rounded-2xl h-64 overflow-hidden backdrop-blur-sm relative">
+                  <img 
+                    v-if="project.previewImage" 
+                    :src="project.previewImage" 
+                    :alt="`Preview do projeto ${project.title}`"
+                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    @error="handleImageError"
+                  />
+                  <!-- Placeholder que será mostrado quando a imagem der erro ou não existir -->
+                  <div 
+                    :class="project.previewImage ? 'hidden' : 'flex'"
+                    class="absolute inset-0 items-center justify-center"
+                  >
+                    <div class="text-center">
+                      <svg class="w-16 h-16 mx-auto mb-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <p class="text-white/60">Preview do Projeto</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -272,6 +285,7 @@ export default {
           id: 1,
           title: 'Monitora Saúde',
           description: 'Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.',
+          previewImage: '../../public/images/monitora_saude.png',
           detailedDescription: 'O Monitora Saúde é uma plataforma web robusta desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real, relatórios customizáveis e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.',
           gradient: 'from-purple-600 to-purple-800',
           technologies: [
@@ -325,6 +339,7 @@ export default {
           id: 2,
           title: 'App Hans+',
           description: 'O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença.',
+          previewImage: '../../public/images/monitora_saude.png',
           detailedDescription: 'O Hans+ é uma solução inovadora desenvolvida para apoiar pacientes e profissionais de saúde no tratamento e acompanhamento da hanseníase. A plataforma oferece funcionalidades tanto para pacientes quanto para profissionais de saúde, incluindo lembretes de medicação, acompanhamento de sintomas, informações educativas e comunicação direta com a equipe médica.',
           gradient: 'from-pink-600 to-purple-800',
           technologies: [
@@ -381,6 +396,7 @@ export default {
           id: 3,
           title: 'RENAVEH',
           description: 'Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões.',
+          previewImage: '../../public/images/monitora_saude.png',
           detailedDescription: 'O RENAVEH (Rede Nacional de Emergências Hospitalares) é um sistema web desenvolvido para otimizar a gestão de emergências hospitalares no Maranhão. A plataforma permite o cadastro e acompanhamento de pacientes em situações de emergência, facilitando a comunicação entre hospitais e agilizando processos de transferência e notificação.',
           gradient: 'from-purple-500 to-pink-600',
           technologies: [
@@ -414,6 +430,7 @@ export default {
           id: 4,
           title: 'Maranhão Livre da Fome',
           description: 'O sistema Maranhão Livre da Fome (eixo saúde) combate a insegurança alimentar com o cadastro e acompanhamento de famílias em situação de vulnerabilidade, permitindo registrar avaliações e monitorar o histórico de cada indivíduo.',
+          previewImage: '../../public/images/monitora_saude.png',
           detailedDescription: 'O sistema Maranhão Livre da Fome representa uma iniciativa fundamental no combate à insegurança alimentar no estado. Desenvolvido como parte de uma política pública abrangente, o sistema permite identificar, cadastrar e acompanhar famílias em situação de vulnerabilidade alimentar, oferecendo ferramentas para monitoramento nutricional e coordenação de ações de assistência.',
           gradient: 'from-green-500 to-blue-600',
           technologies: [
@@ -466,6 +483,7 @@ export default {
           id: 5,
           title: 'CadServ',
           description: 'Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta.',
+          previewImage: '../../public/images/monitora_saude.png',
           detailedDescription: 'O CadServ é um sistema de gestão de recursos humanos desenvolvido especificamente para a Secretaria Adjunta de Políticas para Adolescentes e Pessoas Vivendo com HIV/AIDS (SAPAPVS). A plataforma centraliza informações funcionais, facilitando a administração de pessoal e otimizando processos internos da secretaria.',
           gradient: 'from-blue-500 to-indigo-600',
           technologies: [
@@ -499,6 +517,7 @@ export default {
           id: 6,
           title: 'PlanDox 2.0',
           description: 'PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços.',
+          previewImage: '../../public/images/monitora_saude.png',
           detailedDescription: 'O PlanDox 2.0 representa uma evolução significativa do software original, incorporando tecnologias modernas e arquitetura de microserviços. Este projeto visa modernizar completamente a experiência de planejamento experimental para análise de biodiesel, oferecendo maior flexibilidade, escalabilidade e acessibilidade através de múltiplas plataformas.',
           gradient: 'from-yellow-500 to-orange-600',
           technologies: [
@@ -546,6 +565,7 @@ export default {
           id: 7,
           title: 'Portal REACT',
           description: 'O portal REACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (REACT), fortalecendo a colaboração acadêmica e profissional.',
+          previewImage: '../../public/images/monitora_saude.png',
           detailedDescription: 'O Portal REACT está sendo desenvolvido como uma plataforma central para a Rede de Aplicação de Ciência e Tecnologia, com o objetivo de conectar pesquisadores, facilitar a colaboração em projetos e centralizar informações acadêmicas. A plataforma servirá como hub de conhecimento e colaboração para a comunidade acadêmica.',
           gradient: 'from-teal-500 to-cyan-600',
           technologies: [
@@ -612,7 +632,17 @@ export default {
     },
     goToProject(projectId) {
       this.$router.push(`/projeto/${projectId}`)
+    },
+    handleImageError(event) {
+    // Remove a imagem com erro
+    event.target.style.display = 'none'
+    
+    // Mostra o placeholder se ele existir
+    const nextElement = event.target.nextElementSibling
+    if (nextElement) {
+      nextElement.style.display = 'flex'
     }
+  }
   },
   watch: {
     '$route'() {
