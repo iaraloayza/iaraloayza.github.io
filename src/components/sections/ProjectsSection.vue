@@ -187,6 +187,15 @@ export default {
     }
   },
   methods: {
+    updateSlidesPerView() {
+      if (window.innerWidth < 768) {
+        this.slidesPerView = 1
+      } else if (window.innerWidth < 1024) {
+        this.slidesPerView = 2
+      } else {
+        this.slidesPerView = 3
+      }
+    },
     nextSlide() {
       if (this.currentSlide < this.maxSlides) {
         this.currentSlide++
@@ -202,24 +211,12 @@ export default {
     }
   },
   mounted() {
-    // Ajustar slidesPerView baseado no tamanho da tela
-    const updateSlidesPerView = () => {
-      if (window.innerWidth < 768) {
-        this.slidesPerView = 1
-      } else if (window.innerWidth < 1024) {
-        this.slidesPerView = 2
-      } else {
-        this.slidesPerView = 3
-      }
-    }
-
-    updateSlidesPerView()
-    window.addEventListener('resize', updateSlidesPerView)
-
-    // Cleanup do event listener
-    this.$once('hook:beforeDestroy', () => {
-      window.removeEventListener('resize', updateSlidesPerView)
-    })
+    this.updateSlidesPerView()
+    window.addEventListener('resize', this.updateSlidesPerView)
+  },
+  // Substitua o $once por beforeUnmount
+  beforeUnmount() {
+    window.removeEventListener('resize', this.updateSlidesPerView)
   }
 }
 </script>
