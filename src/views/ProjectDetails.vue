@@ -493,9 +493,9 @@ export default {
         },
         {
           id: 3,
-          title: 'RENAVEH',
+          title: 'RENAVEH - MA',
           description: 'Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões.',
-          previewImage: '../../public/images/monitora_saude.png',
+          previewImage: '../../public/images/renaveh/logo_renaveh.png',
           detailedDescription: 'O RENAVEH (Rede Nacional de Emergências Hospitalares) é um sistema web desenvolvido para otimizar a gestão de emergências hospitalares no Maranhão. A plataforma permite o cadastro e acompanhamento de pacientes em situações de emergência, facilitando a comunicação entre hospitais e agilizando processos de transferência e notificação.',
           gradient: 'from-purple-500 to-pink-600',
           technologies: [
@@ -506,13 +506,12 @@ export default {
           githubUrl: '#',
           inDevelopment: false,
           features: [
-            'Cadastro rápido de pacientes em emergências',
-            'Sistema de transferências entre hospitais',
-            'Módulo especializado para acidentes de trânsito',
+            'Cadastro de pacientes',
+            'Cadastro de notificações hospitalares',
+            'Sistema de transferências de notificações entre hospitais',
+            'Módulo especializado para acidentes de trânsito, requisitado pela SUPAST',
             'Controle de acesso por papéis e permissões',
-            'Notificações automáticas entre unidades',
-            'Relatórios estatísticos de emergências',
-            'Interface otimizada para uso em pronto-socorro'
+            'Painel de controle para gestores',
           ],
           projectInfo: {
             duration: '10 meses',
