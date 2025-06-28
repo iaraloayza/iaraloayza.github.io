@@ -13,50 +13,70 @@
         <div class="space-y-16">
           <ExperienceCard
             :position="'left'"
-            :company="'Saúde Digital - SES/MA'"
-            :role="'Desenvolvedora Full Stack Junior'"
+            :company="'Secretaria de Estado da Saúde do Maranhão - SES/MA'"
+            :role="'Desenvolvedora Full-Stack Junior'"
             :period="'Jan 2024 - Presente'"
             :location="'São Luís, MA'"
-            :description="'Desenvolvi aplicações web responsivas e APIs RESTful, colaborando diretamente com equipes de design e produto para entregar soluções de alta qualidade.'"
+            :description="'Desenvolvo sistemas web full-stack para saúde pública utilizando Laravel e PHP, criando soluções que apoiam a gestão e interoperabilidade de dados entre diferentes áreas da saúde.'"
             :achievements="[
-              'Desenvolvi 15+ projetos web completos',
-              'Integrei sistemas de pagamento online',
-              'Otimizei SEO aumentando tráfego em 200%',
-              'Implementei testes automatizados'
+              'Desenvolvi sistemas web completos com Laravel e PHP',
+              'Criei APIs RESTful para integração com aplicações móveis',
+              'Construí interfaces responsivas priorizando acessibilidade',
+              'Automatizei processos de interoperabilidade de dados',
+              'Estruturei consultas SQL para relatórios de saúde'
             ]"
-            :technologies="['React', 'Express.js', 'MongoDB', 'Stripe', 'Vercel']"
+            :technologies="['Laravel', 'PHP', 'MySQL', 'PostgreSQL', 'Vue.js', 'Docker', 'Git', 'GitHub', 'Trello', 'Linux']"
           />
           
           <ExperienceCard
             :position="'right'"
-            :company="'UFMA'"
-            :role="'Monitora de Projeto e Desenvolvimento de Software'"
-            :period="'Mar 2024 - Jul 2024'"
-            :location="'Remote'"
-            :description="'Focada no desenvolvimento de interfaces modernas e experiências de usuário excepcionais, trabalhando em close collaboration com designers UX/UI.'"
+            :company="'DartiLab - UFMA'"
+            :role="'Estagiária Acadêmica em Engenharia de Software'"
+            :period="'Jun 2025 - Presente'"
+            :location="'São Luís, MA'"
+            :description="'Participo da modernização de sistemas monolíticos, contribuindo para a decomposição em microsserviços e desenvolvimento de interfaces multiplataforma.'"
             :achievements="[
-              'Criei biblioteca de componentes reutilizáveis',
-              'Melhorei UX resultando em 50% mais conversões',
-              'Implementei Progressive Web App',
-              'Adotei metodologias ágeis'
+              'Apoio análise e decomposição de sistemas monolíticos',
+              'Desenvolvo interfaces multiplataforma com React Native',
+              'Implemento microsserviços em Python com FastAPI',
+              'Utilizo Docker e Kubernetes para containerização',
+              'Contribuo para documentação técnica do projeto'
             ]"
-            :technologies="['JavaScript', 'SCSS', 'Webpack', 'PWA', 'Figma']"
+            :technologies="['Python', 'React Native', 'FastAPI', 'Firebase', 'Docker', 'Kubernetes', 'RabbitMQ', 'Git', 'GitHub', 'Linux']"
           />
           
           <ExperienceCard
             :position="'left'"
-            :company="'Saúde Digital - SES/MA'"
-            :role="'Estagiária de Desenvolvimento Web'"
+            :company="'Universidade Federal do Maranhão - UFMA'"
+            :role="'Monitora de Projeto e Desenvolvimento de Software'"
+            :period="'Mar 2024 - Jul 2024'"
+            :location="'São Luís, MA'"
+            :description="'Auxiliei estudantes na compreensão de conceitos de engenharia de software, promovendo boas práticas de programação e colaboração em projetos práticos.'"
+            :achievements="[
+              'Auxiliei alunos em conceitos de engenharia de software',
+              'Apoiei desenvolvimento de projetos práticos em grupo',
+              'Esclareci dúvidas sobre UML e arquitetura de software',
+              'Promovi integração entre teoria e prática',
+              'Utilizei metodologias ágeis (Scrum, Kanban)'
+            ]"
+            :technologies="['UML', 'Git', 'GitHub', 'Jira', 'Scrum', 'Kanban']"
+          />
+          
+          <ExperienceCard
+            :position="'right'"
+            :company="'Secretaria de Estado da Saúde do Maranhão - SES/MA'"
+            :role="'Estagiária em Desenvolvimento Back-End e Ciência de Dados'"
             :period="'Jun 2023 - Dez 2023'"
             :location="'São Luís, MA'"
-            :description="'Início da carreira desenvolvendo websites institucionais e sistemas web básicos, aprendendo as melhores práticas de desenvolvimento.'"
+            :description="'Desenvolvi funcionalidades back-end e realizei análise de dados para apoiar decisões estratégicas na saúde pública, automatizando processos e criando relatórios técnicos.'"
             :achievements="[
-              'Desenvolvi 20+ websites responsivos',
-              'Aprendi frameworks modernos',
-              'Colaborei em projetos de e-commerce',
-              'Participei de workshops técnicos'
+              'Desenvolvi funcionalidades back-end em PHP',
+              'Criei consultas SQL para relatórios estratégicos',
+              'Analisei dados com Python e Julia',
+              'Automatizei extração e organização de dados',
+              'Apoiei integração entre diferentes fontes de dados'
             ]"
-            :technologies="['HTML5', 'CSS3', 'jQuery', 'PHP', 'MySQL']"
+            :technologies="['PHP', 'MySQL', 'PostgreSQL', 'Python', 'Julia', 'Jupyter Notebook']"
           />
         </div>
       </div>
