@@ -1,1 +1,0 @@
-import{_ as e,P as t,c,r as n,o as s}from"./index-B-Z7Q8g_.js";const r={name:"ProjectsOnly",components:{ProjectsSection:t}};function a(p,_,i,m,f,l){const o=n("ProjectsSection");return s(),c(o)}const j=e(r,[["render",a]]);export{j as default};
