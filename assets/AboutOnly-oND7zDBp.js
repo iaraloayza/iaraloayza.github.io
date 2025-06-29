@@ -1,0 +1,1 @@
+import{_ as t,A as n,c as e,r as c,o as s}from"./index-DjayRnQB.js";const r={name:"AboutOnly",components:{AboutSection:n}};function a(p,_,u,i,m,f){const o=c("AboutSection");return s(),e(o)}const A=t(r,[["render",a]]);export{A as default};
