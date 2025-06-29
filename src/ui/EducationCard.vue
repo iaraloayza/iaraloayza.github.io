@@ -192,7 +192,8 @@ export default {
       default: null,
       validator: value => {
         if (!value) return true
-        return value.hasOwnProperty('title') && value.hasOwnProperty('grade')
+        return Object.prototype.hasOwnProperty.call(value, 'title') &&
+              Object.prototype.hasOwnProperty.call(value, 'grade')
       }
     },
     academicPerformance: {
@@ -200,7 +201,8 @@ export default {
       default: null,
       validator: value => {
         if (!value) return true
-        return value.hasOwnProperty('cra') && value.hasOwnProperty('maxCra')
+        return Object.prototype.hasOwnProperty.call(value, 'cra') &&
+              Object.prototype.hasOwnProperty.call(value, 'maxCra')
       }
     }
   },

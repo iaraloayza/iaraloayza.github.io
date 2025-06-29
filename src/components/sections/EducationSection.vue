@@ -12,8 +12,30 @@
         <!-- Education Items -->
         <div class="space-y-16">
           <EducationCard
+            :position="'right'"
+            :institution="'Instituto Federal de Mato Grosso (IFMT)'"
+            :degree="'Pós-Graduação em Engenharia DevOps'"
+            :period="'2025 - Presente'"
+            :location="'Planaltina, GO'"
+            :status="'Em andamento'"
+            :description="'Especialização voltada para práticas modernas de desenvolvimento e operações de software, com foco em metodologias ágeis, integração e entrega contínua, automação de testes e gerenciamento de infraestrutura em ambientes de DevOps.'"
+            :highlights="[
+              'Projetos práticos de integração e entrega contínua',
+              'Implantação de pipelines automatizados com foco em qualidade e performance'
+            ]"
+            :subjects="[
+              'Projetos Ágeis e DevOps',
+              'Integração e Entrega Contínua',
+              'Gerenciamento de Mudanças e Infraestrutura',
+              'Monitoramento de Aplicações',
+              'Testes Automatizados de Software'
+            ]"
+            :type="'graduation'"
+          />
+          
+          <EducationCard
             :position="'left'"
-            :institution="'Universidade Federal do Maranhão'"
+            :institution="'Universidade Federal do Maranhão (UFMA)'"
             :degree="'Bacharelado em Engenharia da Computação'"
             :period="'2024 - Presente'"
             :location="'São Luís, MA'"
@@ -47,7 +69,7 @@
           
           <EducationCard
             :position="'right'"
-            :institution="'Universidade Federal do Maranhão'"
+            :institution="'Universidade Federal do Maranhão (UFMA)'"
             :degree="'Bacharelado em Ciência e Tecnologia'"
             :period="'2021 - 2024'"
             :location="'São Luís -MA'"
