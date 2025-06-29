@@ -2,11 +2,11 @@
 import { ref, reactive, computed } from 'vue'
 import emailjs from '@emailjs/browser'
 
-// Configurações do EmailJS - SUBSTITUA PELOS SEUS VALORES
+// Configurações do EmailJS usando variáveis de ambiente
 const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_k0yvjio',        // Ex: 'service_abc123'
-  TEMPLATE_ID: 'template_vl9q9r3',      // Ex: 'template_xyz789'
-  PUBLIC_KEY: '2ht1x2_A-wKS82dR8'         // Ex: 'user_123456789'
+  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 }
 
 // Estado do formulário
@@ -53,15 +53,15 @@ const validateForm = () => {
 // Método usando EmailJS
 const sendEmailWithEmailJS = async () => {
   // Verificar se as configurações foram definidas
-  if (EMAILJS_CONFIG.SERVICE_ID === 'SEU_SERVICE_ID') {
-    throw new Error('Por favor, configure os IDs do EmailJS primeiro!')
+  if (!EMAILJS_CONFIG.SERVICE_ID || !EMAILJS_CONFIG.TEMPLATE_ID || !EMAILJS_CONFIG.PUBLIC_KEY) {
+    throw new Error('Configurações do EmailJS não encontradas!')
   }
 
   const templateParams = {
     from_name: form.name,
     from_email: form.email,
     message: form.message,
-    to_email: 'anaiaraloayza11@gmail.com', // Seu email para receber as mensagens
+    to_email: 'anaiaraloayza11@gmail.com',
     reply_to: form.email
   }
   
@@ -102,7 +102,7 @@ const handleSubmit = async () => {
   } catch (error) {
     console.error('Erro ao enviar email:', error)
     
-    if (error.message.includes('configure os IDs')) {
+    if (error.message.includes('Configurações do EmailJS')) {
       statusMessage.value = '⚠️ EmailJS não configurado. Verifique as configurações.'
     } else if (error.text) {
       statusMessage.value = `❌ Erro EmailJS: ${error.text}`
@@ -117,7 +117,9 @@ const handleSubmit = async () => {
     }, 8000)
   }
 }
-</script><template>
+</script>
+
+<template>
   <div class="relative">
     <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl sm:rounded-3xl blur opacity-30"></div>
     <form @submit.prevent="handleSubmit" class="relative bg-black/80 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-purple-500/20 space-y-4 sm:space-y-6">
@@ -182,20 +184,20 @@ const handleSubmit = async () => {
 </template>
 
 <style scoped>
-    /* Form Styles */
-    .form-group {
-    @apply space-y-2;
-    }
+/* Form Styles */
+.form-group {
+  @apply space-y-2;
+}
 
-    .form-label {
-    @apply block text-white font-bold text-base sm:text-lg;
-    }
+.form-label {
+  @apply block text-white font-bold text-base sm:text-lg;
+}
 
-    .form-input {
-    @apply w-full bg-purple-900/20 border border-purple-500/30 rounded-lg sm:rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 text-sm sm:text-base;
-    }
+.form-input {
+  @apply w-full bg-purple-900/20 border border-purple-500/30 rounded-lg sm:rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 text-sm sm:text-base;
+}
 
-    .form-input:focus {
-    transform: scale(1.02);
-    }
+.form-input:focus {
+  transform: scale(1.02);
+}
 </style>
