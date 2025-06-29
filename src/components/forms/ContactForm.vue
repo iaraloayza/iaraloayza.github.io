@@ -93,7 +93,7 @@ const handleSubmit = async () => {
   try {
     await sendEmailWithEmailJS()
     
-    statusMessage.value = '✅ Mensagem enviada com sucesso! Entrarei em contato em breve.'
+    statusMessage.value = 'Mensagem enviada com sucesso! Entrarei em contato em breve.'
     // Limpar formulário
     form.name = ''
     form.email = ''
