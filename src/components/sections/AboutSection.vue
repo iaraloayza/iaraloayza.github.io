@@ -87,7 +87,7 @@ export default {
       backendTech: [
         'Laravel (PHP) / Python',
         'Express / FastAPI',
-        'PostgreSQL / Firebase',
+        'PostgreSQL / MySQL / Firebase',
         'Docker'
       ]
     }
