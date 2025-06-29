@@ -76,7 +76,7 @@ const router = createRouter({
 
 // Guard global para atualizar o título da página
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || 'Portfólio'
+  document.title = to.meta.title || 'Portfólio - Ana Loayza'
   next()
 })
 
