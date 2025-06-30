@@ -14,7 +14,8 @@
       </div> -->
     </div>
     <div class="project-content">
-      <h3 class="text-2xl font-bold text-white mb-3 cursor-pointer hover:text-purple-400 transition-colors duration-300" @click="goToProjectDetails">
+      <h3 class="text-2xl font-bold text-white mb-3 cursor-pointer hover:text-purple-400 transition-colors duration-300"> 
+      <!-- // Lembrar de adicionar o evento no h3 de ir para detalhes quando estiver tudo pronto @click="goToProjectDetails" -->
         {{ project.title }}
       </h3>
       <p class="text-gray-400 mb-6 leading-relaxed">
