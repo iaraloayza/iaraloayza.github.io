@@ -45,8 +45,111 @@
       </div>
     </div>
 
+    <!-- Modal da Galeria Melhorado -->
+    <div 
+      v-if="showGalleryModal && selectedImage" 
+      class="gallery-modal fixed inset-0 bg-black/95 flex items-center justify-center p-4"
+      style="z-index: 99999;"
+      @click="closeGalleryModal"
+    >
+      <div class="gallery-modal-container relative w-full h-full max-w-7xl max-h-full flex items-center justify-center" @click.stop>
+        
+        <!-- Botão fechar -->
+        <button 
+          @click="closeGalleryModal"
+          class="gallery-close-btn absolute top-4 right-4 z-20 text-white/80 hover:text-white transition-colors duration-200 bg-black/50 rounded-full p-2 backdrop-blur-sm"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <!-- Navegação anterior -->
+        <button 
+          v-if="selectedImageIndex > 0"
+          @click="previousImage"
+          class="gallery-nav-btn gallery-nav-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 text-white/80 hover:text-white transition-all duration-200 bg-black/50 rounded-full p-3 backdrop-blur-sm hover:bg-black/70 hover:scale-110"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        
+        <!-- Navegação próxima -->
+        <button 
+          v-if="selectedImageIndex < project.gallery.length - 1"
+          @click="nextImage"
+          class="gallery-nav-btn gallery-nav-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-white/80 hover:text-white transition-all duration-200 bg-black/50 rounded-full p-3 backdrop-blur-sm hover:bg-black/70 hover:scale-110"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        
+        <!-- Container principal da imagem -->
+        <div class="gallery-image-wrapper relative flex flex-col items-center justify-center w-full h-full px-16 py-16">
+          
+          <!-- Informações da imagem no topo -->
+          <div class="gallery-info-top mb-6 text-center">
+            <!-- Contador principal -->
+            <div class="gallery-counter text-white/90 text-lg font-semibold mb-2">
+              {{ selectedImageIndex + 1 }} / {{ project.gallery.length }}
+            </div>
+            
+            <!-- Descrição da imagem -->
+            <p class="text-white/80 text-base font-medium mb-4 max-w-2xl mx-auto leading-relaxed">
+              {{ selectedImage.alt }}
+            </p>
+            
+            <!-- Indicadores de progresso (dots) -->
+            <div class="gallery-dots flex justify-center gap-2">
+              <button
+                v-for="(image, index) in project.gallery"
+                :key="index"
+                @click="goToImage(index)"
+                :class="[
+                  'gallery-dot w-2 h-2 rounded-full transition-all duration-200',
+                  index === selectedImageIndex 
+                    ? 'bg-white scale-125' 
+                    : 'bg-white/40 hover:bg-white/60'
+                ]"
+              ></button>
+            </div>
+          </div>
+          
+          <!-- Imagem principal -->
+          <img 
+            :src="selectedImage.url" 
+            :alt="selectedImage.alt"
+            class="gallery-main-image max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+          >
+        </div>
+
+        <!-- Thumbnails na parte inferior (opcional - similar ao Lightroom) -->
+        <!-- <div v-if="project.gallery.length > 1" class="gallery-thumbnails absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 bg-black/50 backdrop-blur-sm rounded-lg p-2 max-w-md overflow-x-auto">
+          <button
+            v-for="(image, index) in project.gallery"
+            :key="index"
+            @click="goToImage(index)"
+            :class="[
+              'gallery-thumbnail flex-shrink-0 w-12 h-8 rounded overflow-hidden border-2 transition-all duration-200',
+              index === selectedImageIndex 
+                ? 'border-white/80 scale-110' 
+                : 'border-white/20 hover:border-white/50'
+            ]"
+          >
+            <img 
+              :src="image.url" 
+              :alt="image.alt"
+              class="w-full h-full object-cover"
+            >
+          </button>
+        </div> -->
+      </div>
+    </div>
+
     <!-- Conteúdo principal -->
-    <main v-else class="relative z-10 pt-8">
+    <main v-if="!loading && project" class="relative z-10 pt-8">
       <!-- Hero Section -->
       <section class="px-6 py-12">
         <div class="container mx-auto max-w-6xl">
@@ -203,67 +306,15 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
                       </svg>
                     </div>
-                    <!-- Contador de imagens -->
-                    <div class="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                    <!-- Contador de imagens no thumbnail -->
+                    <div class="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
                       {{ index + 1 }}/{{ project.gallery.length }}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Modal da Galeria -->
-              <div 
-                v-if="showGalleryModal && selectedImage" 
-                class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-                @click="closeGalleryModal"
-              >
-                <div class="relative max-w-4xl max-h-full" @click.stop>
-                  <!-- Botão fechar -->
-                  <button 
-                    @click="closeGalleryModal"
-                    class="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors z-10"
-                  >
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                  </button>
-                  
-                  <!-- Navegação anterior -->
-                  <button 
-                    v-if="selectedImageIndex > 0"
-                    @click="previousImage"
-                    class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
-                  >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                  </button>
-                  
-                  <!-- Navegação próxima -->
-                  <button 
-                    v-if="selectedImageIndex < project.gallery.length - 1"
-                    @click="nextImage"
-                    class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
-                  >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                  
-                  <!-- Imagem principal -->
-                  <img 
-                    :src="selectedImage.url" 
-                    :alt="selectedImage.alt"
-                    class="max-w-full max-h-full object-contain rounded-lg"
-                  >
-                  
-                  <!-- Descrição da imagem -->
-                  <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-lg">
-                    <p class="text-white text-sm">{{ selectedImage.alt }}</p>
-                    <p class="text-gray-300 text-xs mt-1">{{ selectedImageIndex + 1 }} de {{ project.gallery.length }}</p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
             <!-- Sidebar com informações adicionais -->
@@ -385,7 +436,7 @@ export default {
             alt: 'Visualização de dados em gráficos interativos'
           }
         ],
-          detailedDescription: 'O Monitora Saúde é uma plataforma web robusta desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real, relatórios customizáveis e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.',
+          detailedDescription: 'O Monitora Saúde é uma plataforma web desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real, relatórios customizáveis e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.',
           gradient: 'from-purple-600 to-purple-800',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -395,10 +446,10 @@ export default {
           githubUrl: '#',
           inDevelopment: false,
           features: [
-            'Dashboard interativo com indicadores em tempo real',
-            'Sistema de relatórios customizáveis',
+            'Dashboards interativos, feitos em Power BI, com indicadores em tempo real',
+            // 'Sistema de relatórios customizáveis',
             'Gestão de usuários com diferentes níveis de acesso',
-            'Integração com bases de dados governamentais',
+            // 'Integração com bases de dados governamentais',
             'Interface responsiva para dispositivos móveis'
           ],
           developmentProcess: [
@@ -732,12 +783,15 @@ export default {
         this.loading = false
       }, 1000)
     },
+
     goBack() {
       this.$router.go(-1)
     },
+
     goToProject(projectId) {
       this.$router.push(`/projeto/${projectId}`)
     },
+
     handleImageError(event) {
       // Remove a imagem com erro
       event.target.style.display = 'none'
@@ -748,47 +802,55 @@ export default {
         nextElement.style.display = 'flex'
       }
     },
-      openGalleryModal(image, index) {
-      this.selectedImage = image
-      this.selectedImageIndex = index
-      this.showGalleryModal = true
-      // Previne scroll do body quando modal está aberto
-      document.body.style.overflow = 'hidden'
+
+    goToImage(index) {
+      this.selectedImageIndex = index;
+      this.selectedImage = this.project.gallery[index];
+    },
+
+    handleGalleryImageError(event, index) {
+      console.warn(`Erro ao carregar imagem da galeria: ${this.project.gallery[index].url}`);
+      event.target.src = '../../public/images/placeholder.png'; // imagem placeholder
+    },
+
+    openGalleryModal(image, index) {
+      this.selectedImage = image;
+      this.selectedImageIndex = index;
+      this.showGalleryModal = true;
+      document.body.style.overflow = 'hidden';
     },
     
     closeGalleryModal() {
-      this.showGalleryModal = false
-      this.selectedImage = null
-      document.body.style.overflow = 'auto'
+      this.showGalleryModal = false;
+      this.selectedImage = null;
+      document.body.style.overflow = 'auto';
     },
     
     nextImage() {
       if (this.selectedImageIndex < this.project.gallery.length - 1) {
-        this.selectedImageIndex++
-        this.selectedImage = this.project.gallery[this.selectedImageIndex]
+        this.goToImage(this.selectedImageIndex + 1);
       }
     },
     
     previousImage() {
       if (this.selectedImageIndex > 0) {
-        this.selectedImageIndex--
-        this.selectedImage = this.project.gallery[this.selectedImageIndex]
+        this.goToImage(this.selectedImageIndex - 1);
       }
     },
     
     handleKeydown(event) {
-      if (!this.showGalleryModal) return
+      if (!this.showGalleryModal) return;
       
       switch(event.key) {
         case 'Escape':
-          this.closeGalleryModal()
-          break
+          this.closeGalleryModal();
+          break;
         case 'ArrowRight':
-          this.nextImage()
-          break
+          this.nextImage();
+          break;
         case 'ArrowLeft':
-          this.previousImage()
-          break
+          this.previousImage();
+          break;
       }
     }
   },
@@ -918,6 +980,83 @@ export default {
   animation: fadeInUp 0.6s ease-out;
 }
 
+/* Estilos da galeria modal */
+.gallery-modal {
+  backdrop-filter: blur(8px);
+}
+
+.gallery-modal-container {
+  animation: galleryFadeIn 0.3s ease-out;
+}
+
+.gallery-main-image {
+  max-height: calc(100vh - 200px);
+  animation: imageZoomIn 0.3s ease-out;
+}
+
+.gallery-nav-btn {
+  transition: all 0.2s ease;
+}
+
+.gallery-nav-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-close-btn:hover {
+  transform: scale(1.1);
+}
+
+.gallery-counter {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-dot {
+  cursor: pointer;
+}
+
+.gallery-thumbnails {
+  max-height: 60px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+  height: 4px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animações */
+@keyframes galleryFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes imageZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .action-btn {
@@ -935,6 +1074,47 @@ export default {
   
   .grid.md\\:grid-cols-2 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .gallery-image-wrapper {
+    padding: 8px;
+  }
+  
+  .gallery-nav-prev {
+    left: 8px;
+  }
+  
+  .gallery-nav-next {
+    right: 8px;
+  }
+  
+  .gallery-close-btn {
+    top: 8px;
+    right: 8px;
+  }
+  
+  .gallery-thumbnails {
+    display: none; /* Ocultar thumbnails em mobile para economizar espaço */
+  }
+  
+  .gallery-main-image {
+    max-height: calc(100vh - 120px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-nav-btn {
+    padding: 8px;
+  }
+  
+  .gallery-nav-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .gallery-close-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }
 </style>
