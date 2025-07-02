@@ -288,7 +288,7 @@
                 <h2 class="section-title">Galeria</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   <div 
-                    v-for="(image, index) in project.gallery" 
+                    v-for="(image, index) in project.gallery.slice(0, 6)" 
                     :key="index" 
                     class="gallery-item aspect-video bg-gray-800 rounded-lg overflow-hidden cursor-pointer group relative"
                     @click="openGalleryModal(image, index)"
@@ -312,8 +312,20 @@
                     </div>
                   </div>
                 </div>
+                
+                <!-- Botão para ver mais fotos (se houver mais de 6) -->
+                <div v-if="project.gallery.length > 6" class="mt-6 text-center">
+                  <button 
+                    @click="openGalleryModal(project.gallery[0], 0)"
+                    class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 mx-auto hover:transform hover:scale-105"
+                  >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    Ver todas as {{ project.gallery.length }} fotos
+                  </button>
+                </div>
               </div>
-
               
             </div>
 
@@ -508,20 +520,76 @@ export default {
               alt: 'Página inicial do Hans+'
             },
             {
-              url: '../../public/images/hans+/redefinir_senha.jpeg',
-              alt: 'Tela de redefinição de senha'
+              url: '../../public/images/hans+/page_info.jpeg',
+              alt: 'Tela de informações sobre hanseníase'
             },
             {
-              url: '../../public/images/hans+/perfil.jpeg',
-              alt: 'Tela de perfil do usuário'
+              url: '../../public/images/hans+/page_info2.jpeg',
+              alt: 'Tela com informações adicionais sobre a doença'
             },
             {
-              url: '../../public/images/hans+/medicacao.jpeg',
-              alt: 'Tela de registro de medicação'
+              url: '../../public/images/hans+/page_sinais_sintomas.jpeg',
+              alt: 'Tela com sinais e sintomas da hanseníase'
+            },
+            {
+              url: '../../public/images/hans+/calendario.jpeg',
+              alt: 'Tela do calendário de tratamento'
+            },
+            {
+              url: '../../public/images/hans+/calendario_2remedios.jpeg',
+              alt: 'Tela de registro de dois medicamentos no calendário'
+            },
+            {
+              url: '../../public/images/hans+/calendario_2remedios_3.jpeg',
+              alt: 'Tela de lembretes de medicação configurados'
+            },
+            {
+              url: '../../public/images/hans+/calendario_2remedios_2.jpeg',
+              alt: 'Tela de monitoramento diário de sintomas'
             },
             {
               url: '../../public/images/hans+/sintomas.jpeg',
-              alt: 'Tela de monitoramento de sintomas'
+              alt: 'Tela de registro e histórico de sintomas'
+            },
+            {
+              url: '../../public/images/hans+/profile.jpeg',
+              alt: 'Tela de perfil do usuário'
+            },
+            {
+              url: '../../public/images/hans+/edit_conta.jpeg',
+              alt: 'Tela de edição de informações da conta'
+            },
+            {
+              url: '../../public/images/hans+/edit_conta2.jpeg',
+              alt: 'Tela de configurações da conta do usuário'
+            },
+            {
+              url: '../../public/images/hans+/edit_conta_3.jpeg',
+              alt: 'Tela de edição de dados do profissional de saúde'
+            },
+            {
+              url: '../../public/images/hans+/edit_perfil.jpeg',
+              alt: 'Tela de edição de perfil do usuário'
+            },
+            {
+              url: '../../public/images/hans+/edit_tratamento.jpeg',
+              alt: 'Tela de edição de dados do tratamento'
+            },
+            {
+              url: '../../public/images/hans+/historico_sintomas.jpeg',
+              alt: 'Tela com histórico de sintomas registrados'
+            },
+            {
+              url: '../../public/images/hans+/saiba_mais.jpeg',
+              alt: 'Tela com links e informações para saber mais'
+            },
+            {
+              url: '../../public/images/hans+/sobre_nos.jpeg',
+              alt: 'Tela sobre a equipe responsável pelo aplicativo'
+            },
+            {
+              url: '../../public/images/hans+/links_sobre_nos.jpeg',
+              alt: 'Tela com links externos relacionados ao projeto'
             }
           ],
           detailedDescription: 'O Hans+ é uma solução inovadora desenvolvida para apoiar pacientes e profissionais de saúde no tratamento e acompanhamento da hanseníase. A plataforma oferece funcionalidades tanto para pacientes quanto para profissionais de saúde, incluindo lembretes de medicação, acompanhamento de sintomas, informações educativas e comunicação direta com a equipe médica.',
