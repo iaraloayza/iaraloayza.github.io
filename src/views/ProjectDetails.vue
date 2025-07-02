@@ -118,11 +118,65 @@
           </div>
           
           <!-- Imagem principal -->
-          <img 
-            :src="selectedImage.url" 
-            :alt="selectedImage.alt"
-            class="gallery-main-image max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-          >
+          <!-- Container da imagem com zoom -->
+          <div class="gallery-image-container relative overflow-hidden rounded-lg shadow-2xl" 
+              style="max-width: 90vw; max-height: calc(100vh - 200px);"
+              @wheel="handleZoom"
+              @mousedown="startDrag"
+              @mousemove="drag"
+              @mouseup="endDrag"
+              @mouseleave="endDrag">
+            
+            <img 
+              :src="selectedImage.url" 
+              :alt="selectedImage.alt"
+              class="gallery-main-image transition-transform duration-200 cursor-move"
+              :style="{
+                transform: 'scale(' + imageZoom + ') translate(' + imagePosition.x + 'px, ' + imagePosition.y + 'px)',
+                transformOrigin: 'center center'
+              }"
+              @dragstart.prevent
+            >
+            
+            <!-- Controles de zoom -->
+            <div class="gallery-zoom-controls absolute bottom-4 left-4 flex gap-2">
+              <button 
+                @click="zoomIn"
+                class="zoom-btn bg-black/70 text-white p-2 rounded-full backdrop-blur-sm hover:bg-black/80 transition-colors"
+                title="Aumentar zoom"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+              </button>
+              
+              <button 
+                @click="zoomOut"
+                class="zoom-btn bg-black/70 text-white p-2 rounded-full backdrop-blur-sm hover:bg-black/80 transition-colors"
+                title="Diminuir zoom"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path>
+                </svg>
+              </button>
+              
+              <button 
+                @click="resetZoom"
+                class="zoom-btn bg-black/70 text-white p-2 rounded-full backdrop-blur-sm hover:bg-black/80 transition-colors"
+                title="Resetar zoom"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+              </button>
+            </div>
+            
+            <!-- Indicador de zoom -->
+            <div class="gallery-zoom-indicator absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full backdrop-blur-sm text-sm">
+              {{ Math.round(imageZoom * 100) }}%
+            </div>
+          </div>
+
         </div>
 
         <!-- Thumbnails na parte inferior (opcional - similar ao Lightroom) -->
@@ -424,6 +478,11 @@ export default {
       showGalleryModal: false,
       selectedImage: null,
       selectedImageIndex: 0,
+      imageZoom: 1,
+      imagePosition: { x: 0, y: 0 },
+      isDragging: false,
+      dragStart: { x: 0, y: 0 },
+      imageStartPosition: { x: 0, y: 0 },
       allProjects: [
         {
           id: 1,
@@ -908,6 +967,9 @@ export default {
     goToImage(index) {
       this.selectedImageIndex = index;
       this.selectedImage = this.project.gallery[index];
+      // Resetar zoom ao trocar de imagem
+      this.imageZoom = 1;
+      this.imagePosition = { x: 0, y: 0 };
     },
 
     handleGalleryImageError(event, index) {
@@ -925,6 +987,10 @@ export default {
     closeGalleryModal() {
       this.showGalleryModal = false;
       this.selectedImage = null;
+      // Resetar zoom ao fechar modal
+      this.imageZoom = 1;
+      this.imagePosition = { x: 0, y: 0 };
+      this.isDragging = false;
       document.body.style.overflow = 'auto';
     },
     
@@ -953,8 +1019,70 @@ export default {
         case 'ArrowLeft':
           this.previousImage();
           break;
+        case '+':
+        case '=':
+          this.zoomIn();
+          break;
+        case '-':
+          this.zoomOut();
+          break;
+        case '0':
+          this.resetZoom();
+          break;
       }
-    }
+    },
+
+    handleZoom(event) {
+      event.preventDefault();
+      const delta = event.deltaY > 0 ? -0.1 : 0.1;
+      this.imageZoom = Math.max(0.5, Math.min(5, this.imageZoom + delta));
+      
+      if (this.imageZoom <= 1) {
+        this.imagePosition = { x: 0, y: 0 };
+      }
+    },
+
+    zoomIn() {
+      this.imageZoom = Math.min(5, this.imageZoom + 0.2);
+    },
+
+    zoomOut() {
+      this.imageZoom = Math.max(0.5, this.imageZoom - 0.2);
+      if (this.imageZoom <= 1) {
+        this.imagePosition = { x: 0, y: 0 };
+      }
+    },
+
+    resetZoom() {
+      this.imageZoom = 1;
+      this.imagePosition = { x: 0, y: 0 };
+    },
+
+    // Métodos de arrastar
+    startDrag(event) {
+      if (this.imageZoom <= 1) return;
+      
+      this.isDragging = true;
+      this.dragStart = { x: event.clientX, y: event.clientY };
+      this.imageStartPosition = { ...this.imagePosition };
+      event.preventDefault();
+    },
+
+    drag(event) {
+      if (!this.isDragging || this.imageZoom <= 1) return;
+      
+      const deltaX = event.clientX - this.dragStart.x;
+      const deltaY = event.clientY - this.dragStart.y;
+      
+      this.imagePosition = {
+        x: this.imageStartPosition.x + deltaX / this.imageZoom,
+        y: this.imageStartPosition.y + deltaY / this.imageZoom
+      };
+    },
+
+    endDrag() {
+      this.isDragging = false;
+    },
   },
 
   // MÉTODO PARA TRATAR ERRO DE IMAGEM DA GALERIA
@@ -1091,9 +1219,42 @@ export default {
   animation: galleryFadeIn 0.3s ease-out;
 }
 
+.gallery-image-container {
+  cursor: grab;
+}
+
+.gallery-image-container:active {
+  cursor: grabbing;
+}
+
+/* Indicador visual quando a imagem está sendo arrastada */
+.gallery-image-container.dragging {
+  cursor: grabbing;
+}
+
 .gallery-main-image {
-  max-height: calc(100vh - 200px);
-  animation: imageZoomIn 0.3s ease-out;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.gallery-zoom-controls {
+  z-index: 10;
+}
+
+.zoom-btn {
+  transition: all 0.2s ease;
+}
+
+.zoom-btn:hover {
+  transform: scale(1.1);
+}
+
+.gallery-zoom-indicator {
+  z-index: 10;
+  font-weight: 600;
 }
 
 .gallery-nav-btn {
@@ -1201,6 +1362,28 @@ export default {
   
   .gallery-main-image {
     max-height: calc(100vh - 120px);
+  }
+
+  .gallery-zoom-controls {
+    bottom: 8px;
+    left: 8px;
+    gap: 8px;
+  }
+  
+  .zoom-btn {
+    padding: 8px;
+  }
+  
+  .zoom-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .gallery-zoom-indicator {
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    padding: 4px 8px;
   }
 }
 
