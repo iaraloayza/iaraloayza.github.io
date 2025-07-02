@@ -489,7 +489,41 @@ export default {
           id: 2,
           title: 'App Hans+',
           description: 'O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença.',
-          previewImage: '../../public/images/monitora_saude.png',
+          previewImage: '../../public/images/hans+/logo_hans+.jpeg',
+          gallery: [
+            {
+              url: '../../public/images/hans+/login.jpeg',
+              alt: 'Tela de Login do Hans+'
+            },
+            {
+              url: '../../public/images/hans+/cadastro.jpeg',
+              alt: 'Tela de cadastro de usuário'
+            },
+            {
+              url: '../../public/images/hans+/redefinir_senha.jpeg',
+              alt: 'Tela de redefinição de senha'
+            },
+            {
+              url: '../../public/images/hans+/home.jpeg',
+              alt: 'Página inicial do Hans+'
+            },
+            {
+              url: '../../public/images/hans+/redefinir_senha.jpeg',
+              alt: 'Tela de redefinição de senha'
+            },
+            {
+              url: '../../public/images/hans+/perfil.jpeg',
+              alt: 'Tela de perfil do usuário'
+            },
+            {
+              url: '../../public/images/hans+/medicacao.jpeg',
+              alt: 'Tela de registro de medicação'
+            },
+            {
+              url: '../../public/images/hans+/sintomas.jpeg',
+              alt: 'Tela de monitoramento de sintomas'
+            }
+          ],
           detailedDescription: 'O Hans+ é uma solução inovadora desenvolvida para apoiar pacientes e profissionais de saúde no tratamento e acompanhamento da hanseníase. A plataforma oferece funcionalidades tanto para pacientes quanto para profissionais de saúde, incluindo lembretes de medicação, acompanhamento de sintomas, informações educativas e comunicação direta com a equipe médica.',
           gradient: 'from-pink-600 to-purple-800',
           technologies: [
