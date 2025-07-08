@@ -513,7 +513,7 @@ export default {
             },
             {
               url: '../../public/images/hans+/redefinir_senha.jpeg',
-              alt: 'Tela de redefinição de senha'
+              alt: 'Tela de solicitação de redefinição de senha'
             },
             {
               url: '../../public/images/hans+/home.jpeg',
@@ -525,11 +525,11 @@ export default {
             },
             {
               url: '../../public/images/hans+/page_info2.jpeg',
-              alt: 'Tela com informações adicionais sobre a doença'
+              alt: 'Continuação da tela de informações sobre hanseníase'
             },
             {
               url: '../../public/images/hans+/page_sinais_sintomas.jpeg',
-              alt: 'Tela com sinais e sintomas da hanseníase'
+              alt: 'Página informativa com sinais e sintomas da hanseníase'
             },
             {
               url: '../../public/images/hans+/calendario.jpeg',
@@ -541,7 +541,7 @@ export default {
             },
             {
               url: '../../public/images/hans+/calendario_2remedios_3.jpeg',
-              alt: 'Tela de lembretes de medicação configurados'
+              alt: 'Confirmação do uso da medicação'
             },
             {
               url: '../../public/images/hans+/calendario_2remedios_2.jpeg',
@@ -561,11 +561,11 @@ export default {
             },
             {
               url: '../../public/images/hans+/edit_conta2.jpeg',
-              alt: 'Tela de configurações da conta do usuário'
+              alt: 'Tela de edição de e-mail'
             },
             {
               url: '../../public/images/hans+/edit_conta_3.jpeg',
-              alt: 'Tela de edição de dados do profissional de saúde'
+              alt: 'Tela de edição de senha'
             },
             {
               url: '../../public/images/hans+/edit_perfil.jpeg',
@@ -581,7 +581,7 @@ export default {
             },
             {
               url: '../../public/images/hans+/saiba_mais.jpeg',
-              alt: 'Tela com links e informações para saber mais'
+              alt: 'Tela com links e informações úteis sobre hanseníase'
             },
             {
               url: '../../public/images/hans+/sobre_nos.jpeg',
@@ -589,10 +589,10 @@ export default {
             },
             {
               url: '../../public/images/hans+/links_sobre_nos.jpeg',
-              alt: 'Tela com links externos relacionados ao projeto'
+              alt: 'Tela com links externos relacionados à equipe responsável pelo aplicativo'
             }
           ],
-          detailedDescription: 'O Hans+ é uma solução inovadora desenvolvida para apoiar pacientes e profissionais de saúde no tratamento e acompanhamento da hanseníase. A plataforma oferece funcionalidades tanto para pacientes quanto para profissionais de saúde, incluindo lembretes de medicação, acompanhamento de sintomas, informações educativas e comunicação direta com a equipe médica.',
+          detailedDescription: 'O Hans+ é um aplicativo móvel desenvolvido para apoiar o tratamento da hanseníase e fornecer informações confiáveis sobre a doença. O projeto foi realizado em parceria com o curso de Farmácia da Universidade Federal do Maranhão (UFMA), com suporte técnico e expertise na área da saúde. O aplicativo permite o registro de medicações, o monitoramento diário de sintomas e o acesso a conteúdos educativos. Utiliza Flutter para o desenvolvimento multiplataforma e Firebase para armazenamento seguro dos dados. O Hans+ passou por etapas de levantamento de requisitos, prototipagem e testes de usabilidade, sendo avaliado como uma ferramenta prática, informativa e com grande potencial para auxiliar pacientes no acompanhamento do tratamento da hanseníase.',
           gradient: 'from-pink-600 to-purple-800',
           technologies: [
             { name: 'Flutter', color: 'bg-purple-600' },
@@ -634,15 +634,15 @@ export default {
             }
           ],
           projectInfo: {
-            duration: '6 meses',
-            team: '3 desenvolvedores + 1 designer',
-            client: 'Programa de Controle da Hanseníase'
+            duration: '3 meses',
+            team: '3 desenvolvedores',
+            client: 'Universidade Federal do Maranhão (UFMA)'
           },
-          impact: [
-            { value: '500+', label: 'Downloads' },
-            { value: '95%', label: 'Satisfação' },
-            { value: '80%', label: 'Adesão ao Tratamento' }
-          ]
+          // impact: [
+          //   { value: '500+', label: 'Downloads' },
+          //   { value: '95%', label: 'Satisfação' },
+          //   { value: '80%', label: 'Adesão ao Tratamento' }
+          // ]
         },
         {
           id: 3,
