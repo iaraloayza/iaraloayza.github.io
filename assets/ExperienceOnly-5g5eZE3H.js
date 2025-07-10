@@ -1,1 +1,0 @@
-import{_ as n,E as o,c,r as t,o as r}from"./index-BvS2X5zZ.js";const s={name:"ExperienceOnly",components:{ExperienceSection:o}};function p(a,i,_,x,m,f){const e=t("ExperienceSection");return r(),c(e)}const E=n(s,[["render",p]]);export{E as default};
