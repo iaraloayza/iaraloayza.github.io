@@ -133,7 +133,8 @@ export default {
             { name: 'Docker', color: 'bg-blue-600' }
           ],
           projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/',
-          githubUrl: '#'
+          githubUrl: '#',
+          inDevelopment: true // Projeto em desenvolvimento
         },
         {
           id: 5,
