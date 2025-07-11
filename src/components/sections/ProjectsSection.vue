@@ -134,7 +134,7 @@ export default {
           ],
           projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/',
           githubUrl: '#',
-          inDevelopment: true // Projeto em desenvolvimento
+          inDevelopment: true // Projeto em Desenvolvimento
         },
         {
           id: 5,
