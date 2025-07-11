@@ -211,15 +211,14 @@
                 <div :class="project.gradient" class="absolute top-4 right-4 w-4 h-4 rounded-full bg-gradient-to-br"></div>
                 
                 <!-- Área para screenshot/preview do projeto -->
-                <div class="bg-black/20 rounded-2xl overflow-hidden backdrop-blur-sm relative" style="height: 220px;">
+                <div class="bg-black/20 rounded-2xl overflow-hidden backdrop-blur-sm relative min-h-[220px] max-h-[400px] flex items-center justify-center">
                   <img 
                     v-if="project.previewImage" 
                     :src="project.previewImage" 
                     :alt="`Preview do projeto ${project.title}`"
-                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    class="w-full h-auto max-h-full object-contain hover:scale-105 transition-transform duration-500"
                     @error="handleImageError"
                   />
-                  <!-- Placeholder que será mostrado quando a imagem der erro ou não existir -->
                   <div 
                     :class="project.previewImage ? 'hidden' : 'flex'"
                     class="absolute inset-0 items-center justify-center"
@@ -232,6 +231,7 @@
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -883,52 +883,57 @@ export default {
         {
           id: 4,
           title: 'Maranhão Livre da Fome',
-          description: 'O sistema Maranhão Livre da Fome (eixo saúde) combate a insegurança alimentar com o cadastro e acompanhamento de famílias em situação de vulnerabilidade, permitindo registrar avaliações e monitorar o histórico de cada indivíduo.',
+          description: 'Maranhão Livre da Fome é um sistema em desenvolvimento voltado ao enfrentamento da insegurança alimentar no estado, com foco no cadastro e acompanhamento de famílias vulneráveis, avaliação nutricional e integração com políticas públicas.',
           previewImage: '../../public/images/masemfome/logo.png',
-          detailedDescription: 'O sistema Maranhão Livre da Fome representa uma iniciativa fundamental no combate à insegurança alimentar no estado. Desenvolvido como parte de uma política pública abrangente, o sistema permite identificar, cadastrar e acompanhar famílias em situação de vulnerabilidade alimentar, oferecendo ferramentas para monitoramento nutricional e coordenação de ações de assistência.',
+          detailedDescription: 'O Maranhão Livre da Fome está sendo desenvolvido como uma plataforma estratégica para apoiar ações integradas de combate à fome e insegurança alimentar no estado do Maranhão. O sistema permitirá o registro detalhado de famílias em situação de vulnerabilidade, o monitoramento nutricional individual e o acompanhamento da efetividade das ações sociais por meio de dashboards e relatórios automatizados.',
           gradient: 'from-green-500 to-blue-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
             { name: 'MySQL', color: 'bg-cyan-600' },
             { name: 'Docker', color: 'bg-blue-600' }
           ],
-          projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/',
+          projectUrl: '#',
           githubUrl: '#',
           inDevelopment: true,
           features: [
-            'Cadastro completo de famílias vulneráveis',
-            'Avaliação nutricional individualizada',
-            'Monitoramento de indicadores de segurança alimentar',
-            'Histórico detalhado de acompanhamentos',
-            'Geração de relatórios para gestão pública',
-            'Integração com programas sociais',
-            'Dashboard com indicadores regionais'
+            'Cadastro estruturado de famílias em vulnerabilidade alimentar',
+            'Cadastros de avaliações com base em indicadores de saúde',
+            'Histórico contínuo de atendimentos e acompanhamentos',
+            'Dashboards dinâmicos por região e município',
+            'Relatórios automatizados para gestores públicos',
+            'Integração com políticas e programas sociais existentes',
+            'Apoio à tomada de decisão em políticas de segurança alimentar'
           ],
           developmentProcess: [
             {
-              title: 'Mapeamento Social',
-              description: 'Identificação das áreas e famílias em situação de vulnerabilidade alimentar no estado.'
+              title: 'Diagnóstico e Planejamento',
+              description: 'Mapeamento de necessidades, definição dos fluxos de dados e levantamento dos indicadores nutricionais e sociais prioritários.'
             },
             {
-              title: 'Desenvolvimento do Sistema',
-              description: 'Criação de plataforma robusta para cadastro e acompanhamento familiar.'
+              title: 'Desenvolvimento da Plataforma',
+              description: 'Construção do backend e frontend com foco em performance, segurança e usabilidade para os profissionais de campo.'
             },
             {
-              title: 'Capacitação de Equipes',
-              description: 'Treinamento de profissionais para utilização adequada do sistema.'
+              title: 'Integração com Sistemas Existentes',
+              description: 'Criação de rotas de comunicação com bases de dados públicas e programas sociais do estado.'
             },
             {
-              title: 'Implementação Gradual',
-              description: 'Deploy progressivo em diferentes regiões do estado.'
+              title: 'Testes Pilotos Regionais',
+              description: 'Implantação inicial em regiões-piloto para coleta de feedbacks e validação das funcionalidades.'
             }
-          ]
+          ],
+          projectInfo: {
+            duration: 'Em andamento (2 meses)',
+            team: '6 desenvolvedores',
+            client: 'Secretaria de Estado da Saúde do Maranhão (SES/MA)'
+          }
         },
         {
           id: 5,
           title: 'CadServ',
           description: 'Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta.',
-          previewImage: '../../public/images/monitora_saude.png',
-          detailedDescription: 'O CadServ é um sistema de gestão de recursos humanos desenvolvido especificamente para a Secretaria Adjunta de Políticas para Adolescentes e Pessoas Vivendo com HIV/AIDS (SAPAPVS). A plataforma centraliza informações funcionais, facilitando a administração de pessoal e otimizando processos internos da secretaria.',
+          previewImage: '../../public/images/cadserv/logo.png',
+          detailedDescription: 'O CadServ é um sistema de gestão de recursos humanos desenvolvido especificamente para a Secretaria Adjunta da Política de Atenção Primária e Vigilância em Saúde (SAPAPVS). A plataforma centraliza informações funcionais, facilitando a administração de servidores e otimizando processos internos da secretaria.',
           gradient: 'from-blue-500 to-indigo-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -947,21 +952,16 @@ export default {
             'Interface administrativa intuitiva'
           ],
           projectInfo: {
-            duration: '4 meses',
-            team: '3 desenvolvedores',
+            duration: '2 meses',
+            team: '4 desenvolvedores',
             client: 'SAPAPVS - Secretaria de Saúde do Maranhão'
-          },
-          impact: [
-            { value: '300+', label: 'Servidores Cadastrados' },
-            { value: '90%', label: 'Redução de Processos Manuais' },
-            { value: '100%', label: 'Satisfação dos Gestores' }
-          ]
+          }
         },
         {
           id: 6,
           title: 'PlanDox 2.0',
           description: 'PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços.',
-          previewImage: '../../public/images/monitora_saude.png',
+          previewImage: '../../public/images/plandox/logo.png',
           detailedDescription: 'O PlanDox 2.0 representa uma evolução significativa do software original, incorporando tecnologias modernas e arquitetura de microserviços. Este projeto visa modernizar completamente a experiência de planejamento experimental para análise de biodiesel, oferecendo maior flexibilidade, escalabilidade e acessibilidade através de múltiplas plataformas.',
           gradient: 'from-yellow-500 to-orange-600',
           technologies: [
@@ -1000,16 +1000,16 @@ export default {
             }
           ],
           projectInfo: {
-            duration: 'Em andamento (6 meses)',
-            team: '4 desenvolvedores + 2 pesquisadores',
-            client: 'Laboratório de Biodiesel - Universidade'
+            duration: 'Em andamento (1 mês)',
+            team: '4 desenvolvedores',
+            client: 'DartiLab - UFMA'
           }
         },
         {
           id: 7,
           title: 'Portal REACT',
           description: 'O portal REACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (REACT), fortalecendo a colaboração acadêmica e profissional.',
-          previewImage: '../../public/images/monitora_saude.png',
+          previewImage: '../../public/images/react/logo.png',
           detailedDescription: 'O Portal REACT está sendo desenvolvido como uma plataforma central para a Rede de Aplicação de Ciência e Tecnologia, com o objetivo de conectar pesquisadores, facilitar a colaboração em projetos e centralizar informações acadêmicas. A plataforma servirá como hub de conhecimento e colaboração para a comunidade acadêmica.',
           gradient: 'from-teal-500 to-cyan-600',
           technologies: [
@@ -1047,9 +1047,9 @@ export default {
             }
           ],
           projectInfo: {
-            duration: 'Em andamento (4 meses)',
-            team: '5 desenvolvedores + 1 designer',
-            client: 'Rede REACT - Universidades Parceiras'
+            duration: 'Em andamento (2 meses)',
+            team: '3 desenvolvedores',
+            client: 'Rede REACT - UFMA'
           }
         }
       ]
