@@ -8,14 +8,13 @@
       <span class="development-text">Em Desenvolvimento</span>
     </div>
 
-    <div :class="projectImageClasses" class="project-image">
-      <!-- <div class="project-overlay">
+    <div :class="projectImageClasses" class="project-image" @click="goToProjectDetails">
+      <div class="project-overlay">
         <div class="text-white text-xl font-bold">Ver Detalhes</div>
-      </div> -->
+      </div>
     </div>
     <div class="project-content">
-      <h3 class="text-2xl font-bold text-white mb-3 cursor-pointer hover:text-purple-400 transition-colors duration-300"> 
-      <!-- // Lembrar de adicionar o evento no h3 de ir para detalhes quando estiver tudo pronto @click="goToProjectDetails" -->
+      <h3 class="text-2xl font-bold text-white mb-3 cursor-pointer hover:text-purple-400 transition-colors duration-300" @click="goToProjectDetails"> 
         {{ project.title }}
       </h3>
       <p class="text-gray-400 mb-6 leading-relaxed">
