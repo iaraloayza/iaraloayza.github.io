@@ -429,62 +429,62 @@ export default {
           id: 1,
           title: 'Monitora Saúde',
           description: 'Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.',
-          previewImage: '../../public/images/logo_monitora_saude.png',
+          previewImage: '/images/logo_monitora_saude.png',
           gallery: [
             {
-              url: '../../public/images/monitora/tela_inicial.png',
+              url: '/images/monitora/tela_inicial.png',
               alt: 'Tela inicial do sistema Monitora Saúde'
             },
             {
-              url: '../../public/images/monitora/navegacao_indicadores_logout.png',
+              url: '/images/monitora/navegacao_indicadores_logout.png',
               alt: 'Navegação entre indicadores com usuário deslogado'
             },
             {
-              url: '../../public/images/monitora/login.png',
+              url: '/images/monitora/login.png',
               alt: 'Tela de login do sistema Monitora Saúde'
             },
             {
-              url: '../../public/images/monitora/verificacao_2fa.png',
+              url: '/images/monitora/verificacao_2fa.png',
               alt: 'Verificação em duas etapas (2FA) para segurança de acesso'
             },
             {
-              url: '../../public/images/monitora/nav_indicadores_logado.png',
+              url: '/images/monitora/nav_indicadores_logado.png',
               alt: 'Navegação entre indicadores com usuário logado'
             },
             {
-              url: '../../public/images/monitora/dropdown_admin.png',
+              url: '/images/monitora/dropdown_admin.png',
               alt: 'Menu dropdown de administração do sistema'
             },
             {
-              url: '../../public/images/monitora/dashboard_indicador.png',
+              url: '/images/monitora/dashboard_indicador.png',
               alt: 'Dashboard com visualização de indicadores específicos'
             },
             {
-              url: '../../public/images/monitora/descricao_indicador.png',
+              url: '/images/monitora/descricao_indicador.png',
               alt: 'Tela com a descrição detalhada do indicador selecionado'
             },
             {
-              url: '../../public/images/monitora/ficha_indicador.png',
+              url: '/images/monitora/ficha_indicador.png',
               alt: 'Acesso à ficha técnica do indicador de saúde'
             },
             {
-              url: '../../public/images/monitora/ficha_aberta.png',
+              url: '/images/monitora/ficha_aberta.png',
               alt: 'Ficha de indicador com informações detalhadas expandidas'
             },
             {
-              url: '../../public/images/monitora/dropdown_indicadores.png',
+              url: '/images/monitora/dropdown_indicadores.png',
               alt: 'Menu dropdown com as páginas de gerenciamento de indicadores'
             },
             {
-              url: '../../public/images/monitora/index_grupos.png',
+              url: '/images/monitora/index_grupos.png',
               alt: 'Página de gerenciamento de grupos de indicadores'
             },
             {
-              url: '../../public/images/monitora/index_indicadores.png',
+              url: '/images/monitora/index_indicadores.png',
               alt: 'Página de gerenciamento dos indicadores cadastrados'
             },
             {
-              url: '../../public/images/monitora/contato.png',
+              url: '/images/monitora/contato.png',
               alt: 'Tela de contato e suporte do sistema'
             }
           ],
@@ -541,94 +541,94 @@ export default {
           id: 2,
           title: 'App Hans+',
           description: 'O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença.',
-          previewImage: '../../public/images/hans+/logo_hans+.jpeg',
+          previewImage: '/images/hans+/logo_hans+.jpeg',
           gallery: [
             {
-              url: '../../public/images/hans+/login.jpeg',
+              url: '/images/hans+/login.jpeg',
               alt: 'Tela de Login do Hans+'
             },
             {
-              url: '../../public/images/hans+/cadastro.jpeg',
+              url: '/images/hans+/cadastro.jpeg',
               alt: 'Tela de cadastro de usuário'
             },
             {
-              url: '../../public/images/hans+/redefinir_senha.jpeg',
+              url: '/images/hans+/redefinir_senha.jpeg',
               alt: 'Tela de solicitação de redefinição de senha'
             },
             {
-              url: '../../public/images/hans+/home.jpeg',
+              url: '/images/hans+/home.jpeg',
               alt: 'Página inicial do Hans+'
             },
             {
-              url: '../../public/images/hans+/page_info.jpeg',
+              url: '/images/hans+/page_info.jpeg',
               alt: 'Tela de informações sobre hanseníase'
             },
             {
-              url: '../../public/images/hans+/page_info2.jpeg',
+              url: '/images/hans+/page_info2.jpeg',
               alt: 'Continuação da tela de informações sobre hanseníase'
             },
             {
-              url: '../../public/images/hans+/page_sinais_sintomas.jpeg',
+              url: '/images/hans+/page_sinais_sintomas.jpeg',
               alt: 'Página informativa com sinais e sintomas da hanseníase'
             },
             {
-              url: '../../public/images/hans+/calendario.jpeg',
+              url: '/images/hans+/calendario.jpeg',
               alt: 'Tela do calendário de tratamento'
             },
             {
-              url: '../../public/images/hans+/calendario_2remedios.jpeg',
+              url: '/images/hans+/calendario_2remedios.jpeg',
               alt: 'Tela de registro de dois medicamentos no calendário'
             },
             {
-              url: '../../public/images/hans+/calendario_2remedios_3.jpeg',
+              url: '/images/hans+/calendario_2remedios_3.jpeg',
               alt: 'Confirmação do uso da medicação'
             },
             {
-              url: '../../public/images/hans+/calendario_2remedios_2.jpeg',
+              url: '/images/hans+/calendario_2remedios_2.jpeg',
               alt: 'Tela de monitoramento diário de sintomas'
             },
             {
-              url: '../../public/images/hans+/sintomas.jpeg',
+              url: '/images/hans+/sintomas.jpeg',
               alt: 'Tela de registro e histórico de sintomas'
             },
             {
-              url: '../../public/images/hans+/profile.jpeg',
+              url: '/images/hans+/profile.jpeg',
               alt: 'Tela de perfil do usuário'
             },
             {
-              url: '../../public/images/hans+/edit_conta.jpeg',
+              url: '/images/hans+/edit_conta.jpeg',
               alt: 'Tela de edição de informações da conta'
             },
             {
-              url: '../../public/images/hans+/edit_conta2.jpeg',
+              url: '/images/hans+/edit_conta2.jpeg',
               alt: 'Tela de edição de e-mail'
             },
             {
-              url: '../../public/images/hans+/edit_conta_3.jpeg',
+              url: '/images/hans+/edit_conta_3.jpeg',
               alt: 'Tela de edição de senha'
             },
             {
-              url: '../../public/images/hans+/edit_perfil.jpeg',
+              url: '/images/hans+/edit_perfil.jpeg',
               alt: 'Tela de edição de perfil do usuário'
             },
             {
-              url: '../../public/images/hans+/edit_tratamento.jpeg',
+              url: '/images/hans+/edit_tratamento.jpeg',
               alt: 'Tela de edição de dados do tratamento'
             },
             {
-              url: '../../public/images/hans+/historico_sintomas.jpeg',
+              url: '/images/hans+/historico_sintomas.jpeg',
               alt: 'Tela com histórico de sintomas registrados'
             },
             {
-              url: '../../public/images/hans+/saiba_mais.jpeg',
+              url: '/images/hans+/saiba_mais.jpeg',
               alt: 'Tela com links e informações úteis sobre hanseníase'
             },
             {
-              url: '../../public/images/hans+/sobre_nos.jpeg',
+              url: '/images/hans+/sobre_nos.jpeg',
               alt: 'Tela sobre a equipe responsável pelo aplicativo'
             },
             {
-              url: '../../public/images/hans+/links_sobre_nos.jpeg',
+              url: '/images/hans+/links_sobre_nos.jpeg',
               alt: 'Tela com links externos relacionados à equipe responsável pelo aplicativo'
             }
           ],
@@ -688,166 +688,166 @@ export default {
           id: 3,
           title: 'RENAVEH - MA',
           description: 'Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões.',
-          previewImage: '../../public/images/renaveh/logo_renaveh.png',
+          previewImage: '/images/renaveh/logo_renaveh.png',
           gallery: [
             {
-              url: '../../public/images/renaveh/tela_login.png',
+              url: '/images/renaveh/tela_login.png',
               alt: 'Tela de login do sistema Renaveh'
             },
             {
-              url: '../../public/images/renaveh/tela_2fa_autenticacao.png',
+              url: '/images/renaveh/tela_2fa_autenticacao.png',
               alt: 'Tela de autenticação com verificação em duas etapas (2FA)'
             },
             {
-              url: '../../public/images/renaveh/dashboard_dados_totais.png',
+              url: '/images/renaveh/dashboard_dados_totais.png',
               alt: 'Dashboard com dados totais do sistema'
             },
             {
-              url: '../../public/images/renaveh/dashboard_supast.png',
+              url: '/images/renaveh/dashboard_supast.png',
               alt: 'Dashboard específico da SUPAST (Superintendência da Política de Atenção em Saúde no Trânsito)'
             },
             {
-              url: '../../public/images/renaveh/dados_filtrados_supast.png',
+              url: '/images/renaveh/dados_filtrados_supast.png',
               alt: 'Dados filtrados por região no dashboard da SUPAST'
             },
             {
-              url: '../../public/images/renaveh/index_pacientes.png',
+              url: '/images/renaveh/index_pacientes.png',
               alt: 'Página de busca de pacientes cadastrados no sistema'
             },
             {
-              url: '../../public/images/renaveh/cadastrar_paciente.png',
+              url: '/images/renaveh/cadastrar_paciente.png',
               alt: 'Formulário de cadastro de novo paciente'
             },
             {
-              url: '../../public/images/renaveh/edit_paciente.png',
+              url: '/images/renaveh/edit_paciente.png',
               alt: 'Formulário de edição de dados do paciente'
             },
             {
-              url: '../../public/images/renaveh/ficha_paciente.png',
+              url: '/images/renaveh/ficha_paciente.png',
               alt: 'Ficha com os dados do paciente cadastrado'
             },
             {
-              url: '../../public/images/renaveh/index_not_paciente.png',
+              url: '/images/renaveh/index_not_paciente.png',
               alt: 'Listagem de notificações do paciente referente ao hospital do usuário logado'
             },
             {
-              url: '../../public/images/renaveh/index_not_paciente2.png',
+              url: '/images/renaveh/index_not_paciente2.png',
               alt: 'Visualização de todas as notificações do paciente, em qualquer hospital'
             },
             {
-              url: '../../public/images/renaveh/notificacao_paciente.png',
+              url: '/images/renaveh/notificacao_paciente.png',
               alt: 'Detalhes da notificação do paciente'
             },
             {
-              url: '../../public/images/renaveh/notificacao_paciente2.png',
+              url: '/images/renaveh/notificacao_paciente2.png',
               alt: 'Continuação dos detalhes da notificação do paciente'
             },
             {
-              url: '../../public/images/renaveh/historico_not_transf.png',
+              url: '/images/renaveh/historico_not_transf.png',
               alt: 'Histórico de transferências de notificações'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao.png',
+              url: '/images/renaveh/cadastro_notificacao.png',
               alt: 'Formulário de cadastro de nova notificação'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao2.png',
+              url: '/images/renaveh/cadastro_notificacao2.png',
               alt: 'Cadastro de notificação - Etapa 2'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao3.png',
+              url: '/images/renaveh/cadastro_notificacao3.png',
               alt: 'Cadastro de notificação - Etapa 3'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao4.png',
+              url: '/images/renaveh/cadastro_notificacao4.png',
               alt: 'Cadastro de notificação - Etapa 4'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao5.png',
+              url: '/images/renaveh/cadastro_notificacao5.png',
               alt: 'Cadastro de notificação - Etapa 5'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao6.png',
+              url: '/images/renaveh/cadastro_notificacao6.png',
               alt: 'Cadastro de notificação - Etapa 6'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao7.png',
+              url: '/images/renaveh/cadastro_notificacao7.png',
               alt: 'Cadastro de notificação - Etapa 7'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao8.png',
+              url: '/images/renaveh/cadastro_notificacao8.png',
               alt: 'Cadastro de notificação - Etapa 8'
             },
             {
-              url: '../../public/images/renaveh/cadastro_notificacao9.png',
+              url: '/images/renaveh/cadastro_notificacao9.png',
               alt: 'Cadastro de notificação - Etapa 9'
             },
             {
-              url: '../../public/images/renaveh/index_notificacao.png',
+              url: '/images/renaveh/index_notificacao.png',
               alt: 'Página de busca de notificações cadastradas'
             },
             {
-              url: '../../public/images/renaveh/search_notificacao.png',
+              url: '/images/renaveh/search_notificacao.png',
               alt: 'Filtros de busca de notificações aplicados na página de busca'
             },
             {
-              url: '../../public/images/renaveh/search_notificacao2.png',
+              url: '/images/renaveh/search_notificacao2.png',
               alt: 'Resultados da busca de notificações com filtros aplicados'
             },
             {
-              url: '../../public/images/renaveh/search_notificacao3.png',
+              url: '/images/renaveh/search_notificacao3.png',
               alt: 'Continuação dos resultados da busca de notificações com filtros aplicados'
             },
             {
-              url: '../../public/images/renaveh/search_notificacao4.png',
+              url: '/images/renaveh/search_notificacao4.png',
               alt: 'Continuação dos resultados da busca de notificações com filtros aplicados'
             },
             {
-              url: '../../public/images/renaveh/excel_relatorio.png',
+              url: '/images/renaveh/excel_relatorio.png',
               alt: 'Exportação de relatórios em formato Excel'
             },
             {
-              url: '../../public/images/renaveh/notificacoes_supast.png',
+              url: '/images/renaveh/notificacoes_supast.png',
               alt: 'Notificações vinculadas à SUPAST'
             },
             {
-              url: '../../public/images/renaveh/notificacoes_supast2.png',
+              url: '/images/renaveh/notificacoes_supast2.png',
               alt: 'Resultados da busca de notificações SUPAST com filtros aplicados'
             },
             {
-              url: '../../public/images/renaveh/index_hospitais.png',
+              url: '/images/renaveh/index_hospitais.png',
               alt: 'Gerenciamento de hospitais cadastrados'
             },
             {
-              url: '../../public/images/renaveh/usuarios_hospitais.png',
+              url: '/images/renaveh/usuarios_hospitais.png',
               alt: 'Associação entre usuários e hospitais'
             },
             {
-              url: '../../public/images/renaveh/index_dae.png',
+              url: '/images/renaveh/index_dae.png',
               alt: 'Listagem de DAEs (Doenças, Agravos e Eventos) registrados'
             },
             {
-              url: '../../public/images/renaveh/index_sintomas.png',
+              url: '/images/renaveh/index_sintomas.png',
               alt: 'Cadastro e listagem de sintomas registrados'
             },
             {
-              url: '../../public/images/renaveh/index_auditoria.png',
+              url: '/images/renaveh/index_auditoria.png',
               alt: 'Tela de auditoria do sistema para rastreamento de ações'
             },
             {
-              url: '../../public/images/renaveh/index_usuarios.png',
+              url: '/images/renaveh/index_usuarios.png',
               alt: 'Lista de usuários do sistema'
             },
             {
-              url: '../../public/images/renaveh/visualizar_usuario.png',
+              url: '/images/renaveh/visualizar_usuario.png',
               alt: 'Ficha de visualização de usuário'
             },
             {
-              url: '../../public/images/renaveh/index_papeis.png',
+              url: '/images/renaveh/index_papeis.png',
               alt: 'Gerenciamento de papéis e permissões dos usuários'
             },
             {
-              url: '../../public/images/renaveh/index_paginas.png',
+              url: '/images/renaveh/index_paginas.png',
               alt: 'Gerenciamento das páginas de permissões do sistema'
             }
           ],
@@ -884,7 +884,7 @@ export default {
           id: 4,
           title: 'Maranhão Livre da Fome',
           description: 'Maranhão Livre da Fome é um sistema em desenvolvimento voltado ao enfrentamento da insegurança alimentar no estado, com foco no cadastro e acompanhamento de famílias vulneráveis, avaliação nutricional e integração com políticas públicas.',
-          previewImage: '../../public/images/masemfome/logo.png',
+          previewImage: '/images/masemfome/logo.png',
           detailedDescription: 'O Maranhão Livre da Fome está sendo desenvolvido como uma plataforma estratégica para apoiar ações integradas de combate à fome e insegurança alimentar no estado do Maranhão. O sistema permitirá o registro detalhado de famílias em situação de vulnerabilidade, o monitoramento nutricional individual e o acompanhamento da efetividade das ações sociais por meio de dashboards e relatórios automatizados.',
           gradient: 'from-green-500 to-blue-600',
           technologies: [
@@ -932,7 +932,7 @@ export default {
           id: 5,
           title: 'CadServ',
           description: 'Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta.',
-          previewImage: '../../public/images/cadserv/logo.png',
+          previewImage: '/images/cadserv/logo.png',
           detailedDescription: 'O CadServ é um sistema de gestão de recursos humanos desenvolvido especificamente para a Secretaria Adjunta da Política de Atenção Primária e Vigilância em Saúde (SAPAPVS). A plataforma centraliza informações funcionais, facilitando a administração de servidores e otimizando processos internos da secretaria.',
           gradient: 'from-blue-500 to-indigo-600',
           technologies: [
@@ -961,7 +961,7 @@ export default {
           id: 6,
           title: 'PlanDox 2.0',
           description: 'PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços.',
-          previewImage: '../../public/images/plandox/logo.png',
+          previewImage: '/images/plandox/logo.png',
           detailedDescription: 'O PlanDox 2.0 representa uma evolução significativa do software original, incorporando tecnologias modernas e arquitetura de microserviços. Este projeto visa modernizar completamente a experiência de planejamento experimental para análise de biodiesel, oferecendo maior flexibilidade, escalabilidade e acessibilidade através de múltiplas plataformas.',
           gradient: 'from-yellow-500 to-orange-600',
           technologies: [
@@ -1009,7 +1009,7 @@ export default {
           id: 7,
           title: 'Portal REACT',
           description: 'O portal REACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (REACT), fortalecendo a colaboração acadêmica e profissional.',
-          previewImage: '../../public/images/react/logo.png',
+          previewImage: '/images/react/logo.png',
           detailedDescription: 'O Portal REACT está sendo desenvolvido como uma plataforma central para a Rede de Aplicação de Ciência e Tecnologia, com o objetivo de conectar pesquisadores, facilitar a colaboração em projetos e centralizar informações acadêmicas. A plataforma servirá como hub de conhecimento e colaboração para a comunidade acadêmica.',
           gradient: 'from-teal-500 to-cyan-600',
           technologies: [
@@ -1105,7 +1105,7 @@ export default {
 
     handleGalleryImageError(event, index) {
       console.warn(`Erro ao carregar imagem da galeria: ${this.project.gallery[index].url}`);
-      event.target.src = '../../public/images/placeholder.png'; // imagem placeholder
+      event.target.src = '/images/placeholder.png'; // imagem placeholder
     },
 
     openGalleryModal(image, index) {
@@ -1155,7 +1155,7 @@ export default {
     // Remove a imagem com erro da galeria
     console.warn(`Erro ao carregar imagem da galeria: ${this.project.gallery[index].url}`)
     // Você pode opcionalmente remover a imagem da galeria ou mostrar um placeholder
-    event.target.src = '../../public/images/monitora_saude.png' // imagem placeholder
+    event.target.src = '/images/monitora_saude.png' // imagem placeholder
   },
 
   watch: {
