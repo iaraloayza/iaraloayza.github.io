@@ -431,23 +431,63 @@ export default {
           description: 'Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.',
           previewImage: '../../public/images/logo_monitora_saude.png',
           gallery: [
-          {
-            url: '../../public/images/monitora_saude.png',
-            alt: 'Dashboard principal com indicadores de saúde'
-          },
-          {
-            url: '../../public/images/monitora_saude.png',
-            alt: 'Tela de relatórios customizáveis'
-          },
-          {
-            url: '../../public/images/monitora_saude.png',
-            alt: 'Gestão de usuários e permissões'
-          },
-          {
-            url: '../../public/images/monitora_saude.png',
-            alt: 'Visualização de dados em gráficos interativos'
-          }
-        ],
+            {
+              url: '../../public/images/monitora/tela_inicial.png',
+              alt: 'Tela inicial do sistema Monitora Saúde'
+            },
+            {
+              url: '../../public/images/monitora/navegacao_indicadores_logout.png',
+              alt: 'Navegação entre indicadores com usuário deslogado'
+            },
+            {
+              url: '../../public/images/monitora/login.png',
+              alt: 'Tela de login do sistema Monitora Saúde'
+            },
+            {
+              url: '../../public/images/monitora/verificacao_2fa.png',
+              alt: 'Verificação em duas etapas (2FA) para segurança de acesso'
+            },
+            {
+              url: '../../public/images/monitora/nav_indicadores_logado.png',
+              alt: 'Navegação entre indicadores com usuário logado'
+            },
+            {
+              url: '../../public/images/monitora/dropdown_admin.png',
+              alt: 'Menu dropdown de administração do sistema'
+            },
+            {
+              url: '../../public/images/monitora/dashboard_indicador.png',
+              alt: 'Dashboard com visualização de indicadores específicos'
+            },
+            {
+              url: '../../public/images/monitora/descricao_indicador.png',
+              alt: 'Tela com a descrição detalhada do indicador selecionado'
+            },
+            {
+              url: '../../public/images/monitora/ficha_indicador.png',
+              alt: 'Acesso à ficha técnica do indicador de saúde'
+            },
+            {
+              url: '../../public/images/monitora/ficha_aberta.png',
+              alt: 'Ficha de indicador com informações detalhadas expandidas'
+            },
+            {
+              url: '../../public/images/monitora/dropdown_indicadores.png',
+              alt: 'Menu dropdown com as páginas de gerenciamento de indicadores'
+            },
+            {
+              url: '../../public/images/monitora/index_grupos.png',
+              alt: 'Página de gerenciamento de grupos de indicadores'
+            },
+            {
+              url: '../../public/images/monitora/index_indicadores.png',
+              alt: 'Página de gerenciamento dos indicadores cadastrados'
+            },
+            {
+              url: '../../public/images/monitora/contato.png',
+              alt: 'Tela de contato e suporte do sistema'
+            }
+          ],
           detailedDescription: 'O Monitora Saúde é uma plataforma web desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real, relatórios customizáveis e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.',
           gradient: 'from-purple-600 to-purple-800',
           technologies: [
@@ -487,7 +527,7 @@ export default {
             }
           ],
           projectInfo: {
-            duration: '8 meses',
+            duration: '4 meses',
             team: '4 desenvolvedores',
             client: 'Secretaria de Estado da Saúde do Maranhão'
           },
@@ -649,6 +689,168 @@ export default {
           title: 'RENAVEH - MA',
           description: 'Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões.',
           previewImage: '../../public/images/renaveh/logo_renaveh.png',
+          gallery: [
+            {
+              url: '../../public/images/renaveh/tela_login.png',
+              alt: 'Tela de login do sistema Renaveh'
+            },
+            {
+              url: '../../public/images/renaveh/tela_2fa_autenticacao.png',
+              alt: 'Tela de autenticação com verificação em duas etapas (2FA)'
+            },
+            {
+              url: '../../public/images/renaveh/dashboard_dados_totais.png',
+              alt: 'Dashboard com dados totais do sistema'
+            },
+            {
+              url: '../../public/images/renaveh/dashboard_supast.png',
+              alt: 'Dashboard específico da SUPAST (Superintendência da Política de Atenção em Saúde no Trânsito)'
+            },
+            {
+              url: '../../public/images/renaveh/dados_filtrados_supast.png',
+              alt: 'Dados filtrados por região no dashboard da SUPAST'
+            },
+            {
+              url: '../../public/images/renaveh/index_pacientes.png',
+              alt: 'Página de busca de pacientes cadastrados no sistema'
+            },
+            {
+              url: '../../public/images/renaveh/cadastrar_paciente.png',
+              alt: 'Formulário de cadastro de novo paciente'
+            },
+            {
+              url: '../../public/images/renaveh/edit_paciente.png',
+              alt: 'Formulário de edição de dados do paciente'
+            },
+            {
+              url: '../../public/images/renaveh/ficha_paciente.png',
+              alt: 'Ficha com os dados do paciente cadastrado'
+            },
+            {
+              url: '../../public/images/renaveh/index_not_paciente.png',
+              alt: 'Listagem de notificações do paciente referente ao hospital do usuário logado'
+            },
+            {
+              url: '../../public/images/renaveh/index_not_paciente2.png',
+              alt: 'Visualização de todas as notificações do paciente, em qualquer hospital'
+            },
+            {
+              url: '../../public/images/renaveh/notificacao_paciente.png',
+              alt: 'Detalhes da notificação do paciente'
+            },
+            {
+              url: '../../public/images/renaveh/notificacao_paciente2.png',
+              alt: 'Continuação dos detalhes da notificação do paciente'
+            },
+            {
+              url: '../../public/images/renaveh/historico_not_transf.png',
+              alt: 'Histórico de transferências de notificações'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao.png',
+              alt: 'Formulário de cadastro de nova notificação'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao2.png',
+              alt: 'Cadastro de notificação - Etapa 2'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao3.png',
+              alt: 'Cadastro de notificação - Etapa 3'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao4.png',
+              alt: 'Cadastro de notificação - Etapa 4'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao5.png',
+              alt: 'Cadastro de notificação - Etapa 5'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao6.png',
+              alt: 'Cadastro de notificação - Etapa 6'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao7.png',
+              alt: 'Cadastro de notificação - Etapa 7'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao8.png',
+              alt: 'Cadastro de notificação - Etapa 8'
+            },
+            {
+              url: '../../public/images/renaveh/cadastro_notificacao9.png',
+              alt: 'Cadastro de notificação - Etapa 9'
+            },
+            {
+              url: '../../public/images/renaveh/index_notificacao.png',
+              alt: 'Página de busca de notificações cadastradas'
+            },
+            {
+              url: '../../public/images/renaveh/search_notificacao.png',
+              alt: 'Filtros de busca de notificações aplicados na página de busca'
+            },
+            {
+              url: '../../public/images/renaveh/search_notificacao2.png',
+              alt: 'Resultados da busca de notificações com filtros aplicados'
+            },
+            {
+              url: '../../public/images/renaveh/search_notificacao3.png',
+              alt: 'Continuação dos resultados da busca de notificações com filtros aplicados'
+            },
+            {
+              url: '../../public/images/renaveh/search_notificacao4.png',
+              alt: 'Continuação dos resultados da busca de notificações com filtros aplicados'
+            },
+            {
+              url: '../../public/images/renaveh/excel_relatorio.png',
+              alt: 'Exportação de relatórios em formato Excel'
+            },
+            {
+              url: '../../public/images/renaveh/notificacoes_supast.png',
+              alt: 'Notificações vinculadas à SUPAST'
+            },
+            {
+              url: '../../public/images/renaveh/notificacoes_supast2.png',
+              alt: 'Resultados da busca de notificações SUPAST com filtros aplicados'
+            },
+            {
+              url: '../../public/images/renaveh/index_hospitais.png',
+              alt: 'Gerenciamento de hospitais cadastrados'
+            },
+            {
+              url: '../../public/images/renaveh/usuarios_hospitais.png',
+              alt: 'Associação entre usuários e hospitais'
+            },
+            {
+              url: '../../public/images/renaveh/index_dae.png',
+              alt: 'Listagem de DAEs (Doenças, Agravos e Eventos) registrados'
+            },
+            {
+              url: '../../public/images/renaveh/index_sintomas.png',
+              alt: 'Cadastro e listagem de sintomas registrados'
+            },
+            {
+              url: '../../public/images/renaveh/index_auditoria.png',
+              alt: 'Tela de auditoria do sistema para rastreamento de ações'
+            },
+            {
+              url: '../../public/images/renaveh/index_usuarios.png',
+              alt: 'Lista de usuários do sistema'
+            },
+            {
+              url: '../../public/images/renaveh/visualizar_usuario.png',
+              alt: 'Ficha de visualização de usuário'
+            },
+            {
+              url: '../../public/images/renaveh/index_papeis.png',
+              alt: 'Gerenciamento de papéis e permissões dos usuários'
+            },
+            {
+              url: '../../public/images/renaveh/index_paginas.png',
+              alt: 'Gerenciamento das páginas de permissões do sistema'
+            }
+          ],
           detailedDescription: 'O RENAVEH (Rede Nacional de Emergências Hospitalares) é um sistema web desenvolvido para otimizar a gestão de emergências hospitalares no Maranhão. A plataforma permite o cadastro e acompanhamento de pacientes em situações de emergência, facilitando a comunicação entre hospitais e agilizando processos de transferência e notificação.',
           gradient: 'from-purple-500 to-pink-600',
           technologies: [
@@ -664,24 +866,25 @@ export default {
             'Sistema de transferências de notificações entre hospitais',
             'Módulo especializado para acidentes de trânsito, requisitado pela SUPAST',
             'Controle de acesso por papéis e permissões',
-            'Painel de controle para gestores',
+            'Painel de indicadores para gestores',
           ],
           projectInfo: {
-            duration: '10 meses',
-            team: '5 desenvolvedores',
-            client: 'Rede de Hospitais do Maranhão'
+            duration: '6 meses',
+            team: '4 desenvolvedores',
+            client: 'RENAVEH - Maranhão'
           },
           impact: [
-            { value: '25+', label: 'Hospitais Conectados' },
-            { value: '1000+', label: 'Pacientes/Mês' },
-            { value: '40%', label: 'Redução no Tempo de Transferência' }
+            { value: '40.606+', label: 'Casos Notificados (Geral)' },
+            { value: '8.042+', label: 'Notificações Imediatas' },
+            { value: '4.612+', label: 'Casos Notificados (SUPAST)' },
+            { value: '26', label: 'Óbitos Registrados' }
           ]
         },
         {
           id: 4,
           title: 'Maranhão Livre da Fome',
           description: 'O sistema Maranhão Livre da Fome (eixo saúde) combate a insegurança alimentar com o cadastro e acompanhamento de famílias em situação de vulnerabilidade, permitindo registrar avaliações e monitorar o histórico de cada indivíduo.',
-          previewImage: '../../public/images/monitora_saude.png',
+          previewImage: '../../public/images/masemfome/logo.png',
           detailedDescription: 'O sistema Maranhão Livre da Fome representa uma iniciativa fundamental no combate à insegurança alimentar no estado. Desenvolvido como parte de uma política pública abrangente, o sistema permite identificar, cadastrar e acompanhar famílias em situação de vulnerabilidade alimentar, oferecendo ferramentas para monitoramento nutricional e coordenação de ações de assistência.',
           gradient: 'from-green-500 to-blue-600',
           technologies: [
@@ -691,7 +894,7 @@ export default {
           ],
           projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/',
           githubUrl: '#',
-          inDevelopment: false,
+          inDevelopment: true,
           features: [
             'Cadastro completo de famílias vulneráveis',
             'Avaliação nutricional individualizada',
@@ -718,16 +921,6 @@ export default {
               title: 'Implementação Gradual',
               description: 'Deploy progressivo em diferentes regiões do estado.'
             }
-          ],
-          projectInfo: {
-            duration: '12 meses',
-            team: '6 desenvolvedores + equipe multidisciplinar',
-            client: 'Governo do Estado do Maranhão'
-          },
-          impact: [
-            { value: '10000+', label: 'Famílias Cadastradas' },
-            { value: '217', label: 'Municípios Atendidos' },
-            { value: '85%', label: 'Eficácia no Acompanhamento' }
           ]
         },
         {
