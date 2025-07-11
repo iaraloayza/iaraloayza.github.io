@@ -1,0 +1,1 @@
+import{_ as n,a as t,c,r as e,o as a}from"./index-D9LW4_UB.js";const s={name:"EducationOnly",components:{EducationSection:t}};function r(i,p,_,d,u,m){const o=e("EducationSection");return a(),c(o)}const l=n(s,[["render",r]]);export{l as default};
