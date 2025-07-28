@@ -1,1 +1,0 @@
-import{_ as n,b as s,c as e,r as c,o as t}from"./index-D9LW4_UB.js";const l={name:"SkillsOnly",components:{SkillsSection:s}};function a(r,i,_,p,m,S){const o=c("SkillsSection");return t(),e(o)}const k=n(l,[["render",a]]);export{k as default};
