@@ -32,7 +32,7 @@
             </button>
           </a>
 
-          <a href="/curriculo_ana_iara_loayza_costa.pdf" download>
+          <a href="/Curriculo_Ana_Iara_Loayza.pdf" download>
             <button class="group relative overflow-hidden border-2 border-purple-500 hover:border-purple-400 text-purple-400 hover:text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105">
               <span class="relative z-10">Baixar CV</span>
               <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
