@@ -912,7 +912,7 @@ export default {
             },
             {
               title: 'Integração com Sistemas Governamentais',
-              description: 'Desenvolvimento da integração com API do sistema de cadastro geral das famílias, permitindo busca por CPF do responsável familiar e importação automática de dados pessoais e endereços. Esta integração evita retrabalho e garante consistência nas informações entre os sistemas.'
+              description: 'Desenvolvimento da integração com API do sistema de cadastro geral das famílias, permitindo busca por CPF do responsável familiar e importação automática de dados pessoais e endereço da família. Esta integração evita retrabalho e garante consistência nas informações entre os sistemas.'
             },
             {
               title: 'Desenvolvimento da Plataforma',
