@@ -1,1 +1,0 @@
-import{_ as t,d as n,c,r as e,o as a}from"./index-B3eMm3kS.js";const s={name:"ContactOnly",components:{ContactSection:n}};function r(_,p,i,m,f,l){const o=e("ContactSection");return a(),c(o)}const d=t(s,[["render",r]]);export{d as default};
