@@ -130,7 +130,8 @@ export default {
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
             { name: 'MySQL', color: 'bg-cyan-600' },
-            { name: 'Docker', color: 'bg-blue-600' }
+            { name: 'Docker', color: 'bg-blue-600' },
+            { name: 'APIs REST', color: 'bg-purple-600' }
           ],
           projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/',
           githubUrl: '#',

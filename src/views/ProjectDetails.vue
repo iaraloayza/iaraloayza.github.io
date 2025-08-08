@@ -882,18 +882,22 @@ export default {
           title: 'Maranhão Livre da Fome',
           description: 'Maranhão Livre da Fome é um sistema em desenvolvimento voltado ao enfrentamento da insegurança alimentar no estado, com foco no cadastro e acompanhamento de famílias vulneráveis, avaliação nutricional e integração com políticas públicas.',
           previewImage: '/images/masemfome/logo.png',
-          detailedDescription: 'O Maranhão Livre da Fome está sendo desenvolvido como uma plataforma estratégica para apoiar ações integradas de combate à fome e insegurança alimentar no estado do Maranhão. O sistema permitirá o registro detalhado de famílias em situação de vulnerabilidade, o monitoramento nutricional individual e o acompanhamento da efetividade das ações sociais por meio de dashboards e relatórios automatizados.',
+          detailedDescription: 'O Maranhão Livre da Fome está sendo desenvolvido como uma plataforma estratégica para apoiar ações integradas de combate à fome e insegurança alimentar no estado do Maranhão. O sistema permitirá o registro detalhado de famílias em situação de vulnerabilidade, o monitoramento nutricional individual e o acompanhamento da efetividade das ações sociais por meio de dashboards e relatórios automatizados. A plataforma integra-se com sistemas governamentais existentes através de APIs, permitindo o aproveitamento de dados já cadastrados e evitando duplicação de esforços no atendimento às famílias.',
           gradient: 'from-green-500 to-blue-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
             { name: 'MySQL', color: 'bg-cyan-600' },
-            { name: 'Docker', color: 'bg-blue-600' }
+            { name: 'Docker', color: 'bg-blue-600' },
+            { name: 'APIs REST', color: 'bg-purple-600' }
           ],
           projectUrl: '#',
           githubUrl: '#',
           inDevelopment: true,
           features: [
             'Cadastro estruturado de famílias em vulnerabilidade alimentar',
+            'Integração com API externa para busca automática de dados familiares por CPF',
+            'Importação e sincronização de dados pessoais e endereços das famílias',
+            'Atualização e complementação de informações não disponíveis na API externa',
             'Cadastros de avaliações com base em indicadores de saúde',
             'Histórico contínuo de atendimentos e acompanhamentos',
             'Dashboards dinâmicos por região e município',
@@ -907,16 +911,20 @@ export default {
               description: 'Mapeamento de necessidades, definição dos fluxos de dados e levantamento dos indicadores nutricionais e sociais prioritários.'
             },
             {
-              title: 'Desenvolvimento da Plataforma',
-              description: 'Construção do backend e frontend com foco em performance, segurança e usabilidade para os profissionais de campo.'
+              title: 'Integração com Sistemas Governamentais',
+              description: 'Desenvolvimento da integração com API do sistema de cadastro geral das famílias, permitindo busca por CPF do responsável familiar e importação automática de dados pessoais e endereços. Esta integração evita retrabalho e garante consistência nas informações entre os sistemas.'
             },
             {
-              title: 'Integração com Sistemas Existentes',
-              description: 'Criação de rotas de comunicação com bases de dados públicas e programas sociais do estado.'
+              title: 'Desenvolvimento da Plataforma',
+              description: 'Construção do backend e frontend com foco em performance, segurança e usabilidade para os profissionais de campo, incluindo funcionalidades de sincronização e atualização de dados.'
+            },
+            {
+              title: 'Validação de Dados e Fluxos',
+              description: 'Implementação de rotinas de validação e complementação de dados importados, permitindo que os profissionais atualizem ou acrescentem informações específicas da área da saúde não contempladas no sistema principal.'
             },
             {
               title: 'Testes Pilotos Regionais',
-              description: 'Implantação inicial em regiões-piloto para coleta de feedbacks e validação das funcionalidades.'
+              description: 'Implantação inicial em regiões-piloto para coleta de feedbacks, validação das funcionalidades e teste da integração com o sistema externo em ambiente real.'
             }
           ],
           projectInfo: {
