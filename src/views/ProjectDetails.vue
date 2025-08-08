@@ -488,7 +488,7 @@ export default {
               alt: 'Tela de contato e suporte do sistema'
             }
           ],
-          detailedDescription: 'O Monitora Saúde é uma plataforma web desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real, relatórios customizáveis e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.',
+          detailedDescription: 'O Monitora Saúde é uma plataforma web desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.',
           gradient: 'from-purple-600 to-purple-800',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -533,8 +533,7 @@ export default {
           },
           impact: [
             { value: '50+', label: 'Indicadores Monitorados' },
-            { value: '200+', label: 'Usuários Ativos' },
-            { value: '99.9%', label: 'Uptime' }
+            { value: '200+', label: 'Usuários Ativos' }
           ]
         },
         {
@@ -645,11 +644,9 @@ export default {
           features: [
             'Aplicativo móvel nativo para Android',
             'Versão web responsiva',
-            'Sistema de lembretes para medicação',
-            'Monitoramento de sintomas e evolução do tratamento',
+            'Registro de uso de medicamentos diários',
+            'Registro de sintomas diários',
             'Base de conhecimento sobre hanseníase',
-            'Chat com profissionais de saúde',
-            'Relatórios para acompanhamento médico'
           ],
           developmentProcess: [
             {
