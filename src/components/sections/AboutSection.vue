@@ -11,7 +11,7 @@
           <div class="relative w-full h-96 bg-gradient-to-br from-purple-900/50 to-black rounded-3xl overflow-hidden">
             <!-- Imagem de perfil -->
             <img 
-              src="../../../public/images/foto_formatura.jpeg" 
+              src="/images/foto_formatura.jpeg" 
               alt="Ana Iara Loayza Costa"
               class="w-full h-full object-cover"
             />
