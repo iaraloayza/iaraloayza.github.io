@@ -1,96 +1,80 @@
 <template>
-  <section id="about" class="relative py-32 px-6 z-10">
+  <section id="about" class="relative py-20 px-6 z-10">
     <div class="container mx-auto max-w-6xl">
-      <h2 class="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-        Sobre Mim
-      </h2>
       
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="relative group">
-          <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-50 group-hover:opacity-75 transition duration-1000"></div>
-          <div class="relative w-full h-96 bg-gradient-to-br from-purple-900/50 to-black rounded-3xl overflow-hidden">
-            <!-- Imagem de perfil -->
-            <img 
-              src="/images/foto_formatura.jpeg" 
-              alt="Ana Iara Loayza Costa"
-              class="w-full h-full object-cover"
-            />
-            <!-- Overlay gradient para manter o efeito visual -->
-            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10"></div>
-            <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
-            <div class="absolute bottom-6 left-6 text-2xl font-bold text-white drop-shadow-lg">
-              Ana Iara Loayza Costa
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <h2 class="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          Sobre Mim
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Conteúdo principal reestruturado -->
+      <div class="space-y-16">
+        
+        <!-- Dois cards lado a lado -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Card 1 -->
+          <div 
+            v-reveal="{ delay: 0 }"
+            class="transform hover:scale-105 transition-transform duration-300 p-6 bg-purple-900/10 backdrop-blur-sm rounded-3xl border border-purple-500/20 hover:border-purple-400/40"
+          >
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-purple-400 mb-2">Desenvolvedora Full-Stack</h3>
+                <p class="text-gray-300 leading-relaxed text-sm">
+                  Desenvolvedora Full-Stack com experiência em PHP/Laravel e SQL (MySQL/PostgreSQL). 
+                  Atuo na criação e integração de APIs RESTful, otimização de consultas para relatórios 
+                  estratégicos e desenvolvimento de sistemas web escaláveis e seguros. Também construo 
+                  interfaces responsivas priorizando usabilidade e acessibilidade.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div 
+            v-reveal="{ delay: 120 }"
+            class="transform hover:scale-105 transition-transform duration-300 p-6 bg-purple-900/10 backdrop-blur-sm rounded-3xl border border-purple-500/20 hover:border-purple-400/40"
+          >
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-pink-400 mb-2">Experiência em Saúde Pública</h3>
+                <p class="text-gray-300 leading-relaxed text-sm">
+                  Atuação em projetos de tecnologia para saúde pública, desenvolvendo sistemas e relatórios estratégicos em tempo real. 
+                  Experiência em interoperabilidade de dados, boas práticas de Clean Code, versionamento Git e metodologias ágeis.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        
-        <div class="space-y-8">
-          <div class="space-y-6 text-lg leading-relaxed text-gray-300">
-            <p class="transform hover:scale-105 transition-transform duration-300 p-6 bg-purple-900/10 rounded-2xl border border-purple-500/20">
-              Sou uma desenvolvedora apaixonada por tecnologia, especializada em criar 
-              <span class="text-purple-400 font-semibold">soluções web e mobile modernas</span> 
-              que combinam funcionalidade excepcional com design impactante.
-            </p>
-            
-            <p class="transform hover:scale-105 transition-transform duration-300 p-6 bg-purple-900/10 rounded-2xl border border-purple-500/20">
-              Trabalho com as mais recentes tecnologias como Vue.js, Laravel e Python, 
-              sempre em busca de <span class="text-pink-400 font-semibold">inovação</span> 
-              e excelência em cada projeto.
-            </p>
+
+        <!-- Stats centralizados logo abaixo dos dois cards -->
+        <div 
+          v-reveal="{ delay: 0 }"
+          class="grid grid-cols-2 gap-6 max-w-md mx-auto"
+        >
+          <div class="text-center p-4 bg-black/30 rounded-2xl border border-purple-500/20">
+            <div class="text-2xl font-bold text-purple-400 mb-1">2+</div>
+            <div class="text-gray-300 text-xs">Anos de Experiência</div>
           </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-            <TechCategory 
-              title="Frontend" 
-              color="purple"
-              :technologies="frontendTech"
-            />
-            
-            <TechCategory 
-              title="Mobile" 
-              color="blue"
-              :technologies="mobileTech"
-            />
-            
-            <TechCategory 
-              title="Backend" 
-              color="pink"
-              :technologies="backendTech"
-            />
+          <div class="text-center p-4 bg-black/30 rounded-2xl border border-pink-500/20">
+            <div class="text-2xl font-bold text-pink-400 mb-1">5+</div>
+            <div class="text-gray-300 text-xs">Projetos Concluídos</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<script>
-import TechCategory from '../../ui/TechCategory.vue'
-
-export default {
-  name: 'AboutSection',
-  components: {
-    TechCategory
-  },
-  data() {
-    return {
-      frontendTech: [
-        'Vue.js / React',
-        'JavaScript / TypeScript',
-        'HTML5 / CSS3',
-        'TailwindCSS'
-      ],
-      mobileTech: [
-        'Flutter',
-        'Dart'
-      ],
-      backendTech: [
-        'Laravel (PHP) / Python',
-        'Express / FastAPI',
-        'PostgreSQL / MySQL / Firebase',
-        'Docker'
-      ]
-    }
-  }
-}
-</script>
