@@ -17,14 +17,14 @@
           <div class="grid md:grid-cols-2 gap-8">
             <SkillCategory
               v-reveal="{ delay: 0 }"
-              title="Frontend Development"
+              title="Desenvolvimento Frontend"
               :skills="frontendSkills"
               color="purple"
               icon="code"
             />
             <SkillCategory
               v-reveal="{ delay: 120 }"
-              title="Mobile Development"
+              title="Desenvolvimento Mobile"
               :skills="mobileSkills"
               color="blue"
               icon="device-mobile"
@@ -38,7 +38,7 @@
             />
             <SkillCategory
               v-reveal="{ delay: 360 }"
-              title="Tools & Others"
+              title="Outras Ferramentas"
               :skills="toolsSkills"
               color="indigo"
               icon="cog"
