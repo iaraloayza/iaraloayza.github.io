@@ -1,47 +1,143 @@
 <template>
-  <section id="skills" class="relative py-32 px-6 z-10">
+  <section id="skills" class="relative py-20 px-6 z-10">
     <div class="container mx-auto max-w-6xl">
-      <h2 class="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-        Habilidades
-      </h2>
-
-      <h3 class="text-3xl font-bold mb-8 text-center">Habilidades Técnicas</h3>
-      <div class="grid md:grid-cols-2 gap-12 mb-20">
-        <div class="space-y-8">
-          <SkillItem name="Laravel" percent="90%" color="from-purple-600 to-pink-500" />
-          <SkillItem name="PHP" percent="85%" color="from-pink-500 to-orange-400" />
-          <SkillItem name="Python" percent="80%" color="from-emerald-400 to-emerald-600" />
-          <SkillItem name="Flutter" percent="80%" color="from-emerald-400 to-emerald-600" />
-          <SkillItem name="MySQL" percent="90%" color="from-yellow-400 to-yellow-600" />
-          <SkillItem name="PostgreSQL" percent="90%" color="from-blue-500 to-blue-700" />
-        </div>
-        <div class="space-y-8">
-          <SkillItem name="Vue.js" percent="75%" color="from-blue-400 to-blue-800" />
-          <SkillItem name="Javascript" percent="70%" color="from-cyan-400 to-cyan-700" />
-          <SkillItem name="Firebase" percent="70%" color="from-orange-400 to-red-600" />
-          <SkillItem name="Docker" percent="65%" color="from-red-400 to-red-700" />
-          <SkillItem name="Tailwind CSS" percent="75%" color="from-teal-400 to-teal-700" />
-          <SkillItem name="Git / GitHub" percent="80%" color="from-pink-600 to-pink-800" />
-        </div>
+      
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <h2 class="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          Habilidades
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
       </div>
 
-      <h3 class="text-3xl font-bold mb-8 text-center">Habilidades Complementares</h3>
-      <div class="max-w-xl mx-auto space-y-6 text-center">
-        <div class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30 rounded-xl p-6 hover:border-purple-400/50 transition-all duration-300">
-          <p class="text-lg font-medium bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text text-transparent">
-            Comunicação e trabalho em equipe
-          </p>
-        </div>
-        <div class="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 rounded-xl p-6 hover:border-blue-400/50 transition-all duration-300">
-          <p class="text-lg font-medium bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">
-            Inglês técnico (leitura e compreensão)
-          </p>
+      <!-- Conteúdo principal reestruturado -->
+      <div class="space-y-16">
+        <!-- Minhas Especialidades abaixo dos stats, em grid 2x2 -->
+        <div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <SkillCategory
+              v-reveal="{ delay: 0 }"
+              title="Frontend Development"
+              :skills="frontendSkills"
+              color="purple"
+              icon="code"
+            />
+            <SkillCategory
+              v-reveal="{ delay: 120 }"
+              title="Mobile Development"
+              :skills="mobileSkills"
+              color="blue"
+              icon="device-mobile"
+            />
+            <SkillCategory
+              v-reveal="{ delay: 240 }"
+              title="Backend & Database"
+              :skills="backendSkills"
+              color="pink"
+              icon="server"
+            />
+            <SkillCategory
+              v-reveal="{ delay: 360 }"
+              title="Tools & Others"
+              :skills="toolsSkills"
+              color="indigo"
+              icon="cog"
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-import SkillItem from '../../ui//SkillItem.vue'
+<script>
+import SkillCategory from '../../ui/SkillCategory.vue'
+
+export default {
+  name: 'AboutSection',
+  components: { SkillCategory },
+  directives: {
+    // v-reveal: adiciona fade-in + slide-up quando o elemento entra na viewport
+    reveal: {
+      mounted(el, binding) {
+        const delay = binding?.value?.delay ?? 0
+        el.classList.add('reveal-up')
+        el.style.transitionDelay = `${delay}ms`
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                el.classList.add('is-visible')
+                observer.unobserve(el) // roda uma única vez
+              }
+            })
+          },
+          { threshold: 0.2 }
+        )
+        observer.observe(el)
+        // guarda o observer pra limpar no unmounted
+        el._revealObserver = observer
+      },
+      unmounted(el) {
+        if (el._revealObserver) {
+          el._revealObserver.disconnect()
+          delete el._revealObserver
+        }
+      }
+    }
+  },
+  data() {
+    return {
+      frontendSkills: [
+        { name: 'Vue.js', level: 85 },
+        { name: 'React', level: 80 },
+        { name: 'JavaScript/TypeScript', level: 88 },
+        { name: 'HTML5/CSS3', level: 92 },
+        { name: 'TailwindCSS', level: 90 }
+      ],
+      mobileSkills: [
+        { name: 'React Native', level: 70 },
+        { name: 'Flutter', level: 85 },
+        { name: 'Dart', level: 80 }
+      ],
+      backendSkills: [
+        { name: 'Laravel (PHP)', level: 95 },
+        { name: 'Python', level: 80 },
+        { name: 'Node.js', level: 80 },
+        { name: 'PostgreSQL', level: 95 },
+        { name: 'MySQL', level: 95 }
+      ],
+      toolsSkills: [
+        { name: 'Git/GitHub', level: 80 },
+        { name: 'Docker', level: 65 },
+        { name: 'Figma', level: 80 },
+        { name: 'Linux', level: 85 }
+      ]
+    }
+  }
+}
 </script>
+
+<style scoped>
+/* Animação fade-in + slide-up (sem dependências) */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Acessibilidade: reduz animações quando o usuário prefere */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+</style>

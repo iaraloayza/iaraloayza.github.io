@@ -81,10 +81,10 @@ export default {
     const navItems = reactive([
       { id: 'home', label: 'Início' },
       { id: 'about', label: 'Sobre' },
+      { id: 'skills', label: 'Habilidades' },
+      { id: 'projects', label: 'Projetos' },
       { id: 'experience', label: 'Experiência' },
       { id: 'education', label: 'Formação' },
-      { id: 'projects', label: 'Projetos' },
-      { id: 'skills', label: 'Habilidades' },
       { id: 'contact', label: 'Contato' }
     ])
 
