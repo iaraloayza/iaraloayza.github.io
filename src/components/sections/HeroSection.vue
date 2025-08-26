@@ -31,17 +31,6 @@
             <span class="text-pink-400 font-semibold">realidade</span>.
           </p>
           
-          <!-- Quick Tech Stack -->
-          <div class="flex flex-wrap gap-3 py-4">
-            <span 
-              v-for="tech in quickTech" 
-              :key="tech"
-              class="px-4 py-2 bg-purple-900/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium hover:bg-purple-900/40 hover:border-purple-400/50 transition-all duration-300"
-            >
-              {{ tech }}
-            </span>
-          </div>
-          
           <div class="flex flex-col sm:flex-row gap-6 pt-4">
             <a href="#projects">
               <button class="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 btn-primary">
@@ -103,17 +92,6 @@
     </div>
   </section>
 </template>
-
-<script>
-export default {
-  name: 'HeroSection',
-  data() {
-    return {
-      quickTech: ['Vue.js', 'Laravel', 'Flutter', 'Python', 'TailwindCSS']
-    }
-  }
-}
-</script>
 
 <style scoped>
 /* Animations específicas para elementos flutuantes */

@@ -28,7 +28,7 @@
               </div>
               <div>
                 <h3 class="text-xl font-bold text-purple-400 mb-2">Desenvolvedora Full-Stack</h3>
-                <p class="text-gray-300 leading-relaxed text-sm">
+                <p class="text-gray-300 leading-relaxed text-justify text-base">
                   Desenvolvedora Full-Stack com experiência em PHP/Laravel e SQL (MySQL/PostgreSQL). 
                   Atuo na criação e integração de APIs RESTful, otimização de consultas para relatórios 
                   estratégicos e desenvolvimento de sistemas web escaláveis e seguros. Também construo 
@@ -51,7 +51,7 @@
               </div>
               <div>
                 <h3 class="text-xl font-bold text-pink-400 mb-2">Experiência em Saúde Pública</h3>
-                <p class="text-gray-300 leading-relaxed text-sm">
+                <p class="text-gray-300 leading-relaxed text-justify text-base">
                   Atuação em projetos de tecnologia para saúde pública, desenvolvendo sistemas e relatórios estratégicos em tempo real. 
                   Experiência em interoperabilidade de dados, boas práticas de Clean Code, versionamento Git e metodologias ágeis.
                 </p>
@@ -67,11 +67,11 @@
         >
           <div class="text-center p-4 bg-black/30 rounded-2xl border border-purple-500/20">
             <div class="text-2xl font-bold text-purple-400 mb-1">2+</div>
-            <div class="text-gray-300 text-xs">Anos de Experiência</div>
+            <div class="text-gray-300">Anos de Experiência</div>
           </div>
           <div class="text-center p-4 bg-black/30 rounded-2xl border border-pink-500/20">
             <div class="text-2xl font-bold text-pink-400 mb-1">5+</div>
-            <div class="text-gray-300 text-xs">Projetos Concluídos</div>
+            <div class="text-gray-300">Projetos Concluídos</div>
           </div>
         </div>
       </div>
