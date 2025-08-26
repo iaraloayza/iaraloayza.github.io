@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "logo": "{ code & creativity }",
+    "home": "Início",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "education": "Formação",
+    "contact": "Contato"
+  },
+  "hero": {
+    "role": "Desenvolvedora Full Stack",
+    "greeting": "Olá, eu sou",
+    "name": "Ana Iara",
+    "surname": "Loayza Costa",
+    "description": "Apaixonada por criar",
+    "highlight1": "experiências digitais",
+    "description2": "extraordinárias que transformam ideias em",
+    "highlight2": "realidade",
+    "buttons": {
+      "viewProjects": "Ver Projetos",
+      "downloadCV": "Baixar CV"
+    }
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "card1": {
+      "title": "Desenvolvedora Full-Stack",
+      "description": "Desenvolvedora Full-Stack com experiência em PHP/Laravel e SQL (MySQL/PostgreSQL). Atuo na criação e integração de APIs RESTful, otimização de consultas para relatórios estratégicos e desenvolvimento de sistemas web escaláveis e seguros. Também construo interfaces responsivas priorizando usabilidade e acessibilidade."
+    },
+    "card2": {
+      "title": "Experiência em Saúde Pública",
+      "description": "Atuação em projetos de tecnologia para saúde pública, desenvolvendo sistemas e relatórios estratégicos em tempo real. Experiência em interoperabilidade de dados, boas práticas de Clean Code, versionamento Git e metodologias ágeis."
+    },
+    "stats": {
+      "experience": "Anos de Experiência",
+      "projects": "Projetos Concluídos"
+    }
+  }
+}

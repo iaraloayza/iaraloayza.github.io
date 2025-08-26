@@ -9,33 +9,33 @@
             <div class="flex items-center space-x-4 mb-6">
               <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
               <span class="text-purple-400 font-semibold text-lg tracking-wider uppercase">
-                Desenvolvedora Full Stack
+                {{ $t('hero.role') }}
               </span>
             </div>
             
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
-              <span class="block text-white">Olá, eu sou</span>
+              <span class="block text-white">{{ $t('hero.greeting') }}</span>
               <span class="block bg-gradient-to-r from-purple-400 via-pink-400 to-purple-500 bg-clip-text text-transparent animate-gradient">
-                Ana Iara
+                {{ $t('hero.name') }}
               </span>
               <span class="block text-gray-300 text-3xl md:text-4xl lg:text-5xl font-medium mt-2">
-                Loayza Costa
+                {{ $t('hero.surname') }}
               </span>
             </h1>
           </div>
           
           <p class="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl">
-            Apaixonada por criar
-            <span class="text-purple-400 font-semibold">experiências digitais</span>
-            extraordinárias que transformam ideias em
-            <span class="text-pink-400 font-semibold">realidade</span>.
+            {{ $t('hero.description') }}
+            <span class="text-purple-400 font-semibold">{{ $t('hero.highlight1') }}</span>
+            {{ $t('hero.description2') }}
+            <span class="text-pink-400 font-semibold">{{ $t('hero.highlight2') }}</span>.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-6 pt-4">
             <a href="#projects">
               <button class="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 btn-primary">
                 <span class="relative z-10 flex items-center justify-center space-x-2">
-                  <span>Ver Projetos</span>
+                  <span>{{ $t('hero.buttons.viewProjects') }}</span>
                   <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
@@ -49,7 +49,7 @@
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                   </svg>
-                  <span>Baixar CV</span>
+                  <span>{{ $t('hero.buttons.downloadCV') }}</span>
                 </span>
                 <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
@@ -92,6 +92,12 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  name: 'HeroSection'
+}
+</script>
 
 <style scoped>
 /* Animations específicas para elementos flutuantes */

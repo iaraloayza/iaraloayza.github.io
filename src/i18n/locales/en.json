@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "logo": "{ code & creativity }",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "Full Stack Developer",
+    "greeting": "Hello, I'm",
+    "name": "Ana Iara",
+    "surname": "Loayza Costa",
+    "description": "Passionate about creating",
+    "highlight1": "digital experiences",
+    "description2": "that transform ideas into",
+    "highlight2": "reality",
+    "buttons": {
+      "viewProjects": "View Projects",
+      "downloadCV": "Download Resume"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "card1": {
+      "title": "Full-Stack Developer",
+      "description": "Full-Stack Developer with experience in PHP/Laravel and SQL (MySQL/PostgreSQL). I work on creating and integrating RESTful APIs, optimizing queries for strategic reports, and developing scalable and secure web systems. I also build responsive interfaces prioritizing usability and accessibility."
+    },
+    "card2": {
+      "title": "Public Health Experience",
+      "description": "Working on public health technology projects, developing systems and real-time strategic reports. Experience in data interoperability, Clean Code best practices, Git versioning, and agile methodologies."
+    },
+    "stats": {
+      "experience": "Years of Experience",
+      "projects": "Completed Projects"
+    }
+  }
+}
