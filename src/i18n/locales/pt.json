@@ -45,6 +45,39 @@
     "mobile": "Desenvolvimento Mobile",
     "otherTools": "Outras Ferramentas"
   },
+  "projects": {
+    "title": "Projetos",
+    "details": "Ver Detalhes",
+    "viewProject": "Ver Projeto",
+    "github": "GitHub",
+    "inDevelopment": "Em Desenvolvimento",
+    "list": {
+      "monitora": {
+        "title": "Monitora Saúde",
+        "description": "Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão."
+      },
+      "hans": {
+        "title": "App Hans+",
+        "description": "O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença."
+      },
+      "masemfome": {
+        "title": "Maranhão Livre da Fome",
+        "description": "O sistema Maranhão Livre da Fome (eixo saúde) combate a insegurança alimentar com o cadastro e acompanhamento de famílias em situação de vulnerabilidade, permitindo registrar avaliações e monitorar o histórico de cada indivíduo."
+      },
+      "cadserv": {
+        "title": "CadServ",
+        "description": "Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta."
+      },
+      "plandox": {
+        "title": "PlanDox 2.0",
+        "description": "PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços."
+      },
+      "react": {
+        "title": "Portal REACT",
+        "description": "O portal REACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (REACT), fortalecendo a colaboração acadêmica e profissional."
+      }
+    }
+  },
   "contact": {
     "title": "Contato",
     "subtitle": "Vamos criar algo <span class='text-purple-400'>incrível</span> juntos!",

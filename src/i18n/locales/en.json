@@ -45,6 +45,39 @@
     "mobile": "Mobile Development",
     "otherTools": "Other Tools"
   },
+  "projects": {
+    "title": "Projects",
+    "details": "View Details",
+    "viewProject": "View Project",
+    "github": "GitHub",
+    "inDevelopment": "In Development",
+    "list": {
+      "monitora": {
+        "title": "Monitora Saúde",
+        "description": "Web system for monitoring and evaluating health indicators and processes, providing updated data to support management, strategic planning, and health promotion in Maranhão."
+      },
+      "hans": {
+        "title": "Hans+ App",
+        "description": "Hans+ is a platform with a web version and an Android app that supports leprosy treatment, allowing medication recording, symptom monitoring, and access to reliable information about the disease."
+      },
+      "masemfome": {
+        "title": "Maranhão Free from Hunger",
+        "description": "The Maranhão Free from Hunger system (health axis) combats food insecurity through the registration and follow-up of vulnerable families, enabling the recording of evaluations and monitoring the history of each individual."
+      },
+      "cadserv": {
+        "title": "CadServ",
+        "description": "Registration and management system for SAPAPVS employees, allowing the recording of personal, functional, and social data, as well as managing information such as vacations, with access for managers, coordinators, and the deputy secretariat."
+      },
+      "plandox": {
+        "title": "PlanDox 2.0",
+        "description": "PlanDox 2.0 is the new version in development of a desktop software for experimental planning and biodiesel quality analysis, featuring an improved interface, mobile version, and microservices-based architecture."
+      },
+      "react": {
+        "title": "REACT Portal",
+        "description": "The REACT portal, under development, will be a platform for intuitive management of projects, news, public calls, and teams of the Science and Technology Application Network (REACT), strengthening academic and professional collaboration."
+      }
+    }
+  },
   "contact": {
     "title": "Contact",
     "subtitle": "Let's create something <span class='text-purple-400'>amazing</span> together!",

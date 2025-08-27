@@ -4,7 +4,7 @@
       <!-- Header -->
       <div class="text-center mb-20">
         <h2 class="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Projetos
+          {{ $t('projects.title') }}
         </h2>
         <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
       </div>
@@ -32,7 +32,6 @@
           </svg>
         </button>
 
-        <!-- Container do carrossel - REMOVIDO overflow-hidden -->
         <div class="carousel-container">
           <div 
             class="carousel-wrapper"
@@ -86,12 +85,11 @@ export default {
   data() {
     return {
       currentSlide: 0,
-      slidesPerView: 3, // Número de projetos visíveis por vez
+      slidesPerView: 3,
       projects: [
         {
           id: 1,
-          title: 'Monitora Saúde',
-          description: 'Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.',
+          key: 'monitora',
           gradient: 'from-purple-600 to-purple-800',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -99,12 +97,11 @@ export default {
           ],
           projectUrl: 'https://monitora.saude.ma.gov.br/',
           githubUrl: '#',
-          inDevelopment: false // Projeto finalizado
+          inDevelopment: false
         },
         {
           id: 2,
-          title: 'App Hans+',
-          description: 'O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença.',
+          key: 'hans',
           gradient: 'from-pink-600 to-purple-800',
           technologies: [
             { name: 'Flutter', color: 'bg-purple-600' },
@@ -116,35 +113,19 @@ export default {
         },
         {
           id: 3,
-          title: 'RENAVEH',
-          description: 'Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões.',
+          key: 'masemfome',
           gradient: 'from-purple-500 to-pink-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
             { name: 'MySQL', color: 'bg-cyan-600' }
           ],
-          projectUrl: 'https://renaveh.saude.ma.gov.br/',
-          githubUrl: '#'
+          projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/',
+          githubUrl: '#',
+          inDevelopment: true
         },
         {
           id: 4,
-          title: 'Maranhão Livre da Fome',
-          description: 'O sistema Maranhão Livre da Fome (eixo saúde) combate a insegurança alimentar com o cadastro e acompanhamento de famílias em situação de vulnerabilidade, permitindo registrar avaliações e monitorar o histórico de cada indivíduo.',
-          gradient: 'from-purple-500 to-pink-600',
-          technologies: [
-            { name: 'Laravel', color: 'bg-red-600' },
-            { name: 'MySQL', color: 'bg-cyan-600' },
-            { name: 'Docker', color: 'bg-blue-600' },
-            { name: 'APIs REST', color: 'bg-purple-600' }
-          ],
-          projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/',
-          githubUrl: '#',
-          inDevelopment: true // Projeto em Desenvolvimento
-        },
-        {
-          id: 5,
-          title: 'CadServ',
-          description: 'Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta.',
+          key: 'cadserv',
           gradient: 'from-purple-500 to-pink-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -154,9 +135,8 @@ export default {
           githubUrl: '#'
         },
         {
-          id: 6,
-          title: 'PlanDox 2.0',
-          description: 'PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços.',
+          id: 5,
+          key: 'plandox',
           gradient: 'from-purple-500 to-pink-600',
           technologies: [
             { name: 'Python', color: 'bg-yellow-600' },
@@ -165,12 +145,11 @@ export default {
           ],
           projectUrl: '#',
           githubUrl: '#',
-          inDevelopment: true // Projeto em desenvolvimento
+          inDevelopment: true
         },
         {
-          id: 7,
-          title: 'Portal REACT',
-          description: 'O portal REACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (REACT), fortalecendo a colaboração acadêmica e profissional.',
+          id: 6,
+          key: 'react',
           gradient: 'from-purple-500 to-pink-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -178,14 +157,13 @@ export default {
           ],
           projectUrl: '#',
           githubUrl: '#',
-          inDevelopment: true // Projeto em desenvolvimento
+          inDevelopment: true
         }
       ]
     }
   },
   computed: {
     maxSlides() {
-      // Calcula o número máximo de slides baseado no total de projetos menos os visíveis
       return Math.max(0, this.projects.length - this.slidesPerView)
     },
     slideWidth() {
@@ -203,14 +181,10 @@ export default {
       }
     },
     nextSlide() {
-      if (this.currentSlide < this.maxSlides) {
-        this.currentSlide++
-      }
+      if (this.currentSlide < this.maxSlides) this.currentSlide++
     },
     previousSlide() {
-      if (this.currentSlide > 0) {
-        this.currentSlide--
-      }
+      if (this.currentSlide > 0) this.currentSlide--
     },
     goToSlide(index) {
       this.currentSlide = index
@@ -220,7 +194,6 @@ export default {
     this.updateSlidesPerView()
     window.addEventListener('resize', this.updateSlidesPerView)
   },
-  // Substitua o $once por beforeUnmount
   beforeUnmount() {
     window.removeEventListener('resize', this.updateSlidesPerView)
   }
