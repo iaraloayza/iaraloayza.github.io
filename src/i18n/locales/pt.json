@@ -44,5 +44,18 @@
     "backend": "Backend e Database",
     "mobile": "Desenvolvimento Mobile",
     "otherTools": "Outras Ferramentas"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Vamos criar algo <span class='text-purple-400'>incrível</span> juntos!",
+    "form": {
+      "name": "Nome *",
+      "email": "Email *",
+      "message": "Mensagem *",
+      "send": "Enviar",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+      "error": "❌ Erro ao enviar mensagem. Verifique sua conexão e tente novamente."
+    }
   }
 }

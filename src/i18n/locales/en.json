@@ -44,5 +44,18 @@
     "backend": "Backend & Database",
     "mobile": "Mobile Development",
     "otherTools": "Other Tools"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's create something <span class='text-purple-400'>amazing</span> together!",
+    "form": {
+      "name": "Name *",
+      "email": "Email *",
+      "message": "Message *",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I will get back to you soon.",
+      "error": "❌ Error sending message. Please check your connection and try again."
+    }
   }
 }

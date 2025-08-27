@@ -1,7 +1,8 @@
 <template>
   <div class="space-y-4 sm:space-y-6 lg:space-y-8">
-    <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-6 sm:mb-8">
-      Vamos criar algo <span class="text-purple-400">incrível</span> juntos!
+    <div 
+        class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-6 sm:mb-8"
+        v-html="$t('contact.subtitle')">
     </div>
 
     <ContactItem

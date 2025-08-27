@@ -8,6 +8,8 @@ const messages = {
 }
 
 const i18n = createI18n({
+  legacy: false,            // habilita Composition API (useI18n)
+  globalInjection: true,    // mantém $t disponível nos templates
   locale: localStorage.getItem('locale') || 'pt', // idioma padrão
   fallbackLocale: 'pt',
   messages

@@ -4,7 +4,7 @@
       <!-- Header -->
       <div class="text-center mb-20">
         <h2 class="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Contato
+          {{ $t('contact.title') }}
         </h2>
         <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
       </div>
