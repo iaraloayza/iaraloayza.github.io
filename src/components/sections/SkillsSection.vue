@@ -5,7 +5,7 @@
       <!-- Header -->
       <div class="text-center mb-20">
         <h2 class="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Habilidades
+          {{ $t('skills.title') }}
         </h2>
         <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
       </div>
@@ -17,28 +17,31 @@
           <div class="grid md:grid-cols-2 gap-8">
             <SkillCategory
               v-reveal="{ delay: 0 }"
-              title="Desenvolvimento Frontend"
+              :title="$t('skills.frontend')"
               :skills="frontendSkills"
               color="purple"
               icon="code"
             />
+
             <SkillCategory
               v-reveal="{ delay: 120 }"
-              title="Desenvolvimento Mobile"
+              :title="$t('skills.mobile')"
               :skills="mobileSkills"
               color="blue"
               icon="device-mobile"
             />
+
             <SkillCategory
               v-reveal="{ delay: 240 }"
-              title="Backend & Database"
+              :title="$t('skills.backend')"
               :skills="backendSkills"
               color="pink"
               icon="server"
             />
+
             <SkillCategory
               v-reveal="{ delay: 360 }"
-              title="Outras Ferramentas"
+              :title="$t('skills.otherTools')"
               :skills="toolsSkills"
               color="indigo"
               icon="cog"

@@ -37,5 +37,12 @@
       "experience": "Anos de Experiência",
       "projects": "Projetos Concluídos"
     }
+  },
+  "skills": {
+    "title": "Minhas Habilidades",
+    "frontend": "Desenvolvimento Frontend",
+    "backend": "Backend e Database",
+    "mobile": "Desenvolvimento Mobile",
+    "otherTools": "Outras Ferramentas"
   }
 }
