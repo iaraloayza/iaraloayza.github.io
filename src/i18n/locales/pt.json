@@ -60,6 +60,10 @@
         "title": "App Hans+",
         "description": "O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença."
       },
+      "renaveh": {
+        "title": "RENAVEH",
+        "description": "Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões."
+      },
       "masemfome": {
         "title": "Maranhão Livre da Fome",
         "description": "O sistema Maranhão Livre da Fome (eixo saúde) combate a insegurança alimentar com o cadastro e acompanhamento de famílias em situação de vulnerabilidade, permitindo registrar avaliações e monitorar o histórico de cada indivíduo."
@@ -75,6 +79,225 @@
       "react": {
         "title": "Portal REACT",
         "description": "O portal REACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (REACT), fortalecendo a colaboração acadêmica e profissional."
+      }
+    },
+    "projectDdetails": {
+      "backToProjects": "Voltar aos Projetos",
+      "projectNotFound": "Projeto não encontrado",
+      "projectNotFoundDescription": "O projeto que você está procurando não existe ou foi removido.",
+      "projectLive": "Ver Projeto Live",
+      "viewGithub": "Repositório do Github",
+      "aboutProject": "Sobre o Projeto",
+      "mainFeatures": "Principais Funcionalidades",
+      "developmentProcess": "Processo de Desenvolvimento",
+      "gallery": "Galeria",
+      "viewAllPhotos": "Ver todas as {count} fotos",
+      "status": "Status",
+      "completed": "Concluído",
+      "technologies": "Tecnologias",
+      "information": "Informações",
+      "duration": "Duração",
+      "team": "Equipe",
+      "client": "Cliente",
+      "impact": "Impacto",
+      "otherProjects": "Outros Projetos",
+      "monitora": {
+        "title": "Monitora Saúde",
+        "description": "Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.",
+        "detailedDescription": "O Monitora Saúde é uma plataforma web desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.",
+        "features": [
+          "Dashboards interativos, feitos em Power BI, com indicadores em tempo real",
+          "Gestão de usuários com diferentes níveis de acesso",
+          "Interface responsiva para dispositivos móveis"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Análise de Requisitos",
+            "description": "Levantamento detalhado das necessidades da Secretaria de Saúde e definição dos indicadores prioritários."
+          },
+          {
+            "title": "Arquitetura do Sistema",
+            "description": "Desenvolvimento da arquitetura MVC utilizando Laravel, com foco em escalabilidade e performance."
+          },
+          {
+            "title": "Desenvolvimento Backend",
+            "description": "Implementação das APIs, integração com PostgreSQL e desenvolvimento dos algoritmos de cálculo de indicadores."
+          },
+          {
+            "title": "Interface do Usuário",
+            "description": "Criação de dashboards intuitivos utilizando tecnologias modernas de visualização de dados."
+          },
+          {
+            "title": "Testes e Deploy",
+            "description": "Realização de testes extensivos e implantação em ambiente de produção com alta disponibilidade."
+          }
+        ],
+        "projectInfo": {
+          "duration": "4 meses",
+          "team": "4 desenvolvedores",
+          "client": "Secretaria de Estado da Saúde do Maranhão"
+        },
+        "impact": [
+          {
+            "value": "50+",
+            "label": "Indicadores Monitorados"
+          },
+          {
+            "value": "200+",
+            "label": "Usuários Ativos"
+          }
+        ],
+        "gallery": [
+          {
+            "alt": "Tela inicial do sistema Monitora Saúde"
+          },
+          {
+            "alt": "Navegação entre indicadores com usuário deslogado"
+          },
+          {
+            "alt": "Tela de login do sistema Monitora Saúde"
+          },
+          {
+            "alt": "Verificação em duas etapas (2FA) para segurança de acesso"
+          },
+          {
+            "alt": "Navegação entre indicadores com usuário logado"
+          },
+          {
+            "alt": "Menu dropdown de administração do sistema"
+          },
+          {
+            "alt": "Dashboard com visualização de indicadores específicos"
+          },
+          {
+            "alt": "Tela com a descrição detalhada do indicador selecionado"
+          },
+          {
+            "alt": "Acesso à ficha técnica do indicador de saúde"
+          },
+          {
+            "alt": "Ficha de indicador com informações detalhadas expandidas"
+          },
+          {
+            "alt": "Menu dropdown com as páginas de gerenciamento de indicadores"
+          },
+          {
+            "alt": "Página de gerenciamento de grupos de indicadores"
+          },
+          {
+            "alt": "Página de gerenciamento dos indicadores cadastrados"
+          },
+          {
+            "alt": "Tela de contato e suporte do sistema"
+          }
+        ]
+      },
+      "hans": {
+        "title": "App Hans+",
+        "description": "O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença.",
+        "detailedDescription": "O Hans+ é um aplicativo móvel desenvolvido para apoiar o tratamento da hanseníase e fornecer informações confiáveis sobre a doença. O projeto foi realizado em parceria com o curso de Farmácia da Universidade Federal do Maranhão (UFMA), com suporte técnico e expertise na área da saúde. O aplicativo permite o registro de medicações, o monitoramento diário de sintomas e o acesso a conteúdos educativos. Utiliza Flutter para o desenvolvimento multiplataforma e Firebase para armazenamento seguro dos dados. O Hans+ passou por etapas de levantamento de requisitos, prototipagem e testes de usabilidade, sendo avaliado como uma ferramenta prática, informativa e com grande potencial para auxiliar pacientes no acompanhamento do tratamento da hanseníase.",
+        "features": [
+          "Aplicativo móvel nativo para Android",
+          "Versão web responsiva",
+          "Registro de uso de medicamentos diários",
+          "Registro de sintomas diários",
+          "Base de conhecimento sobre hanseníase"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Pesquisa e Validação",
+            "description": "Estudo aprofundado sobre hanseníase e validação da proposta com profissionais de saúde especializados."
+          },
+          {
+            "title": "Design UX/UI",
+            "description": "Criação de uma interface amigável e acessível, considerando diferentes perfis de usuários."
+          },
+          {
+            "title": "Desenvolvimento Flutter",
+            "description": "Implementação do aplicativo utilizando Flutter para garantir performance nativa em Android e web."
+          },
+          {
+            "title": "Integração Firebase",
+            "description": "Configuração do backend Firebase para autenticação, banco de dados e notificações push."
+          },
+          {
+            "title": "Testes com Usuários",
+            "description": "Validação com pacientes reais e profissionais de saúde para refinamento da experiência."
+          }
+        ],
+        "projectInfo": {
+          "duration": "3 meses",
+          "team": "3 desenvolvedores",
+          "client": "Universidade Federal do Maranhão (UFMA)"
+        },
+        "gallery": [
+          {
+            "alt": "Tela de Login do Hans+"
+          },
+          {
+            "alt": "Tela de cadastro de usuário"
+          },
+          {
+            "alt": "Tela de solicitação de redefinição de senha"
+          },
+          {
+            "alt": "Página inicial do Hans+"
+          },
+          {
+            "alt": "Tela de informações sobre hanseníase"
+          },
+          {
+            "alt": "Continuação da tela de informações sobre hanseníase"
+          },
+          {
+            "alt": "Página informativa com sinais e sintomas da hanseníase"
+          },
+          {
+            "alt": "Tela do calendário de tratamento"
+          },
+          {
+            "alt": "Tela de registro de dois medicamentos no calendário"
+          },
+          {
+            "alt": "Confirmação do uso da medicação"
+          },
+          {
+            "alt": "Tela de monitoramento diário de sintomas"
+          },
+          {
+            "alt": "Tela de registro e histórico de sintomas"
+          },
+          {
+            "alt": "Tela de perfil do usuário"
+          },
+          {
+            "alt": "Tela de edição de informações da conta"
+          },
+          {
+            "alt": "Tela de edição de e-mail"
+          },
+          {
+            "alt": "Tela de edição de senha"
+          },
+          {
+            "alt": "Tela de edição de perfil do usuário"
+          },
+          {
+            "alt": "Tela de edição de dados do tratamento"
+          },
+          {
+            "alt": "Tela com histórico de sintomas registrados"
+          },
+          {
+            "alt": "Tela com links e informações úteis sobre hanseníase"
+          },
+          {
+            "alt": "Tela sobre a equipe responsável pelo aplicativo"
+          },
+          {
+            "alt": "Tela com links externos relacionados à equipe responsável pelo aplicativo"
+          }
+        ]
       }
     }
   },

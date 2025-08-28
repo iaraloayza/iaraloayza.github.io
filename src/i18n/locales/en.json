@@ -60,6 +60,10 @@
         "title": "Hans+ App",
         "description": "Hans+ is a platform with a web version and an Android app that supports leprosy treatment, allowing medication recording, symptom monitoring, and access to reliable information about the disease."
       },
+      "renaveh": {
+        "title": "RENAVEH",
+        "description": "Web-based system for patient registration, hospital notification management, and inter-hospital transfers, with an exclusive area for traffic accidents and access control based on roles and permissions."
+      },
       "masemfome": {
         "title": "Maranhão Free from Hunger",
         "description": "The Maranhão Free from Hunger system (health axis) combats food insecurity through the registration and follow-up of vulnerable families, enabling the recording of evaluations and monitoring the history of each individual."
@@ -75,6 +79,103 @@
       "react": {
         "title": "REACT Portal",
         "description": "The REACT portal, under development, will be a platform for intuitive management of projects, news, public calls, and teams of the Science and Technology Application Network (REACT), strengthening academic and professional collaboration."
+      }
+    },
+    "projectDdetails": {
+      "backToProjects": "Back to Projects",
+      "projectNotFound": "Project Not Found",
+      "projectNotFoundDescription": "The project you are looking for does not exist or has been removed.",
+      "projectLive": "See Project Live",
+      "viewGithub": "Github Repository",
+      "aboutProject": "About the Project",
+      "mainFeatures": "Main Features",
+      "developmentProcess": "Development Process",
+      "gallery": "Gallery",
+      "viewAllPhotos": "View all {count} photos",
+      "status": "Status",
+      "completed": "Completed",
+      "technologies": "Technologies",
+      "information": "Information",
+      "duration": "Duration",
+      "team": "Team",
+      "client": "Client",
+      "impact": "Impact",
+      "otherProjects": "Other Projects",
+      "monitora": {
+        "title": "Monitora Saúde",
+        "description": "Web system for monitoring and evaluating health indicators and processes, providing updated data to support management, strategic planning, and health promotion in Maranhão.",
+        "detailedDescription": "Monitora Saúde is a web platform developed for the Maranhão State Health Department, aimed at modernizing and centralizing public health indicators monitoring. The system offers an intuitive interface for real-time data visualization and interactive dashboards that assist managers in strategic decision-making.",
+        "features": [
+          "Interactive dashboards, built with Power BI, featuring real-time indicators",
+          "User management with different access levels",
+          "Responsive interface for mobile devices"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Requirements Analysis",
+            "description": "Detailed assessment of Health Department needs and definition of priority indicators."
+          },
+          {
+            "title": "System Architecture",
+            "description": "Development of MVC architecture using Laravel, focusing on scalability and performance."
+          },
+          {
+            "title": "Backend Development",
+            "description": "Implementation of APIs, PostgreSQL integration, and development of indicator calculation algorithms."
+          },
+          {
+            "title": "User Interface",
+            "description": "Creation of intuitive dashboards using modern data visualization technologies."
+          },
+          {
+            "title": "Testing and Deployment",
+            "description": "Extensive testing and deployment in high-availability production environment."
+          }
+        ],
+        "projectInfo": {
+          "duration": "4 months",
+          "team": "4 developers",
+          "client": "Maranhão State Health Department"
+        }
+      },
+      "hans": {
+        "title": "Hans+ App",
+        "description": "Hans+ is a platform with a web version and an Android app that supports leprosy treatment, allowing medication recording, symptom monitoring, and access to reliable information about the disease.",
+        "detailedDescription": "Hans+ is a mobile application developed to support leprosy treatment and provide reliable information about the disease. The project was carried out in partnership with the Pharmacy course at the Federal University of Maranhão (UFMA), with technical support and expertise in the health field. The application allows medication recording, daily symptom monitoring, and access to educational content. It uses Flutter for cross-platform development and Firebase for secure data storage. Hans+ went through stages of requirements gathering, prototyping, and usability testing, being evaluated as a practical, informative tool with great potential to assist patients in leprosy treatment monitoring.",
+        "features": [
+          "Native mobile application for Android",
+          "Responsive web version",
+          "Daily medication usage recording",
+          "Daily symptom recording",
+          "Knowledge base about leprosy"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Research and Validation",
+            "description": "In-depth study on leprosy and proposal validation with specialized health professionals."
+          },
+          {
+            "title": "UX/UI Design",
+            "description": "Creation of a friendly and accessible interface, considering different user profiles."
+          },
+          {
+            "title": "Flutter Development",
+            "description": "Application implementation using Flutter to ensure native performance on Android and web."
+          },
+          {
+            "title": "Firebase Integration",
+            "description": "Firebase backend configuration for authentication, database, and push notifications."
+          },
+          {
+            "title": "User Testing",
+            "description": "Validation with real patients and health professionals for experience refinement."
+          }
+        ],
+        "projectInfo": {
+          "duration": "3 months",
+          "team": "3 developers",
+          "client": "Federal University of Maranhão (UFMA)"
+        }
       }
     }
   },
