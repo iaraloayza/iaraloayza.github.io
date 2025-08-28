@@ -72,7 +72,7 @@
         
         <!-- Navegação próxima -->
         <button 
-          v-if="selectedImageIndex < project.gallery.length - 1"
+          v-if="selectedImageIndex < $tm(project.gallery).length - 1"
           @click="nextImage"
           class="gallery-nav-btn gallery-nav-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-white/80 hover:text-white transition-all duration-200 bg-black/50 rounded-full p-3 backdrop-blur-sm hover:bg-black/70 hover:scale-110"
         >
@@ -88,7 +88,7 @@
           <div class="gallery-info-top mb-6 text-center">
             <!-- Contador principal -->
             <div class="gallery-counter text-white/90 text-lg font-semibold mb-2">
-              {{ selectedImageIndex + 1 }} / {{ project.gallery.length }}
+              {{ selectedImageIndex + 1 }} / {{ $tm(project.gallery).length }}
             </div>
             
             <!-- Descrição da imagem -->
@@ -99,7 +99,7 @@
             <!-- Indicadores de progresso (dots) -->
             <div class="gallery-dots flex justify-center gap-2">
               <button
-                v-for="(image, index) in project.gallery"
+                v-for="(image, index) in $tm(project.gallery)"
                 :key="index"
                 @click="goToImage(index)"
                 :class="[
@@ -230,7 +230,7 @@
                   <div v-if="project.features" class="mt-6">
                     <h3 class="text-xl font-bold text-white mb-4">{{ $t('projects.projectDdetails.mainFeatures') }}</h3>
                     <ul class="space-y-2">
-                      <li v-for="feature in project.features" :key="feature" class="flex items-start gap-3">
+                      <li v-for="(feature, index) in $tm(project.features)" :key="index" class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
@@ -245,7 +245,7 @@
               <div class="detail-card" v-if="project.developmentProcess">
                 <h2 class="section-title">{{ $t('projects.projectDdetails.developmentProcess') }}</h2>
                 <div class="space-y-4">
-                  <div v-for="(step, index) in project.developmentProcess" :key="index" class="flex gap-4">
+                  <div v-for="(step, index) in $tm(project.developmentProcess)" :key="index" class="flex gap-4">
                     <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-sm font-bold">
                       {{ index + 1 }}
                     </div>
@@ -258,47 +258,32 @@
               </div>
 
               <!-- Galeria de imagens -->
-              <div class="detail-card" v-if="project.gallery && project.gallery.length > 0">
-                <h2 class="section-title">{{ $t('projects.projectDdetails.gallery') }}</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  <div 
-                    v-for="(image, index) in project.gallery.slice(0, 6)" 
-                    :key="index" 
-                    class="gallery-item aspect-video bg-gray-800 rounded-lg overflow-hidden cursor-pointer group relative"
-                    @click="openGalleryModal(image, index)"
-                  >
-                    <img 
-                      :src="image.url" 
-                      :alt="image.alt" 
-                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      loading="lazy"
-                      @error="handleGalleryImageError($event, index)"
-                    >
-                    <!-- Overlay de hover -->
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                      <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
-                      </svg>
-                    </div>
-                    <!-- Contador de imagens no thumbnail -->
-                    <div class="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                      {{ index + 1 }}/{{ project.gallery.length }}
-                    </div>
+              <div class="detail-card" v-if="project.gallery && $tm(project.gallery).length > 0">
+              <h2 class="section-title">{{ $t('projects.projectDdetails.gallery') }}</h2>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div v-for="(image, index) in $tm(project.gallery).slice(0, 6)" :key="index" class="gallery-item aspect-video bg-gray-800 rounded-lg overflow-hidden cursor-pointer group relative" @click="openGalleryModal(image, index)">
+                  <img :src="image.url" :alt="image.alt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" @error="handleGalleryImageError($event, index)">
+                  <!-- Overlay de hover -->
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                    </svg>
+                  </div>
+                  <!-- Contador de imagens no thumbnail -->
+                  <div class="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                    {{ index + 1 }}/{{ $tm(project.gallery).length }}
                   </div>
                 </div>
-                
-                <!-- Botão para ver mais fotos (se houver mais de 6) -->
-                <div v-if="project.gallery.length > 6" class="mt-6 text-center">
-                  <button 
-                    @click="openGalleryModal(project.gallery[0], 0)"
-                    class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 mx-auto hover:transform hover:scale-105"
-                  >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    {{ $t('projects.projectDdetails.viewAllPhotos') }}
-                  </button>
-                </div>
+              </div>
+              <!-- Botão para ver mais fotos (se houver mais de 6) -->
+              <div v-if="$tm(project.gallery).length > 6" class="mt-6 text-center">
+                <button @click="openGalleryModal($tm(project.gallery)[0], 0)" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 mx-auto hover:transform hover:scale-105">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2z"></path>
+                  </svg>
+                  {{ $t('projects.projectDdetails.viewAllPhotos') }}
+                </button>
+              </div>
               </div>
               
             </div>
@@ -310,7 +295,7 @@
                 <h3 class="text-lg font-bold text-white mb-4">{{ $t('projects.projectDdetails.status') }}</h3>
                 <div class="flex items-center gap-3">
                   <div :class="project.inDevelopment ? 'bg-yellow-500' : 'bg-green-500'" class="w-3 h-3 rounded-full"></div>
-                  <span class="text-gray-300">{{ project.inDevelopment ? 'Em Desenvolvimento' : 'Concluído' }}</span>
+                  <span class="text-gray-300">{{ project.inDevelopment ? $t('projects.inDevelopment') : $t('projects.projectDdetails.completed') }}</span>
                 </div>
               </div>
 
@@ -329,17 +314,17 @@
               <div class="detail-card" v-if="project.projectInfo">
                 <h3 class="text-lg font-bold text-white mb-4">{{ $t('projects.projectDdetails.information') }}</h3>
                 <div class="space-y-3">
-                  <div v-if="project.projectInfo.duration">
+                  <div v-if="$tm(project.projectInfo).duration">
                     <span class="text-purple-400 font-semibold">{{ $t('projects.projectDdetails.duration') }}</span>
-                    <p class="text-gray-300">{{ project.projectInfo.duration }}</p>
+                    <p class="text-gray-300">{{ $tm(project.projectInfo).duration }}</p>
                   </div>
-                  <div v-if="project.projectInfo.team">
+                  <div v-if="$tm(project.projectInfo).team">
                     <span class="text-purple-400 font-semibold">{{ $t('projects.projectDdetails.team') }}</span>
-                    <p class="text-gray-300">{{ project.projectInfo.team }}</p>
+                    <p class="text-gray-300">{{ $tm(project.projectInfo).team }}</p>
                   </div>
-                  <div v-if="project.projectInfo.client">
+                  <div v-if="$tm(project.projectInfo).client">
                     <span class="text-purple-400 font-semibold">{{ $t('projects.projectDdetails.client') }}</span>
-                    <p class="text-gray-300">{{ project.projectInfo.client }}</p>
+                    <p class="text-gray-300">{{ $tm(project.projectInfo).client }}</p>
                   </div>
                 </div>
               </div>
@@ -348,7 +333,7 @@
               <div class="detail-card" v-if="project.impact">
                 <h3 class="text-lg font-bold text-white mb-4">{{ $t('projects.projectDdetails.impact') }}</h3>
                 <div class="space-y-3">
-                  <div v-for="stat in project.impact" :key="stat.label" class="text-center">
+                  <div v-for="stat in $tm(project.impact)" :key="stat.label" class="text-center">
                     <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                       {{ stat.value }}
                     </div>
@@ -368,13 +353,13 @@
             {{ $t('projects.projectDdetails.otherProjects') }}
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div v-for="relatedProject in relatedProjects" :key="relatedProject.id" 
-                 @click="goToProject(relatedProject.id)"
-                 class="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 cursor-pointer transform hover:scale-105">
-              <h3 class="text-xl font-bold text-white mb-2">{{ relatedProject.title }}</h3>
-              <p class="text-gray-400 text-sm mb-4">{{ relatedProject.description.substring(0, 100) }}...</p>
+            <div v-for="relatedProject in relatedProjects" :key="relatedProject.id"
+                @click="goToProject(relatedProject.id)"
+                class="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 cursor-pointer transform hover:scale-105">
+              <h3 class="text-xl font-bold text-white mb-2">{{ $t(relatedProject.title) }}</h3>
+              <p class="text-gray-400 text-sm mb-4">{{ $t(relatedProject.description).substring(0, 100) }}...</p>
               <div class="flex flex-wrap gap-2">
-                <span v-for="tech in relatedProject.technologies.slice(0, 2)" :key="tech.name" 
+                <span v-for="tech in relatedProject.technologies.slice(0, 2)" :key="tech.name"
                       :class="tech.color" class="tech-tag-small">
                   {{ tech.name }}
                 </span>
@@ -404,64 +389,7 @@ export default {
           title: 'projects.list.monitora.title',
           description: 'projects.projectDdetails.monitora.description',
           previewImage: '/images/logo_monitora_saude.png',
-          gallery: [
-            {
-              url: '/images/monitora/tela_inicial.png',
-              alt: 'Tela inicial do sistema Monitora Saúde'
-            },
-            {
-              url: '/images/monitora/navegacao_indicadores_logout.png',
-              alt: 'Navegação entre indicadores com usuário deslogado'
-            },
-            {
-              url: '/images/monitora/login.png',
-              alt: 'Tela de login do sistema Monitora Saúde'
-            },
-            {
-              url: '/images/monitora/verificacao_2fa.png',
-              alt: 'Verificação em duas etapas (2FA) para segurança de acesso'
-            },
-            {
-              url: '/images/monitora/nav_indicadores_logado.png',
-              alt: 'Navegação entre indicadores com usuário logado'
-            },
-            {
-              url: '/images/monitora/dropdown_admin.png',
-              alt: 'Menu dropdown de administração do sistema'
-            },
-            {
-              url: '/images/monitora/dashboard_indicador.png',
-              alt: 'Dashboard com visualização de indicadores específicos'
-            },
-            {
-              url: '/images/monitora/descricao_indicador.png',
-              alt: 'Tela com a descrição detalhada do indicador selecionado'
-            },
-            {
-              url: '/images/monitora/ficha_indicador.png',
-              alt: 'Acesso à ficha técnica do indicador de saúde'
-            },
-            {
-              url: '/images/monitora/ficha_aberta.png',
-              alt: 'Ficha de indicador com informações detalhadas expandidas'
-            },
-            {
-              url: '/images/monitora/dropdown_indicadores.png',
-              alt: 'Menu dropdown com as páginas de gerenciamento de indicadores'
-            },
-            {
-              url: '/images/monitora/index_grupos.png',
-              alt: 'Página de gerenciamento de grupos de indicadores'
-            },
-            {
-              url: '/images/monitora/index_indicadores.png',
-              alt: 'Página de gerenciamento dos indicadores cadastrados'
-            },
-            {
-              url: '/images/monitora/contato.png',
-              alt: 'Tela de contato e suporte do sistema'
-            }
-          ],
+          gallery: 'projects.projectDdetails.monitora.gallery',
           detailedDescription: 'projects.projectDdetails.monitora.detailedDescription',
           gradient: 'from-purple-600 to-purple-800',
           technologies: [
@@ -471,141 +399,18 @@ export default {
           projectUrl: 'https://monitora.saude.ma.gov.br/',
           githubUrl: '#',
           inDevelopment: false,
-          features: [
-            'Dashboards interativos, feitos em Power BI, com indicadores em tempo real',
-            // 'Sistema de relatórios customizáveis',
-            'Gestão de usuários com diferentes níveis de acesso',
-            // 'Integração com bases de dados governamentais',
-            'Interface responsiva para dispositivos móveis'
-          ],
-          developmentProcess: [
-            {
-              title: 'Análise de Requisitos',
-              description: 'Levantamento detalhado das necessidades da Secretaria de Saúde e definição dos indicadores prioritários.'
-            },
-            {
-              title: 'Arquitetura do Sistema',
-              description: 'Desenvolvimento da arquitetura MVC utilizando Laravel, com foco em escalabilidade e performance.'
-            },
-            {
-              title: 'Desenvolvimento Backend',
-              description: 'Implementação das APIs, integração com PostgreSQL e desenvolvimento dos algoritmos de cálculo de indicadores.'
-            },
-            {
-              title: 'Interface do Usuário',
-              description: 'Criação de dashboards intuitivos utilizando tecnologias modernas de visualização de dados.'
-            },
-            {
-              title: 'Testes e Deploy',
-              description: 'Realização de testes extensivos e implantação em ambiente de produção com alta disponibilidade.'
-            }
-          ],
-          projectInfo: {
-            duration: '4 meses',
-            team: '4 desenvolvedores',
-            client: 'Secretaria de Estado da Saúde do Maranhão'
-          },
-          impact: [
-            { value: '50+', label: 'Indicadores Monitorados' },
-            { value: '200+', label: 'Usuários Ativos' }
-          ]
+          features: 'projects.projectDdetails.monitora.features',
+          developmentProcess: 'projects.projectDdetails.monitora.developmentProcess',
+          projectInfo: 'projects.projectDdetails.monitora.projectInfo',
+          impact: 'projects.projectDdetails.monitora.impact'
         },
         {
           id: 2,
-          title: 'App Hans+',
-          description: 'O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença.',
+          title: 'projects.list.hans.title',
+          description: 'projects.projectDdetails.hans.description',
           previewImage: '/images/hans+/logo_hans+.jpeg',
-          gallery: [
-            {
-              url: '/images/hans+/login.jpeg',
-              alt: 'Tela de Login do Hans+'
-            },
-            {
-              url: '/images/hans+/cadastro.jpeg',
-              alt: 'Tela de cadastro de usuário'
-            },
-            {
-              url: '/images/hans+/redefinir_senha.jpeg',
-              alt: 'Tela de solicitação de redefinição de senha'
-            },
-            {
-              url: '/images/hans+/home.jpeg',
-              alt: 'Página inicial do Hans+'
-            },
-            {
-              url: '/images/hans+/page_info.jpeg',
-              alt: 'Tela de informações sobre hanseníase'
-            },
-            {
-              url: '/images/hans+/page_info2.jpeg',
-              alt: 'Continuação da tela de informações sobre hanseníase'
-            },
-            {
-              url: '/images/hans+/page_sinais_sintomas.jpeg',
-              alt: 'Página informativa com sinais e sintomas da hanseníase'
-            },
-            {
-              url: '/images/hans+/calendario.jpeg',
-              alt: 'Tela do calendário de tratamento'
-            },
-            {
-              url: '/images/hans+/calendario_2remedios.jpeg',
-              alt: 'Tela de registro de dois medicamentos no calendário'
-            },
-            {
-              url: '/images/hans+/calendario_2remedios_3.jpeg',
-              alt: 'Confirmação do uso da medicação'
-            },
-            {
-              url: '/images/hans+/calendario_2remedios_2.jpeg',
-              alt: 'Tela de monitoramento diário de sintomas'
-            },
-            {
-              url: '/images/hans+/sintomas.jpeg',
-              alt: 'Tela de registro e histórico de sintomas'
-            },
-            {
-              url: '/images/hans+/profile.jpeg',
-              alt: 'Tela de perfil do usuário'
-            },
-            {
-              url: '/images/hans+/edit_conta.jpeg',
-              alt: 'Tela de edição de informações da conta'
-            },
-            {
-              url: '/images/hans+/edit_conta2.jpeg',
-              alt: 'Tela de edição de e-mail'
-            },
-            {
-              url: '/images/hans+/edit_conta_3.jpeg',
-              alt: 'Tela de edição de senha'
-            },
-            {
-              url: '/images/hans+/edit_perfil.jpeg',
-              alt: 'Tela de edição de perfil do usuário'
-            },
-            {
-              url: '/images/hans+/edit_tratamento.jpeg',
-              alt: 'Tela de edição de dados do tratamento'
-            },
-            {
-              url: '/images/hans+/historico_sintomas.jpeg',
-              alt: 'Tela com histórico de sintomas registrados'
-            },
-            {
-              url: '/images/hans+/saiba_mais.jpeg',
-              alt: 'Tela com links e informações úteis sobre hanseníase'
-            },
-            {
-              url: '/images/hans+/sobre_nos.jpeg',
-              alt: 'Tela sobre a equipe responsável pelo aplicativo'
-            },
-            {
-              url: '/images/hans+/links_sobre_nos.jpeg',
-              alt: 'Tela com links externos relacionados à equipe responsável pelo aplicativo'
-            }
-          ],
-          detailedDescription: 'O Hans+ é um aplicativo móvel desenvolvido para apoiar o tratamento da hanseníase e fornecer informações confiáveis sobre a doença. O projeto foi realizado em parceria com o curso de Farmácia da Universidade Federal do Maranhão (UFMA), com suporte técnico e expertise na área da saúde. O aplicativo permite o registro de medicações, o monitoramento diário de sintomas e o acesso a conteúdos educativos. Utiliza Flutter para o desenvolvimento multiplataforma e Firebase para armazenamento seguro dos dados. O Hans+ passou por etapas de levantamento de requisitos, prototipagem e testes de usabilidade, sendo avaliado como uma ferramenta prática, informativa e com grande potencial para auxiliar pacientes no acompanhamento do tratamento da hanseníase.',
+          gallery: 'projects.projectDdetails.hans.gallery',
+          detailedDescription: 'projects.projectDdetails.hans.detailedDescription',
           gradient: 'from-pink-600 to-purple-800',
           technologies: [
             { name: 'Flutter', color: 'bg-purple-600' },
@@ -615,40 +420,9 @@ export default {
           projectUrl: 'https://hansmais.netlify.app/',
           githubUrl: '#',
           inDevelopment: false,
-          features: [
-            'Aplicativo móvel nativo para Android',
-            'Versão web responsiva',
-            'Registro de uso de medicamentos diários',
-            'Registro de sintomas diários',
-            'Base de conhecimento sobre hanseníase',
-          ],
-          developmentProcess: [
-            {
-              title: 'Pesquisa e Validação',
-              description: 'Estudo aprofundado sobre hanseníase e validação da proposta com profissionais de saúde especializados.'
-            },
-            {
-              title: 'Design UX/UI',
-              description: 'Criação de uma interface amigável e acessível, considerando diferentes perfis de usuários.'
-            },
-            {
-              title: 'Desenvolvimento Flutter',
-              description: 'Implementação do aplicativo utilizando Flutter para garantir performance nativa em Android e web.'
-            },
-            {
-              title: 'Integração Firebase',
-              description: 'Configuração do backend Firebase para autenticação, banco de dados e notificações push.'
-            },
-            {
-              title: 'Testes com Usuários',
-              description: 'Validação com pacientes reais e profissionais de saúde para refinamento da experiência.'
-            }
-          ],
-          projectInfo: {
-            duration: '3 meses',
-            team: '3 desenvolvedores',
-            client: 'Universidade Federal do Maranhão (UFMA)'
-          },
+          features: 'projects.projectDdetails.hans.features',
+          developmentProcess: 'projects.projectDdetails.hans.developmentProcess',
+          projectInfo: 'projects.projectDdetails.hans.projectInfo',
           // impact: [
           //   { value: '500+', label: 'Downloads' },
           //   { value: '95%', label: 'Satisfação' },
@@ -657,172 +431,11 @@ export default {
         },
         {
           id: 3,
-          title: 'RENAVEH - MA',
-          description: 'Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões.',
+          title: 'projects.projectDdetails.renaveh.title',
+          description: 'projects.projectDdetails.renaveh.description',
           previewImage: '/images/renaveh/logo_renaveh.png',
-          gallery: [
-            {
-              url: '/images/renaveh/tela_login.png',
-              alt: 'Tela de login do sistema Renaveh'
-            },
-            {
-              url: '/images/renaveh/tela_2fa_autenticacao.png',
-              alt: 'Tela de autenticação com verificação em duas etapas (2FA)'
-            },
-            {
-              url: '/images/renaveh/dashboard_dados_totais.png',
-              alt: 'Dashboard com dados totais do sistema'
-            },
-            {
-              url: '/images/renaveh/dashboard_supast.png',
-              alt: 'Dashboard específico da SUPAST (Superintendência da Política de Atenção em Saúde no Trânsito)'
-            },
-            {
-              url: '/images/renaveh/dados_filtrados_supast.png',
-              alt: 'Dados filtrados por região no dashboard da SUPAST'
-            },
-            {
-              url: '/images/renaveh/index_pacientes.png',
-              alt: 'Página de busca de pacientes cadastrados no sistema'
-            },
-            {
-              url: '/images/renaveh/cadastrar_paciente.png',
-              alt: 'Formulário de cadastro de novo paciente'
-            },
-            {
-              url: '/images/renaveh/edit_paciente.png',
-              alt: 'Formulário de edição de dados do paciente'
-            },
-            {
-              url: '/images/renaveh/ficha_paciente.png',
-              alt: 'Ficha com os dados do paciente cadastrado'
-            },
-            {
-              url: '/images/renaveh/index_not_paciente.png',
-              alt: 'Listagem de notificações do paciente referente ao hospital do usuário logado'
-            },
-            {
-              url: '/images/renaveh/index_not_paciente2.png',
-              alt: 'Visualização de todas as notificações do paciente, em qualquer hospital'
-            },
-            {
-              url: '/images/renaveh/notificacao_paciente.png',
-              alt: 'Detalhes da notificação do paciente'
-            },
-            {
-              url: '/images/renaveh/notificacao_paciente2.png',
-              alt: 'Continuação dos detalhes da notificação do paciente'
-            },
-            {
-              url: '/images/renaveh/historico_not_transf.png',
-              alt: 'Histórico de transferências de notificações'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao.png',
-              alt: 'Formulário de cadastro de nova notificação'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao2.png',
-              alt: 'Cadastro de notificação - Etapa 2'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao3.png',
-              alt: 'Cadastro de notificação - Etapa 3'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao4.png',
-              alt: 'Cadastro de notificação - Etapa 4'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao5.png',
-              alt: 'Cadastro de notificação - Etapa 5'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao6.png',
-              alt: 'Cadastro de notificação - Etapa 6'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao7.png',
-              alt: 'Cadastro de notificação - Etapa 7'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao8.png',
-              alt: 'Cadastro de notificação - Etapa 8'
-            },
-            {
-              url: '/images/renaveh/cadastro_notificacao9.png',
-              alt: 'Cadastro de notificação - Etapa 9'
-            },
-            {
-              url: '/images/renaveh/index_notificacao.png',
-              alt: 'Página de busca de notificações cadastradas'
-            },
-            {
-              url: '/images/renaveh/search_notificacao.png',
-              alt: 'Filtros de busca de notificações aplicados na página de busca'
-            },
-            {
-              url: '/images/renaveh/search_notificacao2.png',
-              alt: 'Resultados da busca de notificações com filtros aplicados'
-            },
-            {
-              url: '/images/renaveh/search_notificacao3.png',
-              alt: 'Continuação dos resultados da busca de notificações com filtros aplicados'
-            },
-            {
-              url: '/images/renaveh/search_notificacao4.png',
-              alt: 'Continuação dos resultados da busca de notificações com filtros aplicados'
-            },
-            {
-              url: '/images/renaveh/excel_relatorio.png',
-              alt: 'Exportação de relatórios em formato Excel'
-            },
-            {
-              url: '/images/renaveh/notificacoes_supast.png',
-              alt: 'Notificações vinculadas à SUPAST'
-            },
-            {
-              url: '/images/renaveh/notificacoes_supast2.png',
-              alt: 'Resultados da busca de notificações SUPAST com filtros aplicados'
-            },
-            {
-              url: '/images/renaveh/index_hospitais.png',
-              alt: 'Gerenciamento de hospitais cadastrados'
-            },
-            {
-              url: '/images/renaveh/usuarios_hospitais.png',
-              alt: 'Associação entre usuários e hospitais'
-            },
-            {
-              url: '/images/renaveh/index_dae.png',
-              alt: 'Listagem de DAEs (Doenças, Agravos e Eventos) registrados'
-            },
-            {
-              url: '/images/renaveh/index_sintomas.png',
-              alt: 'Cadastro e listagem de sintomas registrados'
-            },
-            {
-              url: '/images/renaveh/index_auditoria.png',
-              alt: 'Tela de auditoria do sistema para rastreamento de ações'
-            },
-            {
-              url: '/images/renaveh/index_usuarios.png',
-              alt: 'Lista de usuários do sistema'
-            },
-            {
-              url: '/images/renaveh/visualizar_usuario.png',
-              alt: 'Ficha de visualização de usuário'
-            },
-            {
-              url: '/images/renaveh/index_papeis.png',
-              alt: 'Gerenciamento de papéis e permissões dos usuários'
-            },
-            {
-              url: '/images/renaveh/index_paginas.png',
-              alt: 'Gerenciamento das páginas de permissões do sistema'
-            }
-          ],
-          detailedDescription: 'O RENAVEH (Rede Nacional de Emergências Hospitalares) é um sistema web desenvolvido para otimizar a gestão de emergências hospitalares no Maranhão. A plataforma permite o cadastro e acompanhamento de pacientes em situações de emergência, facilitando a comunicação entre hospitais e agilizando processos de transferência e notificação.',
+          gallery: 'projects.projectDdetails.renaveh.gallery',
+          detailedDescription: 'projects.projectDdetails.renaveh.detailedDescription',
           gradient: 'from-purple-500 to-pink-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -831,32 +444,16 @@ export default {
           projectUrl: 'https://renaveh.saude.ma.gov.br/',
           githubUrl: '#',
           inDevelopment: false,
-          features: [
-            'Cadastro de pacientes',
-            'Cadastro de notificações hospitalares',
-            'Sistema de transferências de notificações entre hospitais',
-            'Módulo especializado para acidentes de trânsito, requisitado pela SUPAST',
-            'Controle de acesso por papéis e permissões',
-            'Painel de indicadores para gestores',
-          ],
-          projectInfo: {
-            duration: '6 meses',
-            team: '4 desenvolvedores',
-            client: 'RENAVEH - Maranhão'
-          },
-          impact: [
-            { value: '40.606+', label: 'Casos Notificados (Geral)' },
-            { value: '8.042+', label: 'Notificações Imediatas' },
-            { value: '4.612+', label: 'Casos Notificados (SUPAST)' },
-            { value: '26', label: 'Óbitos Registrados' }
-          ]
+          features: 'projects.projectDdetails.renaveh.features',
+          projectInfo: 'projects.projectDdetails.renaveh.projectInfo',
+          impact: 'projects.projectDdetails.renaveh.impact'
         },
         {
           id: 4,
-          title: 'Maranhão Livre da Fome',
-          description: 'Maranhão Livre da Fome é um sistema em desenvolvimento voltado ao enfrentamento da insegurança alimentar no estado, com foco no cadastro e acompanhamento de famílias vulneráveis, avaliação nutricional e integração com políticas públicas.',
+          title: 'projects.list.masemfome.title',
+          description: 'projects.projectDdetails.masemfome.description',
           previewImage: '/images/masemfome/logo.png',
-          detailedDescription: 'O Maranhão Livre da Fome está sendo desenvolvido como uma plataforma estratégica para apoiar ações integradas de combate à fome e insegurança alimentar no estado do Maranhão. O sistema permitirá o registro detalhado de famílias em situação de vulnerabilidade, o monitoramento nutricional individual e o acompanhamento da efetividade das ações sociais por meio de dashboards e relatórios automatizados. A plataforma integra-se com sistemas governamentais existentes através de APIs, permitindo o aproveitamento de dados já cadastrados e evitando duplicação de esforços no atendimento às famílias.',
+          detailedDescription: 'projects.projectDdetails.masemfome.detailedDescription',
           gradient: 'from-green-500 to-blue-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -867,52 +464,16 @@ export default {
           projectUrl: '#',
           githubUrl: '#',
           inDevelopment: true,
-          features: [
-            'Cadastro estruturado de famílias em vulnerabilidade alimentar',
-            'Integração com API externa para busca automática de dados familiares por CPF',
-            'Importação e sincronização de dados pessoais e endereços das famílias',
-            'Atualização e complementação de informações não disponíveis na API externa',
-            'Cadastros de avaliações com base em indicadores de saúde',
-            'Histórico contínuo de atendimentos e acompanhamentos',
-            'Dashboards dinâmicos por região e município',
-            'Relatórios automatizados para gestores públicos',
-            'Integração com políticas e programas sociais existentes',
-            'Apoio à tomada de decisão em políticas de segurança alimentar'
-          ],
-          developmentProcess: [
-            {
-              title: 'Diagnóstico e Planejamento',
-              description: 'Mapeamento de necessidades, definição dos fluxos de dados e levantamento dos indicadores nutricionais e sociais prioritários.'
-            },
-            {
-              title: 'Integração com Sistemas Governamentais',
-              description: 'Desenvolvimento da integração com API do sistema de cadastro geral das famílias, permitindo busca por CPF do responsável familiar e importação automática de dados pessoais e endereço da família. Esta integração evita retrabalho e garante consistência nas informações entre os sistemas.'
-            },
-            {
-              title: 'Desenvolvimento da Plataforma',
-              description: 'Construção do backend e frontend com foco em performance, segurança e usabilidade para os profissionais de campo, incluindo funcionalidades de sincronização e atualização de dados.'
-            },
-            {
-              title: 'Validação de Dados e Fluxos',
-              description: 'Implementação de rotinas de validação e complementação de dados importados, permitindo que os profissionais atualizem ou acrescentem informações específicas da área da saúde não contempladas no sistema principal.'
-            },
-            {
-              title: 'Testes Pilotos Regionais',
-              description: 'Implantação inicial em regiões-piloto para coleta de feedbacks, validação das funcionalidades e teste da integração com o sistema externo em ambiente real.'
-            }
-          ],
-          projectInfo: {
-            duration: 'Em andamento (2 meses)',
-            team: '6 desenvolvedores',
-            client: 'Secretaria de Estado da Saúde do Maranhão (SES/MA)'
-          }
+          features: 'projects.projectDdetails.masemfome.features',
+          developmentProcess: 'projects.projectDdetails.masemfome.developmentProcess',
+          projectInfo: 'projects.projectDdetails.masemfome.projectInfo'
         },
         {
           id: 5,
-          title: 'CadServ',
-          description: 'Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta.',
+          title: 'projects.list.cadserv.title',
+          description: 'projects.projectDdetails.cadserv.description',
           previewImage: '/images/cadserv/logo.png',
-          detailedDescription: 'O CadServ é um sistema de gestão de recursos humanos desenvolvido especificamente para a Secretaria Adjunta da Política de Atenção Primária e Vigilância em Saúde (SAPAPVS). A plataforma centraliza informações funcionais, facilitando a administração de servidores e otimizando processos internos da secretaria.',
+          detailedDescription: 'projects.projectDdetails.cadserv.detailedDescription',
           gradient: 'from-blue-500 to-indigo-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -921,27 +482,15 @@ export default {
           projectUrl: 'https://cadserv.saude.ma.gov.br/',
           githubUrl: '#',
           inDevelopment: false,
-          features: [
-            'Cadastro completo de servidores',
-            'Gestão de dados funcionais e pessoais',
-            'Controle de férias e licenças',
-            'Sistema de permissões hierárquicas',
-            'Relatórios gerenciais',
-            'Histórico funcional completo',
-            'Interface administrativa intuitiva'
-          ],
-          projectInfo: {
-            duration: '2 meses',
-            team: '4 desenvolvedores',
-            client: 'SAPAPVS - Secretaria de Saúde do Maranhão'
-          }
+          features: 'projects.projectDdetails.cadserv.features',
+          projectInfo: 'projects.projectDdetails.cadserv.projectInfo'
         },
         {
           id: 6,
-          title: 'PlanDox 2.0',
-          description: 'PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços.',
+          title: 'projects.list.plandox.title',
+          description: 'projects.projectDdetails.plandox.description',
           previewImage: '/images/plandox/logo.png',
-          detailedDescription: 'O PlanDox 2.0 representa uma evolução significativa do software original, incorporando tecnologias modernas e arquitetura de microserviços. Este projeto visa modernizar completamente a experiência de planejamento experimental para análise de biodiesel, oferecendo maior flexibilidade, escalabilidade e acessibilidade através de múltiplas plataformas.',
+          detailedDescription: 'projects.projectDdetails.plandox.detailedDescription',
           gradient: 'from-yellow-500 to-orange-600',
           technologies: [
             { name: 'Python', color: 'bg-yellow-600' },
@@ -951,45 +500,16 @@ export default {
           projectUrl: '#',
           githubUrl: '#',
           inDevelopment: true,
-          features: [
-            'Interface moderna e intuitiva',
-            'Arquitetura baseada em microserviços',
-            'Versão mobile complementar',
-            'Análise avançada de dados',
-            'Integração com equipamentos de laboratório',
-            'Relatórios científicos automatizados',
-            'Colaboração entre pesquisadores'
-          ],
-          developmentProcess: [
-            {
-              title: 'Análise da Versão Anterior',
-              description: 'Estudo detalhado do PlanDox original para identificar pontos de melhoria.'
-            },
-            {
-              title: 'Redesign da Arquitetura',
-              description: 'Migração para arquitetura de microserviços com Python e Docker.'
-            },
-            {
-              title: 'Desenvolvimento Iterativo',
-              description: 'Implementação em sprints com feedback contínuo de pesquisadores.'
-            },
-            {
-              title: 'Testes Laboratoriais',
-              description: 'Validação em ambiente real de laboratório de biodiesel.'
-            }
-          ],
-          projectInfo: {
-            duration: 'Em andamento (1 mês)',
-            team: '4 desenvolvedores',
-            client: 'DartiLab - UFMA'
-          }
+          features: 'projects.projectDdetails.plandox.features',
+          developmentProcess: 'projects.projectDdetails.plandox.developmentProcess',
+          projectInfo: 'projects.projectDdetails.plandox.projectInfo'
         },
         {
           id: 7,
-          title: 'Portal REACT',
-          description: 'O portal REACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (REACT), fortalecendo a colaboração acadêmica e profissional.',
+          title: 'projects.list.react.title',
+          description: 'projects.projectDdetails.react.description',
           previewImage: '/images/react/logo.png',
-          detailedDescription: 'O Portal REACT está sendo desenvolvido como uma plataforma central para a Rede de Aplicação de Ciência e Tecnologia, com o objetivo de conectar pesquisadores, facilitar a colaboração em projetos e centralizar informações acadêmicas. A plataforma servirá como hub de conhecimento e colaboração para a comunidade acadêmica.',
+          detailedDescription: 'projects.projectDdetails.react.detailedDescription',
           gradient: 'from-teal-500 to-cyan-600',
           technologies: [
             { name: 'Laravel', color: 'bg-red-600' },
@@ -998,38 +518,9 @@ export default {
           projectUrl: '#',
           githubUrl: '#',
           inDevelopment: true,
-          features: [
-            'Gestão completa de projetos de pesquisa',
-            'Sistema de notícias e comunicação',
-            'Gestão de editais e processos seletivos',
-            'Diretório de pesquisadores e equipes',
-            'Biblioteca de recursos acadêmicos',
-            'Sistema de colaboração entre instituições',
-            'Dashboard analítico para gestores'
-          ],
-          developmentProcess: [
-            {
-              title: 'Levantamento de Requisitos',
-              description: 'Entrevistas com coordenadores e pesquisadores para definir funcionalidades.'
-            },
-            {
-              title: 'Prototipagem',
-              description: 'Criação de protótipos interativos para validação com usuários.'
-            },
-            {
-              title: 'Desenvolvimento Backend',
-              description: 'Implementação da API e estrutura de dados com Laravel.'
-            },
-            {
-              title: 'Desenvolvimento Frontend',
-              description: 'Criação da interface do usuário focada na experiência do pesquisador.'
-            }
-          ],
-          projectInfo: {
-            duration: 'Em andamento (2 meses)',
-            team: '3 desenvolvedores',
-            client: 'Rede REACT - UFMA'
-          }
+          features: 'projects.projectDdetails.react.features',
+          developmentProcess: 'projects.projectDdetails.react.developmentProcess',
+          projectInfo: 'projects.projectDdetails.react.projectInfo'
         }
       ]
     }
@@ -1078,8 +569,9 @@ export default {
     },
 
     goToImage(index) {
+      const translatedGallery = this.$tm(this.project.gallery);
       this.selectedImageIndex = index;
-      this.selectedImage = this.project.gallery[index];
+      this.selectedImage = translatedGallery[index];
     },
 
     handleGalleryImageError(event, index) {
@@ -1101,7 +593,8 @@ export default {
     },
     
     nextImage() {
-      if (this.selectedImageIndex < this.project.gallery.length - 1) {
+      const translatedGallery = this.$tm(this.project.gallery);
+      if (this.selectedImageIndex < translatedGallery.length - 1) {
         this.goToImage(this.selectedImageIndex + 1);
       }
     },

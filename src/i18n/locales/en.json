@@ -77,8 +77,8 @@
         "description": "PlanDox 2.0 is the new version in development of a desktop software for experimental planning and biodiesel quality analysis, featuring an improved interface, mobile version, and microservices-based architecture."
       },
       "react": {
-        "title": "REACT Portal",
-        "description": "The REACT portal, under development, will be a platform for intuitive management of projects, news, public calls, and teams of the Science and Technology Application Network (REACT), strengthening academic and professional collaboration."
+        "title": "ReACT Portal",
+        "description": "The ReACT portal, under development, will be a platform for intuitive management of projects, news, public calls, and teams of the Science and Technology Application Network (ReACT), strengthening academic and professional collaboration."
       }
     },
     "projectDdetails": {
@@ -136,7 +136,75 @@
           "duration": "4 months",
           "team": "4 developers",
           "client": "Maranhão State Health Department"
-        }
+        },
+        "impact": [
+          {
+            "value": "50+",
+            "label": "Monitored Indicators"
+          },
+          {
+            "value": "200+",
+            "label": "Active Users"
+          }
+        ],
+        "gallery": [
+          {
+            "url": "/images/monitora/tela_inicial.png",
+            "alt": "Home screen of the Monitora Saúde system"
+          },
+          {
+            "url": "/images/monitora/navegacao_indicadores_logout.png",
+            "alt": "Navigation between indicators with logged-out user"
+          },
+          {
+            "url": "/images/monitora/login.png",
+            "alt": "Login screen of the Monitora Saúde system"
+          },
+          {
+            "url": "/images/monitora/verificacao_2fa.png",
+            "alt": "Two-factor authentication (2FA) for access security"
+          },
+          {
+            "url": "/images/monitora/nav_indicadores_logado.png",
+            "alt": "Navigation between indicators with logged-in user"
+          },
+          {
+            "url": "/images/monitora/dropdown_admin.png",
+            "alt": "Administration dropdown menu of the system"
+          },
+          {
+            "url": "/images/monitora/dashboard_indicador.png",
+            "alt": "Dashboard with visualization of specific indicators"
+          },
+          {
+            "url": "/images/monitora/descricao_indicador.png",
+            "alt": "Screen with detailed description of the selected indicator"
+          },
+          {
+            "url": "/images/monitora/ficha_indicador.png",
+            "alt": "Access to the technical sheet of the health indicator"
+          },
+          {
+            "url": "/images/monitora/ficha_aberta.png",
+            "alt": "Indicator sheet with expanded detailed information"
+          },
+          {
+            "url": "/images/monitora/dropdown_indicadores.png",
+            "alt": "Dropdown menu with indicator management pages"
+          },
+          {
+            "url": "/images/monitora/index_grupos.png",
+            "alt": "Page for managing indicator groups"
+          },
+          {
+            "url": "/images/monitora/index_indicadores.png",
+            "alt": "Page for managing registered indicators"
+          },
+          {
+            "url": "/images/monitora/contato.png",
+            "alt": "Contact and support screen of the system"
+          }
+        ]
       },
       "hans": {
         "title": "Hans+ App",
@@ -175,6 +243,424 @@
           "duration": "3 months",
           "team": "3 developers",
           "client": "Federal University of Maranhão (UFMA)"
+        },
+        "gallery": [
+          {
+            "url": "/images/hans+/login.jpeg",
+            "alt": "Hans+ Login screen"
+          },
+          {
+            "url": "/images/hans+/cadastro.jpeg",
+            "alt": "User registration screen"
+          },
+          {
+            "url": "/images/hans+/redefinir_senha.jpeg",
+            "alt": "Password reset request screen"
+          },
+          {
+            "url": "/images/hans+/home.jpeg",
+            "alt": "Hans+ home page"
+          },
+          {
+            "url": "/images/hans+/page_info.jpeg",
+            "alt": "Information screen about leprosy"
+          },
+          {
+            "url": "/images/hans+/page_info2.jpeg",
+            "alt": "Continuation of the information screen about leprosy"
+          },
+          {
+            "url": "/images/hans+/page_sinais_sintomas.jpeg",
+            "alt": "Informative page with signs and symptoms of leprosy"
+          },
+          {
+            "url": "/images/hans+/calendario.jpeg",
+            "alt": "Treatment calendar screen"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios.jpeg",
+            "alt": "Screen for recording two medications in the calendar"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios_3.jpeg",
+            "alt": "Medication use confirmation"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios_2.jpeg",
+            "alt": "Daily symptom monitoring screen"
+          },
+          {
+            "url": "/images/hans+/sintomas.jpeg",
+            "alt": "Symptom recording and history screen"
+          },
+          {
+            "url": "/images/hans+/profile.jpeg",
+            "alt": "User profile screen"
+          },
+          {
+            "url": "/images/hans+/edit_conta.jpeg",
+            "alt": "Account information editing screen"
+          },
+          {
+            "url": "/images/hans+/edit_conta2.jpeg",
+            "alt": "Email editing screen"
+          },
+          {
+            "url": "/images/hans+/edit_conta_3.jpeg",
+            "alt": "Password editing screen"
+          },
+          {
+            "url": "/images/hans+/edit_perfil.jpeg",
+            "alt": "User profile editing screen"
+          },
+          {
+            "url": "/images/hans+/edit_tratamento.jpeg",
+            "alt": "Treatment data editing screen"
+          },
+          {
+            "url": "/images/hans+/historico_sintomas.jpeg",
+            "alt": "Screen with history of recorded symptoms"
+          },
+          {
+            "url": "/images/hans+/saiba_mais.jpeg",
+            "alt": "Screen with useful links and information about leprosy"
+          },
+          {
+            "url": "/images/hans+/sobre_nos.jpeg",
+            "alt": "Screen about the team responsible for the app"
+          },
+          {
+            "url": "/images/hans+/links_sobre_nos.jpeg",
+            "alt": "Screen with external links related to the team responsible for the app"
+          }
+        ]
+
+      },
+      "renaveh": {
+        "title": "RENAVEH - MA",
+        "description": "Web system for patient registration, hospital notification management, and hospital transfers, with an exclusive area for traffic accidents and access control by roles and permissions.",
+        "detailedDescription": "RENAVEH (National Network of Hospital Emergencies) is a web system developed to optimize the management of hospital emergencies in Maranhão. The platform enables the registration and monitoring of patients in emergency situations, facilitating communication between hospitals and speeding up transfer and notification processes.",
+        "features": [
+          "Patient registration",
+          "Hospital notification registration",
+          "System for transferring notifications between hospitals",
+          "Specialized module for traffic accidents, requested by SUPAST",
+          "Access control by roles and permissions",
+          "Dashboard of indicators for managers"
+        ],
+        "projectInfo": {
+          "duration": "6 months",
+          "team": "4 developers",
+          "client": "RENAVEH - Maranhão"
+        },
+        "impact": [
+          {
+            "value": "40,606+",
+            "label": "Reported Cases (General)"
+          },
+          {
+            "value": "8,042+",
+            "label": "Immediate Notifications"
+          },
+          {
+            "value": "4,612+",
+            "label": "Reported Cases (SUPAST)"
+          },
+          {
+            "value": "26",
+            "label": "Recorded Deaths"
+          }
+        ],
+        "gallery": [
+          {
+            "url": "/images/renaveh/tela_login.png",
+            "alt": "RENAVEH system login screen"
+          },
+          {
+            "url": "/images/renaveh/tela_2fa_autenticacao.png",
+            "alt": "Authentication screen with two-factor verification (2FA)"
+          },
+          {
+            "url": "/images/renaveh/dashboard_dados_totais.png",
+            "alt": "Dashboard with overall system data"
+          },
+          {
+            "url": "/images/renaveh/dashboard_supast.png",
+            "alt": "SUPAST-specific dashboard (Superintendence of Health Care Policy in Traffic)"
+          },
+          {
+            "url": "/images/renaveh/dados_filtrados_supast.png",
+            "alt": "Data filtered by region in the SUPAST dashboard"
+          },
+          {
+            "url": "/images/renaveh/index_pacientes.png",
+            "alt": "Search page for patients registered in the system"
+          },
+          {
+            "url": "/images/renaveh/cadastrar_paciente.png",
+            "alt": "New patient registration form"
+          },
+          {
+            "url": "/images/renaveh/edit_paciente.png",
+            "alt": "Patient data editing form"
+          },
+          {
+            "url": "/images/renaveh/ficha_paciente.png",
+            "alt": "Record with registered patient data"
+          },
+          {
+            "url": "/images/renaveh/index_not_paciente.png",
+            "alt": "List of patient notifications related to the logged-in user's hospital"
+          },
+          {
+            "url": "/images/renaveh/index_not_paciente2.png",
+            "alt": "View of all patient notifications across any hospital"
+          },
+          {
+            "url": "/images/renaveh/notificacao_paciente.png",
+            "alt": "Patient notification details"
+          },
+          {
+            "url": "/images/renaveh/notificacao_paciente2.png",
+            "alt": "Continuation of patient notification details"
+          },
+          {
+            "url": "/images/renaveh/historico_not_transf.png",
+            "alt": "Notification transfer history"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao.png",
+            "alt": "New notification registration form"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao2.png",
+            "alt": "Notification registration - Step 2"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao3.png",
+            "alt": "Notification registration - Step 3"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao4.png",
+            "alt": "Notification registration - Step 4"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao5.png",
+            "alt": "Notification registration - Step 5"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao6.png",
+            "alt": "Notification registration - Step 6"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao7.png",
+            "alt": "Notification registration - Step 7"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao8.png",
+            "alt": "Notification registration - Step 8"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao9.png",
+            "alt": "Notification registration - Step 9"
+          },
+          {
+            "url": "/images/renaveh/index_notificacao.png",
+            "alt": "Search page for registered notifications"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao.png",
+            "alt": "Notification search filters applied on the search page"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao2.png",
+            "alt": "Notification search results with applied filters"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao3.png",
+            "alt": "Continuation of notification search results with applied filters"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao4.png",
+            "alt": "Continuation of notification search results with applied filters"
+          },
+          {
+            "url": "/images/renaveh/excel_relatorio.png",
+            "alt": "Report export in Excel format"
+          },
+          {
+            "url": "/images/renaveh/notificacoes_supast.png",
+            "alt": "Notifications linked to SUPAST"
+          },
+          {
+            "url": "/images/renaveh/notificacoes_supast2.png",
+            "alt": "SUPAST notification search results with applied filters"
+          },
+          {
+            "url": "/images/renaveh/index_hospitais.png",
+            "alt": "Management of registered hospitals"
+          },
+          {
+            "url": "/images/renaveh/usuarios_hospitais.png",
+            "alt": "Association between users and hospitals"
+          },
+          {
+            "url": "/images/renaveh/index_dae.png",
+            "alt": "List of registered DAEs (Diseases, Conditions, and Events)"
+          },
+          {
+            "url": "/images/renaveh/index_sintomas.png",
+            "alt": "Registration and listing of recorded symptoms"
+          },
+          {
+            "url": "/images/renaveh/index_auditoria.png",
+            "alt": "System audit screen for tracking actions"
+          },
+          {
+            "url": "/images/renaveh/index_usuarios.png",
+            "alt": "List of system users"
+          },
+          {
+            "url": "/images/renaveh/visualizar_usuario.png",
+            "alt": "User view record"
+          },
+          {
+            "url": "/images/renaveh/index_papeis.png",
+            "alt": "Management of user roles and permissions"
+          },
+          {
+            "url": "/images/renaveh/index_paginas.png",
+            "alt": "Management of system permission pages"
+          }
+        ]
+      },
+      "masemfome": {
+        "title": "Maranhão Free from Hunger",
+        "description": "Maranhão Free from Hunger is a system under development aimed at tackling food insecurity in the state, focusing on the registration and monitoring of vulnerable families, nutritional assessment, and integration with public policies.",
+        "detailedDescription": "Maranhão Free from Hunger is being developed as a strategic platform to support integrated actions to fight hunger and food insecurity in the state of Maranhão. The system will allow detailed registration of families in vulnerable situations, individual nutritional monitoring, and tracking of the effectiveness of social actions through dashboards and automated reports. The platform integrates with existing government systems through APIs, enabling the use of already registered data and avoiding duplication of efforts in family assistance.",
+        "features": [
+          "Structured registration of families in food vulnerability",
+          "Integration with external API for automatic retrieval of family data by CPF",
+          "Import and synchronization of personal data and family addresses",
+          "Updating and complementing information not available in the external API",
+          "Registration of assessments based on health indicators",
+          "Continuous history of care and follow-up",
+          "Dynamic dashboards by region and municipality",
+          "Automated reports for public managers",
+          "Integration with existing social policies and programs",
+          "Support for decision-making in food security policies"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Diagnosis and Planning",
+            "description": "Needs mapping, definition of data flows, and identification of priority nutritional and social indicators."
+          },
+          {
+            "title": "Integration with Government Systems",
+            "description": "Development of integration with the general family registry system API, allowing searches by the head of household’s CPF and automatic import of personal and address data. This integration avoids rework and ensures consistency of information across systems."
+          },
+          {
+            "title": "Platform Development",
+            "description": "Construction of the backend and frontend with a focus on performance, security, and usability for field professionals, including data synchronization and update features."
+          },
+          {
+            "title": "Data and Flow Validation",
+            "description": "Implementation of validation routines and completion of imported data, allowing professionals to update or add specific health information not covered in the main system."
+          },
+          {
+            "title": "Regional Pilot Tests",
+            "description": "Initial deployment in pilot regions for feedback collection, functionality validation, and testing of the external system integration in a real environment."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Ongoing (3 months)",
+          "team": "6 developers",
+          "client": "Maranhão State Department of Health (SES/MA)"
+        }
+      },
+      "cadserv": {
+        "title": "CadServ",
+        "description": "System for registration and management of SAPAPVS staff, allowing the recording of personal, functional, and social data, as well as managing information such as vacations, with access for managers, coordinators, and the deputy secretariat.",
+        "detailedDescription": "CadServ is a human resources management system developed specifically for the Deputy Secretariat of Primary Care and Health Surveillance Policy (SAPAPVS). The platform centralizes functional information, facilitating staff administration and optimizing the secretariat’s internal processes.",
+        "features": [
+          "Complete staff registration",
+          "Management of functional and personal data",
+          "Control of vacations and leave",
+          "Hierarchical permission system",
+          "Intuitive administrative interface"
+        ],
+        "projectInfo": {
+          "duration": "2 months",
+          "team": "4 developers",
+          "client": "SAPAPVS-SES/MA - Deputy Secretariat of Primary Care and Health Surveillance Policy"
+        }
+      },
+      "plandox": {
+        "title": "PlanDox 2.0",
+        "description": "PlanDox 2.0 is the new version under development of a desktop software for experimental planning and biodiesel quality analysis, featuring an improved interface, mobile version, and microservices-based architecture.",
+        "detailedDescription": "PlanDox 2.0 represents a significant evolution of the original software, incorporating modern technologies and a microservices architecture. This project aims to completely modernize the experimental planning experience for biodiesel analysis, offering greater flexibility, scalability, and accessibility across multiple platforms.",
+        "features": [
+          "Modern and intuitive interface",
+          "Microservices-based architecture",
+          "Complementary mobile version",
+          "Advanced data analysis",
+          "Automated scientific reports"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Previous Version Analysis",
+            "description": "Detailed study of the original PlanDox to identify improvement points."
+          },
+          {
+            "title": "Architecture Redesign",
+            "description": "Migration to a microservices architecture with Python and Docker."
+          },
+          {
+            "title": "Iterative Development",
+            "description": "Implementation in sprints with continuous feedback among the team."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Ongoing (1 month)",
+          "team": "4 developers",
+          "client": "DartiLab - UFMA"
+        }
+      },
+      "react": {
+        "title": "ReACT Portal",
+        "description": "The ReACT portal, currently under development, will be a platform for intuitive management of projects, news, calls for proposals, and teams of the Science and Technology Application Network (ReACT), strengthening academic and professional collaboration.",
+        "detailedDescription": "The ReACT Portal is being developed as a central platform for the Science and Technology Application Network, with the goal of connecting researchers, facilitating project collaboration, and centralizing academic information. The platform will serve as a knowledge and collaboration hub for the academic community.",
+        "features": [
+          "Comprehensive research project management",
+          "News and communication system",
+          "Management of calls for proposals and selection processes",
+          "Directory of researchers and teams",
+          "Library of academic resources",
+          "Collaboration system between institutions",
+          "Analytical dashboard for managers"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Requirements Gathering",
+            "description": "Interviews with coordinators and researchers to define features."
+          },
+          {
+            "title": "Prototyping",
+            "description": "Creation of interactive prototypes for user validation."
+          },
+          {
+            "title": "Backend Development",
+            "description": "Implementation of the API and data structure using Laravel."
+          },
+          {
+            "title": "Frontend Development",
+            "description": "Creation of the user interface focused on researcher experience."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Ongoing (2 months)",
+          "team": "3 developers",
+          "client": "ReACT Network - UFMA"
         }
       }
     }
