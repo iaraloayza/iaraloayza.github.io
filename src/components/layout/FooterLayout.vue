@@ -32,7 +32,7 @@
 
       <!-- Nome e direitos -->
       <p class="text-sm text-gray-400">
-        © {{ currentYear }} Ana Iara Loayza. Todos os direitos reservados.
+        © {{ currentYear }} {{ $t('footer.text') }}
       </p>
     </div>
   </footer>

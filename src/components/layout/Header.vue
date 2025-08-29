@@ -7,11 +7,11 @@
           class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer"
           @click="scrollToSection('home')"
         >
-          {{ logoText }}
+          {{ $t('nav.logo') }}
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8">
+        <div class="hidden md:flex space-x-8 items-center">
           <button
             v-for="item in navItems"
             :key="item.id"
@@ -19,8 +19,11 @@
             @click="scrollToSection(item.id)"
             :class="{ 'active': activeSection === item.id }"
           >
-            {{ item.label }}
+            {{ $t(`nav.${item.key}`) }}
           </button>
+          
+          <!-- Language Selector -->
+          <LanguageSelector @language-changed="onLanguageChanged" />
         </div>
 
         <!-- Mobile Menu Button -->
@@ -54,8 +57,13 @@
             @click="handleMobileNavClick(item.id)"
             :class="{ 'active': activeSection === item.id }"
           >
-            {{ item.label }}
+            {{ $t(`nav.${item.key}`) }}
           </button>
+          
+          <!-- Language Selector Mobile -->
+          <div class="flex justify-center pt-2">
+            <LanguageSelector @language-changed="onLanguageChanged" />
+          </div>
         </div>
       </div>
     </nav>
@@ -64,14 +72,12 @@
 
 <script>
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
+import LanguageSelector from './LanguageSelector.vue'
 
 export default {
   name: 'AppHeader',
-  props: {
-    logoText: {
-      type: String,
-      default: '{ code & creativity }'
-    }
+  components: {
+    LanguageSelector
   },
   emits: ['nav-click'],
   setup(props, { emit }) {
@@ -79,13 +85,13 @@ export default {
     const activeSection = ref('home')
     
     const navItems = reactive([
-      { id: 'home', label: 'Início' },
-      { id: 'about', label: 'Sobre' },
-      { id: 'skills', label: 'Habilidades' },
-      { id: 'projects', label: 'Projetos' },
-      { id: 'experience', label: 'Experiência' },
-      { id: 'education', label: 'Formação' },
-      { id: 'contact', label: 'Contato' }
+      { id: 'home', key: 'home' },
+      { id: 'about', key: 'about' },
+      { id: 'skills', key: 'skills' },
+      { id: 'projects', key: 'projects' },
+      { id: 'experience', key: 'experience' },
+      { id: 'education', key: 'education' },
+      { id: 'contact', key: 'contact' }
     ])
 
     const toggleMobileMenu = () => {
@@ -114,6 +120,12 @@ export default {
     const handleMobileNavClick = (sectionId) => {
       scrollToSection(sectionId)
       isMobileMenuOpen.value = false
+    }
+
+    const onLanguageChanged = (newLocale) => {
+      // Fechar menu mobile se estiver aberto
+      isMobileMenuOpen.value = false
+      console.log('Language changed to:', newLocale)
     }
 
     // Detectar seção ativa baseada no scroll
@@ -169,7 +181,8 @@ export default {
       activeSection,
       toggleMobileMenu,
       scrollToSection,
-      handleMobileNavClick
+      handleMobileNavClick,
+      onLanguageChanged
     }
   }
 }

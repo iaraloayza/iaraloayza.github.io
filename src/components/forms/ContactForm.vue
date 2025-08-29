@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive, computed } from 'vue'
+import { useI18n } from 'vue-i18n'  
 import emailjs from '@emailjs/browser'
 
 // Configurações do EmailJS usando variáveis de ambiente
@@ -8,6 +9,9 @@ const EMAILJS_CONFIG = {
   TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
   PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 }
+
+// i18n
+const { t } = useI18n()   // pega a função de tradução
 
 // Estado do formulário
 const form = reactive({
@@ -23,7 +27,7 @@ const errors = reactive({})
 
 // Classes CSS para mensagens de status
 const statusClass = computed(() => {
-  if (statusMessage.value.includes('sucesso') || statusMessage.value.includes('enviada')) {
+  if (statusMessage.value.includes('sucesso') || statusMessage.value.includes('sent')) {
     return 'bg-green-500/20 border border-green-500/40 text-green-400'
   }
   return 'bg-red-500/20 border border-red-500/40 text-red-400'
@@ -34,17 +38,17 @@ const validateForm = () => {
   Object.keys(errors).forEach(key => delete errors[key])
   
   if (!form.name.trim()) {
-    errors.name = 'Nome é obrigatório'
+    errors.name = t('contact.form.name') + ' é obrigatório'
   }
   
   if (!form.email.trim()) {
-    errors.email = 'Email é obrigatório'
+    errors.email = t('contact.form.email') + ' é obrigatório'
   } else if (!/\S+@\S+\.\S+/.test(form.email)) {
     errors.email = 'Email inválido'
   }
   
   if (!form.message.trim()) {
-    errors.message = 'Mensagem é obrigatória'
+    errors.message = t('contact.form.message') + ' é obrigatória'
   }
   
   return Object.keys(errors).length === 0
@@ -52,7 +56,6 @@ const validateForm = () => {
 
 // Método usando EmailJS
 const sendEmailWithEmailJS = async () => {
-  // Verificar se as configurações foram definidas
   if (!EMAILJS_CONFIG.SERVICE_ID || !EMAILJS_CONFIG.TEMPLATE_ID || !EMAILJS_CONFIG.PUBLIC_KEY) {
     throw new Error('Configurações do EmailJS não encontradas!')
   }
@@ -93,7 +96,7 @@ const handleSubmit = async () => {
   try {
     await sendEmailWithEmailJS()
     
-    statusMessage.value = 'Mensagem enviada com sucesso! Entrarei em contato em breve.'
+    statusMessage.value = t('contact.form.success')  
     // Limpar formulário
     form.name = ''
     form.email = ''
@@ -107,17 +110,17 @@ const handleSubmit = async () => {
     } else if (error.text) {
       statusMessage.value = `❌ Erro EmailJS: ${error.text}`
     } else {
-      statusMessage.value = '❌ Erro ao enviar mensagem. Verifique sua conexão e tente novamente.'
+      statusMessage.value = t('contact.form.error') 
     }
   } finally {
     isLoading.value = false
-    // Limpar mensagem após 8 segundos
     setTimeout(() => {
       statusMessage.value = ''
     }, 8000)
   }
 }
 </script>
+
 
 <template>
   <div class="relative">
@@ -130,7 +133,7 @@ const handleSubmit = async () => {
       </div>
 
       <div class="form-group">
-        <label class="form-label">Nome *</label>
+        <label class="form-label">{{ $t('contact.form.name') }}</label>
         <input 
           type="text" 
           v-model="form.name"
@@ -142,7 +145,7 @@ const handleSubmit = async () => {
       </div>
 
       <div class="form-group">
-        <label class="form-label">Email *</label>
+        <label class="form-label">{{ $t('contact.form.email') }}</label>
         <input 
           type="email" 
           v-model="form.email"
@@ -154,7 +157,7 @@ const handleSubmit = async () => {
       </div>
 
       <div class="form-group">
-        <label class="form-label">Mensagem *</label>
+        <label class="form-label">{{ $t('contact.form.message') }}</label>
         <textarea 
           rows="4" 
           v-model="form.message"
@@ -170,13 +173,13 @@ const handleSubmit = async () => {
         :disabled="isLoading"
         class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 disabled:hover:scale-100 flex items-center justify-center"
       >
-        <span v-if="!isLoading">Enviar</span>
-        <span v-else class="flex items-center">
+        <span v-if="!isLoading">{{ $t('contact.form.send') }}</span>
+          <span v-else class="flex items-center">
           <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
-          Enviando...
+          {{ $t('contact.form.sending') }}
         </span>
       </button>
     </form>

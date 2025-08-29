@@ -1,0 +1,829 @@
+{
+  "nav": {
+    "logo": "{ code & creativity }",
+    "home": "Início",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "education": "Formação",
+    "contact": "Contato"
+  },
+  "footer": {
+    "text": "Ana Iara Loayza. Todos os direitos reservados."
+  },
+  "hero": {
+    "role": "Desenvolvedora Full Stack",
+    "greeting": "Olá, eu sou",
+    "name": "Ana Iara",
+    "surname": "Loayza Costa",
+    "description": "Apaixonada por criar",
+    "highlight1": "experiências digitais",
+    "description2": "extraordinárias que transformam ideias em",
+    "highlight2": "realidade",
+    "buttons": {
+      "viewProjects": "Ver Projetos",
+      "downloadCV": "Baixar CV"
+    }
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "card1": {
+      "title": "Desenvolvedora Full-Stack",
+      "description": "Desenvolvedora Full-Stack com experiência em PHP/Laravel e SQL (MySQL/PostgreSQL). Atuo na criação e integração de APIs RESTful, otimização de consultas para relatórios estratégicos e desenvolvimento de sistemas web escaláveis e seguros. Também construo interfaces responsivas priorizando usabilidade e acessibilidade."
+    },
+    "card2": {
+      "title": "Experiência em Saúde Pública",
+      "description": "Atuação em projetos de tecnologia para saúde pública, desenvolvendo sistemas e relatórios estratégicos em tempo real. Experiência em interoperabilidade de dados, boas práticas de Clean Code, versionamento Git e metodologias ágeis."
+    },
+    "stats": {
+      "experience": "Anos de Experiência",
+      "projects": "Projetos Concluídos"
+    }
+  },
+  "skills": {
+    "title": "Minhas Habilidades",
+    "frontend": "Desenvolvimento Frontend",
+    "backend": "Backend e Database",
+    "mobile": "Desenvolvimento Mobile",
+    "otherTools": "Outras Ferramentas"
+  },
+  "projects": {
+    "title": "Projetos",
+    "details": "Ver Detalhes",
+    "viewProject": "Ver Projeto",
+    "github": "GitHub",
+    "inDevelopment": "Em Desenvolvimento",
+    "inDev": "Em Dev",
+    "list": {
+      "monitora": {
+        "title": "Monitora Saúde",
+        "description": "Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão."
+      },
+      "hans": {
+        "title": "App Hans+",
+        "description": "O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença."
+      },
+      "renaveh": {
+        "title": "RENAVEH",
+        "description": "Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões."
+      },
+      "masemfome": {
+        "title": "Maranhão Livre da Fome",
+        "description": "O sistema Maranhão Livre da Fome (eixo saúde) combate a insegurança alimentar com o cadastro e acompanhamento de famílias em situação de vulnerabilidade, permitindo registrar avaliações e monitorar o histórico de cada indivíduo."
+      },
+      "cadserv": {
+        "title": "CadServ",
+        "description": "Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta."
+      },
+      "plandox": {
+        "title": "PlanDox 2.0",
+        "description": "PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços."
+      },
+      "react": {
+        "title": "Portal ReACT",
+        "description": "O portal ReACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (ReACT), fortalecendo a colaboração acadêmica e profissional."
+      }
+    },
+    "projectDdetails": {
+      "backToProjects": "Voltar aos Projetos",
+      "projectNotFound": "Projeto não encontrado",
+      "projectNotFoundDescription": "O projeto que você está procurando não existe ou foi removido.",
+      "projectLive": "Ver Projeto Live",
+      "viewGithub": "Repositório do Github",
+      "aboutProject": "Sobre o Projeto",
+      "mainFeatures": "Principais Funcionalidades",
+      "developmentProcess": "Processo de Desenvolvimento",
+      "gallery": "Galeria",
+      "viewAllPhotos": "Ver todas as {count} fotos",
+      "status": "Status",
+      "completed": "Concluído",
+      "technologies": "Tecnologias",
+      "information": "Informações",
+      "duration": "Duração",
+      "team": "Equipe",
+      "client": "Cliente",
+      "impact": "Impacto",
+      "otherProjects": "Outros Projetos",
+      "back": "Voltar",
+      "monitora": {
+        "title": "Monitora Saúde",
+        "description": "Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.",
+        "detailedDescription": "O Monitora Saúde é uma plataforma web desenvolvida para a Secretaria de Estado da Saúde do Maranhão, com o objetivo de modernizar e centralizar o monitoramento de indicadores de saúde pública. O sistema oferece uma interface intuitiva para visualização de dados em tempo real e dashboards interativos que auxiliam gestores na tomada de decisões estratégicas.",
+        "features": [
+          "Dashboards interativos, feitos em Power BI, com indicadores em tempo real",
+          "Gestão de usuários com diferentes níveis de acesso",
+          "Interface responsiva para dispositivos móveis"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Análise de Requisitos",
+            "description": "Levantamento detalhado das necessidades da Secretaria de Saúde e definição dos indicadores prioritários."
+          },
+          {
+            "title": "Arquitetura do Sistema",
+            "description": "Desenvolvimento da arquitetura MVC utilizando Laravel, com foco em escalabilidade e performance."
+          },
+          {
+            "title": "Desenvolvimento Backend",
+            "description": "Implementação das APIs, integração com PostgreSQL e desenvolvimento dos algoritmos de cálculo de indicadores."
+          },
+          {
+            "title": "Interface do Usuário",
+            "description": "Criação de dashboards intuitivos utilizando tecnologias modernas de visualização de dados."
+          },
+          {
+            "title": "Testes e Deploy",
+            "description": "Realização de testes extensivos e implantação em ambiente de produção com alta disponibilidade."
+          }
+        ],
+        "projectInfo": {
+          "duration": "4 meses",
+          "team": "4 desenvolvedores",
+          "client": "Secretaria de Estado da Saúde do Maranhão"
+        },
+        "impact": [
+          {
+            "value": "50+",
+            "label": "Indicadores Monitorados"
+          },
+          {
+            "value": "200+",
+            "label": "Usuários Ativos"
+          }
+        ],
+        "gallery": [ 
+          { 
+            "url": "/images/monitora/tela_inicial.png", 
+            "alt": "Tela inicial do sistema Monitora Saúde" 
+          }, 
+          { 
+            "url": "/images/monitora/navegacao_indicadores_logout.png", 
+            "alt": "Navegação entre indicadores com usuário deslogado" 
+          }, 
+          { 
+            "url": "/images/monitora/login.png", 
+            "alt": "Tela de login do sistema Monitora Saúde" 
+          }, 
+          { 
+            "url": "/images/monitora/verificacao_2fa.png", 
+            "alt": "Verificação em duas etapas (2FA) para segurança de acesso" 
+          }, 
+          { 
+            "url": "/images/monitora/nav_indicadores_logado.png", 
+            "alt": "Navegação entre indicadores com usuário logado" 
+          }, 
+          { 
+            "url": "/images/monitora/dropdown_admin.png", 
+            "alt": "Menu dropdown de administração do sistema" 
+          }, 
+          { 
+            "url": "/images/monitora/dashboard_indicador.png", 
+            "alt": "Dashboard com visualização de indicadores específicos" 
+          }, 
+          { 
+            "url": "/images/monitora/descricao_indicador.png", 
+            "alt": "Tela com a descrição detalhada do indicador selecionado" 
+          }, 
+          { 
+            "url": "/images/monitora/ficha_indicador.png", 
+            "alt": "Acesso à ficha técnica do indicador de saúde" 
+          }, 
+          { 
+            "url": "/images/monitora/ficha_aberta.png", 
+            "alt": "Ficha de indicador com informações detalhadas expandidas" 
+          }, 
+          { 
+            "url": "/images/monitora/dropdown_indicadores.png", 
+            "alt": "Menu dropdown com as páginas de gerenciamento de indicadores" 
+          }, 
+          { 
+            "url": "/images/monitora/index_grupos.png", 
+            "alt": "Página de gerenciamento de grupos de indicadores" 
+          }, 
+          { 
+            "url": "/images/monitora/index_indicadores.png", 
+            "alt": "Página de gerenciamento dos indicadores cadastrados" 
+          }, 
+          { 
+            "url": "/images/monitora/contato.png", 
+            "alt": "Tela de contato e suporte do sistema" 
+          } 
+        ]
+      },
+      "hans": {
+        "title": "App Hans+",
+        "description": "O Hans+ é uma plataforma com versão web e app Android que apoia o tratamento da hanseníase, que permite registrar medicações, monitorar sintomas e acessar informações confiáveis sobre a doença.",
+        "detailedDescription": "O Hans+ é um aplicativo móvel desenvolvido para apoiar o tratamento da hanseníase e fornecer informações confiáveis sobre a doença. O projeto foi realizado em parceria com o curso de Farmácia da Universidade Federal do Maranhão (UFMA), com suporte técnico e expertise na área da saúde. O aplicativo permite o registro de medicações, o monitoramento diário de sintomas e o acesso a conteúdos educativos. Utiliza Flutter para o desenvolvimento multiplataforma e Firebase para armazenamento seguro dos dados. O Hans+ passou por etapas de levantamento de requisitos, prototipagem e testes de usabilidade, sendo avaliado como uma ferramenta prática, informativa e com grande potencial para auxiliar pacientes no acompanhamento do tratamento da hanseníase.",
+        "features": [
+          "Aplicativo móvel nativo para Android",
+          "Versão web responsiva",
+          "Registro de uso de medicamentos diários",
+          "Registro de sintomas diários",
+          "Base de conhecimento sobre hanseníase"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Pesquisa e Validação",
+            "description": "Estudo aprofundado sobre hanseníase e validação da proposta com profissionais de saúde especializados."
+          },
+          {
+            "title": "Design UX/UI",
+            "description": "Criação de uma interface amigável e acessível, considerando diferentes perfis de usuários."
+          },
+          {
+            "title": "Desenvolvimento Flutter",
+            "description": "Implementação do aplicativo utilizando Flutter para garantir performance nativa em Android e web."
+          },
+          {
+            "title": "Integração Firebase",
+            "description": "Configuração do backend Firebase para autenticação, banco de dados e notificações push."
+          },
+          {
+            "title": "Testes com Usuários",
+            "description": "Validação com pacientes reais e profissionais de saúde para refinamento da experiência."
+          }
+        ],
+        "projectInfo": {
+          "duration": "3 meses",
+          "team": "3 desenvolvedores",
+          "client": "Universidade Federal do Maranhão (UFMA)"
+        },
+        "gallery": [
+          {
+            "url": "/images/hans+/login.jpeg",
+            "alt": "Tela de Login do Hans+"
+          },
+          {
+            "url": "/images/hans+/cadastro.jpeg",
+            "alt": "Tela de cadastro de usuário"
+          },
+          {
+            "url": "/images/hans+/redefinir_senha.jpeg",
+            "alt": "Tela de solicitação de redefinição de senha"
+          },
+          {
+            "url": "/images/hans+/home.jpeg",
+            "alt": "Página inicial do Hans+"
+          },
+          {
+            "url": "/images/hans+/page_info.jpeg",
+            "alt": "Tela de informações sobre hanseníase"
+          },
+          {
+            "url": "/images/hans+/page_info2.jpeg",
+            "alt": "Continuação da tela de informações sobre hanseníase"
+          },
+          {
+            "url": "/images/hans+/page_sinais_sintomas.jpeg",
+            "alt": "Página informativa com sinais e sintomas da hanseníase"
+          },
+          {
+            "url": "/images/hans+/calendario.jpeg",
+            "alt": "Tela do calendário de tratamento"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios.jpeg",
+            "alt": "Tela de registro de dois medicamentos no calendário"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios_3.jpeg",
+            "alt": "Confirmação do uso da medicação"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios_2.jpeg",
+            "alt": "Tela de monitoramento diário de sintomas"
+          },
+          {
+            "url": "/images/hans+/sintomas.jpeg",
+            "alt": "Tela de registro e histórico de sintomas"
+          },
+          {
+            "url": "/images/hans+/profile.jpeg",
+            "alt": "Tela de perfil do usuário"
+          },
+          {
+            "url": "/images/hans+/edit_conta.jpeg",
+            "alt": "Tela de edição de informações da conta"
+          },
+          {
+            "url": "/images/hans+/edit_conta2.jpeg",
+            "alt": "Tela de edição de e-mail"
+          },
+          {
+            "url": "/images/hans+/edit_conta_3.jpeg",
+            "alt": "Tela de edição de senha"
+          },
+          {
+            "url": "/images/hans+/edit_perfil.jpeg",
+            "alt": "Tela de edição de perfil do usuário"
+          },
+          {
+            "url": "/images/hans+/edit_tratamento.jpeg",
+            "alt": "Tela de edição de dados do tratamento"
+          },
+          {
+            "url": "/images/hans+/historico_sintomas.jpeg",
+            "alt": "Tela com histórico de sintomas registrados"
+          },
+          {
+            "url": "/images/hans+/saiba_mais.jpeg",
+            "alt": "Tela com links e informações úteis sobre hanseníase"
+          },
+          {
+            "url": "/images/hans+/sobre_nos.jpeg",
+            "alt": "Tela sobre a equipe responsável pelo aplicativo"
+          },
+          {
+            "url": "/images/hans+/links_sobre_nos.jpeg",
+            "alt": "Tela com links externos relacionados à equipe responsável pelo aplicativo"
+          }
+        ]
+      },
+      "renaveh": {
+        "title": "RENAVEH - MA",
+        "description": "Sistema web para cadastro de pacientes, gestão de notificações hospitalares e transferências entre hospitais, com área exclusiva para acidentes de trânsito e controle de acessos por papéis e permissões.",
+        "detailedDescription": "O RENAVEH (Rede Nacional de Emergências Hospitalares) é um sistema web desenvolvido para otimizar a gestão de emergências hospitalares no Maranhão. A plataforma permite o cadastro e acompanhamento de pacientes em situações de emergência, facilitando a comunicação entre hospitais e agilizando processos de transferência e notificação.",
+        "features": [
+          "Cadastro de pacientes",
+          "Cadastro de notificações hospitalares",
+          "Sistema de transferências de notificações entre hospitais",
+          "Módulo especializado para acidentes de trânsito, requisitado pela SUPAST",
+          "Controle de acesso por papéis e permissões",
+          "Painel de indicadores para gestores"
+        ],
+        "projectInfo": {
+          "duration": "6 meses",
+          "team": "4 desenvolvedores",
+          "client": "RENAVEH - Maranhão"
+        },
+        "impact": [
+          {
+            "value": "40.606+",
+            "label": "Casos Notificados (Geral)"
+          },
+          {
+            "value": "8.042+",
+            "label": "Notificações Imediatas"
+          },
+          {
+            "value": "4.612+",
+            "label": "Casos Notificados (SUPAST)"
+          },
+          {
+            "value": "26",
+            "label": "Óbitos Registrados"
+          }
+        ],
+        "gallery": [
+          {
+            "url": "/images/renaveh/tela_login.png",
+            "alt": "Tela de login do sistema Renaveh"
+          },
+          {
+            "url": "/images/renaveh/tela_2fa_autenticacao.png",
+            "alt": "Tela de autenticação com verificação em duas etapas (2FA)"
+          },
+          {
+            "url": "/images/renaveh/dashboard_dados_totais.png",
+            "alt": "Dashboard com dados totais do sistema"
+          },
+          {
+            "url": "/images/renaveh/dashboard_supast.png",
+            "alt": "Dashboard específico da SUPAST (Superintendência da Política de Atenção em Saúde no Trânsito)"
+          },
+          {
+            "url": "/images/renaveh/dados_filtrados_supast.png",
+            "alt": "Dados filtrados por região no dashboard da SUPAST"
+          },
+          {
+            "url": "/images/renaveh/index_pacientes.png",
+            "alt": "Página de busca de pacientes cadastrados no sistema"
+          },
+          {
+            "url": "/images/renaveh/cadastrar_paciente.png",
+            "alt": "Formulário de cadastro de novo paciente"
+          },
+          {
+            "url": "/images/renaveh/edit_paciente.png",
+            "alt": "Formulário de edição de dados do paciente"
+          },
+          {
+            "url": "/images/renaveh/ficha_paciente.png",
+            "alt": "Ficha com os dados do paciente cadastrado"
+          },
+          {
+            "url": "/images/renaveh/index_not_paciente.png",
+            "alt": "Listagem de notificações do paciente referente ao hospital do usuário logado"
+          },
+          {
+            "url": "/images/renaveh/index_not_paciente2.png",
+            "alt": "Visualização de todas as notificações do paciente, em qualquer hospital"
+          },
+          {
+            "url": "/images/renaveh/notificacao_paciente.png",
+            "alt": "Detalhes da notificação do paciente"
+          },
+          {
+            "url": "/images/renaveh/notificacao_paciente2.png",
+            "alt": "Continuação dos detalhes da notificação do paciente"
+          },
+          {
+            "url": "/images/renaveh/historico_not_transf.png",
+            "alt": "Histórico de transferências de notificações"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao.png",
+            "alt": "Formulário de cadastro de nova notificação"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao2.png",
+            "alt": "Cadastro de notificação - Etapa 2"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao3.png",
+            "alt": "Cadastro de notificação - Etapa 3"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao4.png",
+            "alt": "Cadastro de notificação - Etapa 4"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao5.png",
+            "alt": "Cadastro de notificação - Etapa 5"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao6.png",
+            "alt": "Cadastro de notificação - Etapa 6"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao7.png",
+            "alt": "Cadastro de notificação - Etapa 7"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao8.png",
+            "alt": "Cadastro de notificação - Etapa 8"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao9.png",
+            "alt": "Cadastro de notificação - Etapa 9"
+          },
+          {
+            "url": "/images/renaveh/index_notificacao.png",
+            "alt": "Página de busca de notificações cadastradas"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao.png",
+            "alt": "Filtros de busca de notificações aplicados na página de busca"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao2.png",
+            "alt": "Resultados da busca de notificações com filtros aplicados"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao3.png",
+            "alt": "Continuação dos resultados da busca de notificações com filtros aplicados"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao4.png",
+            "alt": "Continuação dos resultados da busca de notificações com filtros aplicados"
+          },
+          {
+            "url": "/images/renaveh/excel_relatorio.png",
+            "alt": "Exportação de relatórios em formato Excel"
+          },
+          {
+            "url": "/images/renaveh/notificacoes_supast.png",
+            "alt": "Notificações vinculadas à SUPAST"
+          },
+          {
+            "url": "/images/renaveh/notificacoes_supast2.png",
+            "alt": "Resultados da busca de notificações SUPAST com filtros aplicados"
+          },
+          {
+            "url": "/images/renaveh/index_hospitais.png",
+            "alt": "Gerenciamento de hospitais cadastrados"
+          },
+          {
+            "url": "/images/renaveh/usuarios_hospitais.png",
+            "alt": "Associação entre usuários e hospitais"
+          },
+          {
+            "url": "/images/renaveh/index_dae.png",
+            "alt": "Listagem de DAEs (Doenças, Agravos e Eventos) registrados"
+          },
+          {
+            "url": "/images/renaveh/index_sintomas.png",
+            "alt": "Cadastro e listagem de sintomas registrados"
+          },
+          {
+            "url": "/images/renaveh/index_auditoria.png",
+            "alt": "Tela de auditoria do sistema para rastreamento de ações"
+          },
+          {
+            "url": "/images/renaveh/index_usuarios.png",
+            "alt": "Lista de usuários do sistema"
+          },
+          {
+            "url": "/images/renaveh/visualizar_usuario.png",
+            "alt": "Ficha de visualização de usuário"
+          },
+          {
+            "url": "/images/renaveh/index_papeis.png",
+            "alt": "Gerenciamento de papéis e permissões dos usuários"
+          },
+          {
+            "url": "/images/renaveh/index_paginas.png",
+            "alt": "Gerenciamento das páginas de permissões do sistema"
+          }
+        ]
+      },
+      "masemfome": {
+        "title": "Maranhão Livre da Fome",
+        "description": "Maranhão Livre da Fome é um sistema em desenvolvimento voltado ao enfrentamento da insegurança alimentar no estado, com foco no cadastro e acompanhamento de famílias vulneráveis, avaliação nutricional e integração com políticas públicas.",
+        "detailedDescription": "O Maranhão Livre da Fome está sendo desenvolvido como uma plataforma estratégica para apoiar ações integradas de combate à fome e insegurança alimentar no estado do Maranhão. O sistema permitirá o registro detalhado de famílias em situação de vulnerabilidade, o monitoramento nutricional individual e o acompanhamento da efetividade das ações sociais por meio de dashboards e relatórios automatizados. A plataforma integra-se com sistemas governamentais existentes através de APIs, permitindo o aproveitamento de dados já cadastrados e evitando duplicação de esforços no atendimento às famílias.",
+        "features": [
+          "Cadastro estruturado de famílias em vulnerabilidade alimentar",
+          "Integração com API externa para busca automática de dados familiares por CPF",
+          "Importação e sincronização de dados pessoais e endereços das famílias",
+          "Atualização e complementação de informações não disponíveis na API externa",
+          "Cadastros de avaliações com base em indicadores de saúde",
+          "Histórico contínuo de atendimentos e acompanhamentos",
+          "Dashboards dinâmicos por região e município",
+          "Relatórios automatizados para gestores públicos",
+          "Integração com políticas e programas sociais existentes",
+          "Apoio à tomada de decisão em políticas de segurança alimentar"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Diagnóstico e Planejamento",
+            "description": "Mapeamento de necessidades, definição dos fluxos de dados e levantamento dos indicadores nutricionais e sociais prioritários."
+          },
+          {
+            "title": "Integração com Sistemas Governamentais",
+            "description": "Desenvolvimento da integração com API do sistema de cadastro geral das famílias, permitindo busca por CPF do responsável familiar e importação automática de dados pessoais e endereço da família. Esta integração evita retrabalho e garante consistência nas informações entre os sistemas."
+          },
+          {
+            "title": "Desenvolvimento da Plataforma",
+            "description": "Construção do backend e frontend com foco em performance, segurança e usabilidade para os profissionais de campo, incluindo funcionalidades de sincronização e atualização de dados."
+          },
+          {
+            "title": "Validação de Dados e Fluxos",
+            "description": "Implementação de rotinas de validação e complementação de dados importados, permitindo que os profissionais atualizem ou acrescentem informações específicas da área da saúde não contempladas no sistema principal."
+          },
+          {
+            "title": "Testes Pilotos Regionais",
+            "description": "Implantação inicial em regiões-piloto para coleta de feedbacks, validação das funcionalidades e teste da integração com o sistema externo em ambiente real."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Em andamento (3 meses)",
+          "team": "6 desenvolvedores",
+          "client": "Secretaria de Estado da Saúde do Maranhão (SES/MA)"
+        }
+      },
+      "cadserv": {
+        "title": "CadServ",
+        "description": "Sistema de cadastro e gestão de servidores da SAPAPVS, permitindo registrar dados pessoais, funcionais e sociais, além de gerenciar informações como férias, com acesso por gerentes, coordenadores e a secretaria adjunta.",
+        "detailedDescription": "O CadServ é um sistema de gestão de recursos humanos desenvolvido especificamente para a Secretaria Adjunta da Política de Atenção Primária e Vigilância em Saúde (SAPAPVS). A plataforma centraliza informações funcionais, facilitando a administração de servidores e otimizando processos internos da secretaria.",
+        "features": [
+          "Cadastro completo de servidores",
+          "Gestão de dados funcionais e pessoais",
+          "Controle de férias e licenças",
+          "Sistema de permissões hierárquicas",
+          "Interface administrativa intuitiva"
+        ],
+        "projectInfo": {
+          "duration": "2 meses",
+          "team": "4 desenvolvedores",
+          "client": "SAPAPVS-SES/MA - Secretaria Adjunta da Política de Atenção Primária e Vigilância em Saúde"
+        }
+      },
+      "plandox": {
+        "title": "PlanDox 2.0",
+        "description": "PlanDox 2.0 é a nova versão em desenvolvimento de um software desktop para planejamento experimental e análise de qualidade do biodiesel, que terá interface aprimorada, versão mobile e arquitetura baseada em microserviços.",
+        "detailedDescription": "O PlanDox 2.0 representa uma evolução significativa do software original, incorporando tecnologias modernas e arquitetura de microserviços. Este projeto visa modernizar completamente a experiência de planejamento experimental para análise de biodiesel, oferecendo maior flexibilidade, escalabilidade e acessibilidade através de múltiplas plataformas.",
+        "features": [
+          "Interface moderna e intuitiva",
+          "Arquitetura baseada em microserviços",
+          "Versão mobile complementar",
+          "Análise avançada de dados",
+          "Relatórios científicos automatizados"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Análise da Versão Anterior",
+            "description": "Estudo detalhado do PlanDox original para identificar pontos de melhoria."
+          },
+          {
+            "title": "Redesign da Arquitetura",
+            "description": "Migração para arquitetura de microserviços com Python e Docker."
+          },
+          {
+            "title": "Desenvolvimento Iterativo",
+            "description": "Implementação em sprints com feedback contínuo entre a equipe."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Em andamento (1 mês)",
+          "team": "4 desenvolvedores",
+          "client": "DartiLab - UFMA"
+        }
+      },
+      "react": {
+        "title": "Portal ReACT",
+        "description": "O portal ReACT, em desenvolvimento, será uma plataforma para gestão intuitiva de projetos, notícias, editais e equipes da Rede de Aplicação de Ciência e Tecnologia (ReACT), fortalecendo a colaboração acadêmica e profissional.",
+        "detailedDescription": "O Portal ReACT está sendo desenvolvido como uma plataforma central para a Rede de Aplicação de Ciência e Tecnologia, com o objetivo de conectar pesquisadores, facilitar a colaboração em projetos e centralizar informações acadêmicas. A plataforma servirá como hub de conhecimento e colaboração para a comunidade acadêmica.",
+        "features": [
+          "Gestão completa de projetos de pesquisa",
+          "Sistema de notícias e comunicação",
+          "Gestão de editais e processos seletivos",
+          "Diretório de pesquisadores e equipes",
+          "Biblioteca de recursos acadêmicos",
+          "Sistema de colaboração entre instituições",
+          "Dashboard analítico para gestores"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Levantamento de Requisitos",
+            "description": "Entrevistas com coordenadores e pesquisadores para definir funcionalidades."
+          },
+          {
+            "title": "Prototipagem",
+            "description": "Criação de protótipos interativos para validação com usuários."
+          },
+          {
+            "title": "Desenvolvimento Backend",
+            "description": "Implementação da API e estrutura de dados com Laravel."
+          },
+          {
+            "title": "Desenvolvimento Frontend",
+            "description": "Criação da interface do usuário focada na experiência do pesquisador."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Em andamento (2 meses)",
+          "team": "3 desenvolvedores",
+          "client": "Rede ReACT - UFMA"
+        }
+      }
+    }
+  },
+  "experience": {
+    "title": "Experiência",
+    "activitiesTitle": "Atividades e Responsabilidades",
+    "technologiesTitle": "Tecnologias Utilizadas",
+    "jobs": [
+      {
+        "position": "left",
+        "company": "Secretaria de Estado da Saúde do Maranhão - SES/MA",
+        "role": "Desenvolvedora Full-Stack Junior",
+        "period": "Jan 2024 - Presente",
+        "location": "São Luís, MA",
+        "description": "Desenvolvo sistemas web full-stack para saúde pública utilizando Laravel e PHP, criando soluções que apoiam a gestão e interoperabilidade de dados entre diferentes áreas da saúde.",
+        "achievements": [
+          "Desenvolvi sistemas web completos com Laravel e PHP",
+          "Criei APIs RESTful para integração com aplicações móveis",
+          "Construí interfaces responsivas priorizando acessibilidade",
+          "Automatizei processos de interoperabilidade de dados",
+          "Estruturei consultas SQL para relatórios de saúde"
+        ],
+        "technologies": ["Laravel", "PHP", "MySQL", "PostgreSQL", "Vue.js", "Docker", "Git", "GitHub", "Trello", "Linux"]
+      },
+      {
+        "position": "right",
+        "company": "DartiLab - UFMA",
+        "role": "Estagiária Acadêmica em Engenharia de Software",
+        "period": "Jun 2025 - Presente",
+        "location": "São Luís, MA",
+        "description": "Participo da modernização de sistemas monolíticos, contribuindo para a decomposição em microsserviços e desenvolvimento de interfaces multiplataforma.",
+        "achievements": [
+          "Apoio análise e decomposição de sistemas monolíticos",
+          "Desenvolvo interfaces multiplataforma com React Native",
+          "Implemento microsserviços em Python com FastAPI",
+          "Utilizo Docker e Kubernetes para containerização",
+          "Contribuo para documentação técnica do projeto"
+        ],
+        "technologies": ["Python", "React Native", "FastAPI", "Firebase", "Docker", "Kubernetes", "RabbitMQ", "Git", "GitHub", "Linux"]
+      },
+      {
+        "position": "left",
+        "company": "Universidade Federal do Maranhão - UFMA",
+        "role": "Monitora de Projeto e Desenvolvimento de Software",
+        "period": "Mar 2024 - Jul 2024",
+        "location": "São Luís, MA",
+        "description": "Auxiliei estudantes na compreensão de conceitos de engenharia de software, promovendo boas práticas de programação e colaboração em projetos práticos.",
+        "achievements": [
+          "Auxiliei alunos em conceitos de engenharia de software",
+          "Apoiei desenvolvimento de projetos práticos em grupo",
+          "Esclareci dúvidas sobre UML e arquitetura de software",
+          "Promovi integração entre teoria e prática",
+          "Utilizei metodologias ágeis (Scrum, Kanban)"
+        ],
+        "technologies": ["UML", "Git", "GitHub", "Jira", "Scrum", "Kanban"]
+      },
+      {
+        "position": "right",
+        "company": "Secretaria de Estado da Saúde do Maranhão - SES/MA",
+        "role": "Estagiária em Desenvolvimento Back-End e Ciência de Dados",
+        "period": "Jun 2023 - Dez 2023",
+        "location": "São Luís, MA",
+        "description": "Desenvolvi funcionalidades back-end e realizei análise de dados para apoiar decisões estratégicas na saúde pública, automatizando processos e criando relatórios técnicos.",
+        "achievements": [
+          "Desenvolvi funcionalidades back-end em PHP",
+          "Criei consultas SQL para relatórios estratégicos",
+          "Analisei dados com Python e Julia",
+          "Automatizei extração e organização de dados",
+          "Apoiei integração entre diferentes fontes de dados"
+        ],
+        "technologies": ["PHP", "MySQL", "PostgreSQL", "Python", "Julia", "Jupyter Notebook"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Formação",
+    "highlightsTitle": "Destaques",
+    "tccTitle": "Trabalho de Conclusão de Curso",
+    "advisorLabel": "Orientador",
+    "gradeLabel": "Nota",
+    "craLabel": "CR",
+    "subjectsLabel": "Principais Disciplinas",
+    "technologiesLabel": "Tecnologias Estudadas", 
+    "knowledgeAreasLabel": "Áreas de Conhecimento",
+    "contentLabel": "Conteúdo",
+    "degrees": [
+      {
+        "position": "right",
+        "institution": "Instituto Federal de Mato Grosso (IFMT)",
+        "degree": "Pós-Graduação em Engenharia DevOps",
+        "period": "2025 - Presente",
+        "location": "Planaltina, GO",
+        "status": "Em andamento",
+        "description": "Especialização voltada para práticas modernas de desenvolvimento e operações de software, com foco em metodologias ágeis, integração e entrega contínua, automação de testes e gerenciamento de infraestrutura em ambientes de DevOps.",
+        "highlights": [
+          "Projetos práticos de integração e entrega contínua",
+          "Implantação de pipelines automatizados com foco em qualidade e performance"
+        ],
+        "subjects": [
+          "Projetos Ágeis e DevOps",
+          "Integração e Entrega Contínua",
+          "Gerenciamento de Mudanças e Infraestrutura",
+          "Monitoramento de Aplicações",
+          "Testes Automatizados de Software"
+        ],
+        "type": "graduation"
+      },
+      {
+        "position": "left",
+        "institution": "Universidade Federal do Maranhão (UFMA)",
+        "degree": "Bacharelado em Engenharia da Computação",
+        "period": "2024 - Presente",
+        "location": "São Luís, MA",
+        "status": "Em andamento",
+        "description": "Formação sólida em Visão Computacional, Machine Learning, Deep Learning, Redes e Automação Industrial. Participação ativa em projetos de pesquisa e extensão.",
+        "highlights": [
+          "Entrega de Portal da Rede de Aplicação de Ciência e Tecnologia (REACT)",
+          "Entrega da versão 2.0 do app PlanDox"
+        ],
+        "subjects": ["Machine Learning", "Computação Gráfica", "Eng Controle", "Redes", "Compiladores"],
+        "type": "graduation"
+      },
+      {
+        "position": "right",
+        "institution": "Universidade Federal do Maranhão (UFMA)",
+        "degree": "Bacharelado em Ciência e Tecnologia",
+        "period": "2021 - 2024",
+        "location": "São Luís, MA",
+        "status": "Concluído",
+        "description": "Formação sólida em fundamentos da computação, algoritmos, estruturas de dados, engenharia de software e desenvolvimento web. Participação ativa em projetos de pesquisa e extensão.",
+        "highlights": [
+          "Projetos com Python, C, Java e PHP"
+        ],
+        "subjects": ["Algoritmos", "Banco de Dados", "Eng. Software", "Paradigmas de Programação", "IA"],
+        "type": "graduation",
+        "tccInfo": {
+          "title": "Hans+: Uma Ferramenta de Acompanhamento e Informações Sobre a Hanseníase",
+          "grade": "10",
+          "advisor": "Prof. Dr. Davi Viana dos Santos"
+        },
+        "academicPerformance": {
+          "cra": "8.6",
+          "maxCra": "10.0"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Vamos criar algo <span class='text-purple-400'>incrível</span> juntos!",
+    "form": {
+      "name": "Nome *",
+      "email": "Email *",
+      "message": "Mensagem *",
+      "send": "Enviar",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+      "error": "❌ Erro ao enviar mensagem. Verifique sua conexão e tente novamente."
+    }
+  }
+}

@@ -5,7 +5,7 @@
       <!-- Header -->
       <div class="text-center mb-20">
         <h2 class="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Sobre Mim
+          {{ $t('about.title') }}
         </h2>
         <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
       </div>
@@ -27,12 +27,9 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-purple-400 mb-2">Desenvolvedora Full-Stack</h3>
+                <h3 class="text-xl font-bold text-purple-400 mb-2">{{ $t('about.card1.title') }}</h3>
                 <p class="text-gray-300 leading-relaxed text-justify text-base">
-                  Desenvolvedora Full-Stack com experiência em PHP/Laravel e SQL (MySQL/PostgreSQL). 
-                  Atuo na criação e integração de APIs RESTful, otimização de consultas para relatórios 
-                  estratégicos e desenvolvimento de sistemas web escaláveis e seguros. Também construo 
-                  interfaces responsivas priorizando usabilidade e acessibilidade.
+                  {{ $t('about.card1.description') }}
                 </p>
               </div>
             </div>
@@ -50,10 +47,9 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-pink-400 mb-2">Experiência em Saúde Pública</h3>
+                <h3 class="text-xl font-bold text-pink-400 mb-2">{{ $t('about.card2.title') }}</h3>
                 <p class="text-gray-300 leading-relaxed text-justify text-base">
-                  Atuação em projetos de tecnologia para saúde pública, desenvolvendo sistemas e relatórios estratégicos em tempo real. 
-                  Experiência em interoperabilidade de dados, boas práticas de Clean Code, versionamento Git e metodologias ágeis.
+                  {{ $t('about.card2.description') }}
                 </p>
               </div>
             </div>
@@ -67,14 +63,20 @@
         >
           <div class="text-center p-4 bg-black/30 rounded-2xl border border-purple-500/20">
             <div class="text-2xl font-bold text-purple-400 mb-1">2+</div>
-            <div class="text-gray-300">Anos de Experiência</div>
+            <div class="text-gray-300">{{ $t('about.stats.experience') }}</div>
           </div>
           <div class="text-center p-4 bg-black/30 rounded-2xl border border-pink-500/20">
             <div class="text-2xl font-bold text-pink-400 mb-1">5+</div>
-            <div class="text-gray-300">Projetos Concluídos</div>
+            <div class="text-gray-300">{{ $t('about.stats.projects') }}</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  name: 'AboutSection'
+}
+</script>

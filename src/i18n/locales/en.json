@@ -1,0 +1,830 @@
+{
+  "nav": {
+    "logo": "{ code & creativity }",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "footer": {
+    "text": "Ana Iara Loayza. All rights reserved."
+  },
+  "hero": {
+    "role": "Full Stack Developer",
+    "greeting": "Hello, I'm",
+    "name": "Ana Iara",
+    "surname": "Loayza Costa",
+    "description": "Passionate about creating",
+    "highlight1": "digital experiences",
+    "description2": "that transform ideas into",
+    "highlight2": "reality",
+    "buttons": {
+      "viewProjects": "View Projects",
+      "downloadCV": "Download Resume"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "card1": {
+      "title": "Full-Stack Developer",
+      "description": "Full-Stack Developer with experience in PHP/Laravel and SQL (MySQL/PostgreSQL). I work on creating and integrating RESTful APIs, optimizing queries for strategic reports, and developing scalable and secure web systems. I also build responsive interfaces prioritizing usability and accessibility."
+    },
+    "card2": {
+      "title": "Public Health Experience",
+      "description": "Working on public health technology projects, developing systems and real-time strategic reports. Experience in data interoperability, Clean Code best practices, Git versioning, and agile methodologies."
+    },
+    "stats": {
+      "experience": "Years of Experience",
+      "projects": "Completed Projects"
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "frontend": "Frontend Development",
+    "backend": "Backend & Database",
+    "mobile": "Mobile Development",
+    "otherTools": "Other Tools"
+  },
+  "projects": {
+    "title": "Projects",
+    "details": "View Details",
+    "viewProject": "View Project",
+    "github": "GitHub",
+    "inDevelopment": "In Development",
+    "inDev": "In Dev",
+    "list": {
+      "monitora": {
+        "title": "Monitora Saúde",
+        "description": "Web system for monitoring and evaluating health indicators and processes, providing updated data to support management, strategic planning, and health promotion in Maranhão."
+      },
+      "hans": {
+        "title": "Hans+ App",
+        "description": "Hans+ is a platform with a web version and an Android app that supports leprosy treatment, allowing medication recording, symptom monitoring, and access to reliable information about the disease."
+      },
+      "renaveh": {
+        "title": "RENAVEH",
+        "description": "Web-based system for patient registration, hospital notification management, and inter-hospital transfers, with an exclusive area for traffic accidents and access control based on roles and permissions."
+      },
+      "masemfome": {
+        "title": "Maranhão Free from Hunger",
+        "description": "The Maranhão Free from Hunger system (health axis) combats food insecurity through the registration and follow-up of vulnerable families, enabling the recording of evaluations and monitoring the history of each individual."
+      },
+      "cadserv": {
+        "title": "CadServ",
+        "description": "Registration and management system for SAPAPVS employees, allowing the recording of personal, functional, and social data, as well as managing information such as vacations, with access for managers, coordinators, and the deputy secretariat."
+      },
+      "plandox": {
+        "title": "PlanDox 2.0",
+        "description": "PlanDox 2.0 is the new version in development of a desktop software for experimental planning and biodiesel quality analysis, featuring an improved interface, mobile version, and microservices-based architecture."
+      },
+      "react": {
+        "title": "ReACT Portal",
+        "description": "The ReACT portal, under development, will be a platform for intuitive management of projects, news, public calls, and teams of the Science and Technology Application Network (ReACT), strengthening academic and professional collaboration."
+      }
+    },
+    "projectDdetails": {
+      "backToProjects": "Back to Projects",
+      "projectNotFound": "Project Not Found",
+      "projectNotFoundDescription": "The project you are looking for does not exist or has been removed.",
+      "projectLive": "See Project Live",
+      "viewGithub": "Github Repository",
+      "aboutProject": "About the Project",
+      "mainFeatures": "Main Features",
+      "developmentProcess": "Development Process",
+      "gallery": "Gallery",
+      "viewAllPhotos": "View all {count} photos",
+      "status": "Status",
+      "completed": "Completed",
+      "technologies": "Technologies",
+      "information": "Information",
+      "duration": "Duration",
+      "team": "Team",
+      "client": "Client",
+      "impact": "Impact",
+      "otherProjects": "Other Projects",
+      "back": "Go Back",
+      "monitora": {
+        "title": "Monitora Saúde",
+        "description": "Web system for monitoring and evaluating health indicators and processes, providing updated data to support management, strategic planning, and health promotion in Maranhão.",
+        "detailedDescription": "Monitora Saúde is a web platform developed for the Maranhão State Health Department, aimed at modernizing and centralizing public health indicators monitoring. The system offers an intuitive interface for real-time data visualization and interactive dashboards that assist managers in strategic decision-making.",
+        "features": [
+          "Interactive dashboards, built with Power BI, featuring real-time indicators",
+          "User management with different access levels",
+          "Responsive interface for mobile devices"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Requirements Analysis",
+            "description": "Detailed assessment of Health Department needs and definition of priority indicators."
+          },
+          {
+            "title": "System Architecture",
+            "description": "Development of MVC architecture using Laravel, focusing on scalability and performance."
+          },
+          {
+            "title": "Backend Development",
+            "description": "Implementation of APIs, PostgreSQL integration, and development of indicator calculation algorithms."
+          },
+          {
+            "title": "User Interface",
+            "description": "Creation of intuitive dashboards using modern data visualization technologies."
+          },
+          {
+            "title": "Testing and Deployment",
+            "description": "Extensive testing and deployment in high-availability production environment."
+          }
+        ],
+        "projectInfo": {
+          "duration": "4 months",
+          "team": "4 developers",
+          "client": "Maranhão State Health Department"
+        },
+        "impact": [
+          {
+            "value": "50+",
+            "label": "Monitored Indicators"
+          },
+          {
+            "value": "200+",
+            "label": "Active Users"
+          }
+        ],
+        "gallery": [
+          {
+            "url": "/images/monitora/tela_inicial.png",
+            "alt": "Home screen of the Monitora Saúde system"
+          },
+          {
+            "url": "/images/monitora/navegacao_indicadores_logout.png",
+            "alt": "Navigation between indicators with logged-out user"
+          },
+          {
+            "url": "/images/monitora/login.png",
+            "alt": "Login screen of the Monitora Saúde system"
+          },
+          {
+            "url": "/images/monitora/verificacao_2fa.png",
+            "alt": "Two-factor authentication (2FA) for access security"
+          },
+          {
+            "url": "/images/monitora/nav_indicadores_logado.png",
+            "alt": "Navigation between indicators with logged-in user"
+          },
+          {
+            "url": "/images/monitora/dropdown_admin.png",
+            "alt": "Administration dropdown menu of the system"
+          },
+          {
+            "url": "/images/monitora/dashboard_indicador.png",
+            "alt": "Dashboard with visualization of specific indicators"
+          },
+          {
+            "url": "/images/monitora/descricao_indicador.png",
+            "alt": "Screen with detailed description of the selected indicator"
+          },
+          {
+            "url": "/images/monitora/ficha_indicador.png",
+            "alt": "Access to the technical sheet of the health indicator"
+          },
+          {
+            "url": "/images/monitora/ficha_aberta.png",
+            "alt": "Indicator sheet with expanded detailed information"
+          },
+          {
+            "url": "/images/monitora/dropdown_indicadores.png",
+            "alt": "Dropdown menu with indicator management pages"
+          },
+          {
+            "url": "/images/monitora/index_grupos.png",
+            "alt": "Page for managing indicator groups"
+          },
+          {
+            "url": "/images/monitora/index_indicadores.png",
+            "alt": "Page for managing registered indicators"
+          },
+          {
+            "url": "/images/monitora/contato.png",
+            "alt": "Contact and support screen of the system"
+          }
+        ]
+      },
+      "hans": {
+        "title": "Hans+ App",
+        "description": "Hans+ is a platform with a web version and an Android app that supports leprosy treatment, allowing medication recording, symptom monitoring, and access to reliable information about the disease.",
+        "detailedDescription": "Hans+ is a mobile application developed to support leprosy treatment and provide reliable information about the disease. The project was carried out in partnership with the Pharmacy course at the Federal University of Maranhão (UFMA), with technical support and expertise in the health field. The application allows medication recording, daily symptom monitoring, and access to educational content. It uses Flutter for cross-platform development and Firebase for secure data storage. Hans+ went through stages of requirements gathering, prototyping, and usability testing, being evaluated as a practical, informative tool with great potential to assist patients in leprosy treatment monitoring.",
+        "features": [
+          "Native mobile application for Android",
+          "Responsive web version",
+          "Daily medication usage recording",
+          "Daily symptom recording",
+          "Knowledge base about leprosy"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Research and Validation",
+            "description": "In-depth study on leprosy and proposal validation with specialized health professionals."
+          },
+          {
+            "title": "UX/UI Design",
+            "description": "Creation of a friendly and accessible interface, considering different user profiles."
+          },
+          {
+            "title": "Flutter Development",
+            "description": "Application implementation using Flutter to ensure native performance on Android and web."
+          },
+          {
+            "title": "Firebase Integration",
+            "description": "Firebase backend configuration for authentication, database, and push notifications."
+          },
+          {
+            "title": "User Testing",
+            "description": "Validation with real patients and health professionals for experience refinement."
+          }
+        ],
+        "projectInfo": {
+          "duration": "3 months",
+          "team": "3 developers",
+          "client": "Federal University of Maranhão (UFMA)"
+        },
+        "gallery": [
+          {
+            "url": "/images/hans+/login.jpeg",
+            "alt": "Hans+ Login screen"
+          },
+          {
+            "url": "/images/hans+/cadastro.jpeg",
+            "alt": "User registration screen"
+          },
+          {
+            "url": "/images/hans+/redefinir_senha.jpeg",
+            "alt": "Password reset request screen"
+          },
+          {
+            "url": "/images/hans+/home.jpeg",
+            "alt": "Hans+ home page"
+          },
+          {
+            "url": "/images/hans+/page_info.jpeg",
+            "alt": "Information screen about leprosy"
+          },
+          {
+            "url": "/images/hans+/page_info2.jpeg",
+            "alt": "Continuation of the information screen about leprosy"
+          },
+          {
+            "url": "/images/hans+/page_sinais_sintomas.jpeg",
+            "alt": "Informative page with signs and symptoms of leprosy"
+          },
+          {
+            "url": "/images/hans+/calendario.jpeg",
+            "alt": "Treatment calendar screen"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios.jpeg",
+            "alt": "Screen for recording two medications in the calendar"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios_3.jpeg",
+            "alt": "Medication use confirmation"
+          },
+          {
+            "url": "/images/hans+/calendario_2remedios_2.jpeg",
+            "alt": "Daily symptom monitoring screen"
+          },
+          {
+            "url": "/images/hans+/sintomas.jpeg",
+            "alt": "Symptom recording and history screen"
+          },
+          {
+            "url": "/images/hans+/profile.jpeg",
+            "alt": "User profile screen"
+          },
+          {
+            "url": "/images/hans+/edit_conta.jpeg",
+            "alt": "Account information editing screen"
+          },
+          {
+            "url": "/images/hans+/edit_conta2.jpeg",
+            "alt": "Email editing screen"
+          },
+          {
+            "url": "/images/hans+/edit_conta_3.jpeg",
+            "alt": "Password editing screen"
+          },
+          {
+            "url": "/images/hans+/edit_perfil.jpeg",
+            "alt": "User profile editing screen"
+          },
+          {
+            "url": "/images/hans+/edit_tratamento.jpeg",
+            "alt": "Treatment data editing screen"
+          },
+          {
+            "url": "/images/hans+/historico_sintomas.jpeg",
+            "alt": "Screen with history of recorded symptoms"
+          },
+          {
+            "url": "/images/hans+/saiba_mais.jpeg",
+            "alt": "Screen with useful links and information about leprosy"
+          },
+          {
+            "url": "/images/hans+/sobre_nos.jpeg",
+            "alt": "Screen about the team responsible for the app"
+          },
+          {
+            "url": "/images/hans+/links_sobre_nos.jpeg",
+            "alt": "Screen with external links related to the team responsible for the app"
+          }
+        ]
+
+      },
+      "renaveh": {
+        "title": "RENAVEH - MA",
+        "description": "Web system for patient registration, hospital notification management, and hospital transfers, with an exclusive area for traffic accidents and access control by roles and permissions.",
+        "detailedDescription": "RENAVEH (National Network of Hospital Emergencies) is a web system developed to optimize the management of hospital emergencies in Maranhão. The platform enables the registration and monitoring of patients in emergency situations, facilitating communication between hospitals and speeding up transfer and notification processes.",
+        "features": [
+          "Patient registration",
+          "Hospital notification registration",
+          "System for transferring notifications between hospitals",
+          "Specialized module for traffic accidents, requested by SUPAST",
+          "Access control by roles and permissions",
+          "Dashboard of indicators for managers"
+        ],
+        "projectInfo": {
+          "duration": "6 months",
+          "team": "4 developers",
+          "client": "RENAVEH - Maranhão"
+        },
+        "impact": [
+          {
+            "value": "40,606+",
+            "label": "Reported Cases (General)"
+          },
+          {
+            "value": "8,042+",
+            "label": "Immediate Notifications"
+          },
+          {
+            "value": "4,612+",
+            "label": "Reported Cases (SUPAST)"
+          },
+          {
+            "value": "26",
+            "label": "Recorded Deaths"
+          }
+        ],
+        "gallery": [
+          {
+            "url": "/images/renaveh/tela_login.png",
+            "alt": "RENAVEH system login screen"
+          },
+          {
+            "url": "/images/renaveh/tela_2fa_autenticacao.png",
+            "alt": "Authentication screen with two-factor verification (2FA)"
+          },
+          {
+            "url": "/images/renaveh/dashboard_dados_totais.png",
+            "alt": "Dashboard with overall system data"
+          },
+          {
+            "url": "/images/renaveh/dashboard_supast.png",
+            "alt": "SUPAST-specific dashboard (Superintendence of Health Care Policy in Traffic)"
+          },
+          {
+            "url": "/images/renaveh/dados_filtrados_supast.png",
+            "alt": "Data filtered by region in the SUPAST dashboard"
+          },
+          {
+            "url": "/images/renaveh/index_pacientes.png",
+            "alt": "Search page for patients registered in the system"
+          },
+          {
+            "url": "/images/renaveh/cadastrar_paciente.png",
+            "alt": "New patient registration form"
+          },
+          {
+            "url": "/images/renaveh/edit_paciente.png",
+            "alt": "Patient data editing form"
+          },
+          {
+            "url": "/images/renaveh/ficha_paciente.png",
+            "alt": "Record with registered patient data"
+          },
+          {
+            "url": "/images/renaveh/index_not_paciente.png",
+            "alt": "List of patient notifications related to the logged-in user's hospital"
+          },
+          {
+            "url": "/images/renaveh/index_not_paciente2.png",
+            "alt": "View of all patient notifications across any hospital"
+          },
+          {
+            "url": "/images/renaveh/notificacao_paciente.png",
+            "alt": "Patient notification details"
+          },
+          {
+            "url": "/images/renaveh/notificacao_paciente2.png",
+            "alt": "Continuation of patient notification details"
+          },
+          {
+            "url": "/images/renaveh/historico_not_transf.png",
+            "alt": "Notification transfer history"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao.png",
+            "alt": "New notification registration form"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao2.png",
+            "alt": "Notification registration - Step 2"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao3.png",
+            "alt": "Notification registration - Step 3"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao4.png",
+            "alt": "Notification registration - Step 4"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao5.png",
+            "alt": "Notification registration - Step 5"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao6.png",
+            "alt": "Notification registration - Step 6"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao7.png",
+            "alt": "Notification registration - Step 7"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao8.png",
+            "alt": "Notification registration - Step 8"
+          },
+          {
+            "url": "/images/renaveh/cadastro_notificacao9.png",
+            "alt": "Notification registration - Step 9"
+          },
+          {
+            "url": "/images/renaveh/index_notificacao.png",
+            "alt": "Search page for registered notifications"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao.png",
+            "alt": "Notification search filters applied on the search page"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao2.png",
+            "alt": "Notification search results with applied filters"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao3.png",
+            "alt": "Continuation of notification search results with applied filters"
+          },
+          {
+            "url": "/images/renaveh/search_notificacao4.png",
+            "alt": "Continuation of notification search results with applied filters"
+          },
+          {
+            "url": "/images/renaveh/excel_relatorio.png",
+            "alt": "Report export in Excel format"
+          },
+          {
+            "url": "/images/renaveh/notificacoes_supast.png",
+            "alt": "Notifications linked to SUPAST"
+          },
+          {
+            "url": "/images/renaveh/notificacoes_supast2.png",
+            "alt": "SUPAST notification search results with applied filters"
+          },
+          {
+            "url": "/images/renaveh/index_hospitais.png",
+            "alt": "Management of registered hospitals"
+          },
+          {
+            "url": "/images/renaveh/usuarios_hospitais.png",
+            "alt": "Association between users and hospitals"
+          },
+          {
+            "url": "/images/renaveh/index_dae.png",
+            "alt": "List of registered DAEs (Diseases, Conditions, and Events)"
+          },
+          {
+            "url": "/images/renaveh/index_sintomas.png",
+            "alt": "Registration and listing of recorded symptoms"
+          },
+          {
+            "url": "/images/renaveh/index_auditoria.png",
+            "alt": "System audit screen for tracking actions"
+          },
+          {
+            "url": "/images/renaveh/index_usuarios.png",
+            "alt": "List of system users"
+          },
+          {
+            "url": "/images/renaveh/visualizar_usuario.png",
+            "alt": "User view record"
+          },
+          {
+            "url": "/images/renaveh/index_papeis.png",
+            "alt": "Management of user roles and permissions"
+          },
+          {
+            "url": "/images/renaveh/index_paginas.png",
+            "alt": "Management of system permission pages"
+          }
+        ]
+      },
+      "masemfome": {
+        "title": "Maranhão Free from Hunger",
+        "description": "Maranhão Free from Hunger is a system under development aimed at tackling food insecurity in the state, focusing on the registration and monitoring of vulnerable families, nutritional assessment, and integration with public policies.",
+        "detailedDescription": "Maranhão Free from Hunger is being developed as a strategic platform to support integrated actions to fight hunger and food insecurity in the state of Maranhão. The system will allow detailed registration of families in vulnerable situations, individual nutritional monitoring, and tracking of the effectiveness of social actions through dashboards and automated reports. The platform integrates with existing government systems through APIs, enabling the use of already registered data and avoiding duplication of efforts in family assistance.",
+        "features": [
+          "Structured registration of families in food vulnerability",
+          "Integration with external API for automatic retrieval of family data by CPF",
+          "Import and synchronization of personal data and family addresses",
+          "Updating and complementing information not available in the external API",
+          "Registration of assessments based on health indicators",
+          "Continuous history of care and follow-up",
+          "Dynamic dashboards by region and municipality",
+          "Automated reports for public managers",
+          "Integration with existing social policies and programs",
+          "Support for decision-making in food security policies"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Diagnosis and Planning",
+            "description": "Needs mapping, definition of data flows, and identification of priority nutritional and social indicators."
+          },
+          {
+            "title": "Integration with Government Systems",
+            "description": "Development of integration with the general family registry system API, allowing searches by the head of household’s CPF and automatic import of personal and address data. This integration avoids rework and ensures consistency of information across systems."
+          },
+          {
+            "title": "Platform Development",
+            "description": "Construction of the backend and frontend with a focus on performance, security, and usability for field professionals, including data synchronization and update features."
+          },
+          {
+            "title": "Data and Flow Validation",
+            "description": "Implementation of validation routines and completion of imported data, allowing professionals to update or add specific health information not covered in the main system."
+          },
+          {
+            "title": "Regional Pilot Tests",
+            "description": "Initial deployment in pilot regions for feedback collection, functionality validation, and testing of the external system integration in a real environment."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Ongoing (3 months)",
+          "team": "6 developers",
+          "client": "Maranhão State Department of Health (SES/MA)"
+        }
+      },
+      "cadserv": {
+        "title": "CadServ",
+        "description": "System for registration and management of SAPAPVS staff, allowing the recording of personal, functional, and social data, as well as managing information such as vacations, with access for managers, coordinators, and the deputy secretariat.",
+        "detailedDescription": "CadServ is a human resources management system developed specifically for the Deputy Secretariat of Primary Care and Health Surveillance Policy (SAPAPVS). The platform centralizes functional information, facilitating staff administration and optimizing the secretariat’s internal processes.",
+        "features": [
+          "Complete staff registration",
+          "Management of functional and personal data",
+          "Control of vacations and leave",
+          "Hierarchical permission system",
+          "Intuitive administrative interface"
+        ],
+        "projectInfo": {
+          "duration": "2 months",
+          "team": "4 developers",
+          "client": "SAPAPVS-SES/MA - Deputy Secretariat of Primary Care and Health Surveillance Policy"
+        }
+      },
+      "plandox": {
+        "title": "PlanDox 2.0",
+        "description": "PlanDox 2.0 is the new version under development of a desktop software for experimental planning and biodiesel quality analysis, featuring an improved interface, mobile version, and microservices-based architecture.",
+        "detailedDescription": "PlanDox 2.0 represents a significant evolution of the original software, incorporating modern technologies and a microservices architecture. This project aims to completely modernize the experimental planning experience for biodiesel analysis, offering greater flexibility, scalability, and accessibility across multiple platforms.",
+        "features": [
+          "Modern and intuitive interface",
+          "Microservices-based architecture",
+          "Complementary mobile version",
+          "Advanced data analysis",
+          "Automated scientific reports"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Previous Version Analysis",
+            "description": "Detailed study of the original PlanDox to identify improvement points."
+          },
+          {
+            "title": "Architecture Redesign",
+            "description": "Migration to a microservices architecture with Python and Docker."
+          },
+          {
+            "title": "Iterative Development",
+            "description": "Implementation in sprints with continuous feedback among the team."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Ongoing (1 month)",
+          "team": "4 developers",
+          "client": "DartiLab - UFMA"
+        }
+      },
+      "react": {
+        "title": "ReACT Portal",
+        "description": "The ReACT portal, currently under development, will be a platform for intuitive management of projects, news, calls for proposals, and teams of the Science and Technology Application Network (ReACT), strengthening academic and professional collaboration.",
+        "detailedDescription": "The ReACT Portal is being developed as a central platform for the Science and Technology Application Network, with the goal of connecting researchers, facilitating project collaboration, and centralizing academic information. The platform will serve as a knowledge and collaboration hub for the academic community.",
+        "features": [
+          "Comprehensive research project management",
+          "News and communication system",
+          "Management of calls for proposals and selection processes",
+          "Directory of researchers and teams",
+          "Library of academic resources",
+          "Collaboration system between institutions",
+          "Analytical dashboard for managers"
+        ],
+        "developmentProcess": [
+          {
+            "title": "Requirements Gathering",
+            "description": "Interviews with coordinators and researchers to define features."
+          },
+          {
+            "title": "Prototyping",
+            "description": "Creation of interactive prototypes for user validation."
+          },
+          {
+            "title": "Backend Development",
+            "description": "Implementation of the API and data structure using Laravel."
+          },
+          {
+            "title": "Frontend Development",
+            "description": "Creation of the user interface focused on researcher experience."
+          }
+        ],
+        "projectInfo": {
+          "duration": "Ongoing (2 months)",
+          "team": "3 developers",
+          "client": "ReACT Network - UFMA"
+        }
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "activitiesTitle": "Activities and Responsibilities",
+    "technologiesTitle": "Technologies Used",
+    "jobs": [
+      {
+        "position": "left",
+        "company": "Maranhão State Health Department - SES/MA",
+        "role": "Junior Full-Stack Developer",
+        "period": "Jan 2024 - Present",
+        "location": "São Luís, MA",
+        "description": "I develop full-stack web systems for public health using Laravel and PHP, creating solutions that support management and data interoperability between different health areas.",
+        "achievements": [
+          "Developed complete web systems with Laravel and PHP",
+          "Created RESTful APIs for mobile application integration",
+          "Built responsive interfaces prioritizing accessibility",
+          "Automated data interoperability processes",
+          "Structured SQL queries for health reports"
+        ],
+        "technologies": ["Laravel", "PHP", "MySQL", "PostgreSQL", "Vue.js", "Docker", "Git", "GitHub", "Trello", "Linux"]
+      },
+      {
+        "position": "right",
+        "company": "DartiLab - UFMA",
+        "role": "Academic Intern in Software Engineering",
+        "period": "Jun 2025 - Present",
+        "location": "São Luís, MA",
+        "description": "I participate in the modernization of monolithic systems, contributing to decomposition into microservices and development of cross-platform interfaces.",
+        "achievements": [
+          "Support analysis and decomposition of monolithic systems",
+          "Develop cross-platform interfaces with React Native",
+          "Implement microservices in Python with FastAPI",
+          "Use Docker and Kubernetes for containerization",
+          "Contribute to project technical documentation"
+        ],
+        "technologies": ["Python", "React Native", "FastAPI", "Firebase", "Docker", "Kubernetes", "RabbitMQ", "Git", "GitHub", "Linux"]
+      },
+      {
+        "position": "left",
+        "company": "Federal University of Maranhão - UFMA",
+        "role": "Project and Software Development Monitor",
+        "period": "Mar 2024 - Jul 2024",
+        "location": "São Luís, MA",
+        "description": "I assisted students in understanding software engineering concepts, promoting good programming practices and collaboration in practical projects.",
+        "achievements": [
+          "Assisted students with software engineering concepts",
+          "Supported development of practical group projects",
+          "Clarified doubts about UML and software architecture",
+          "Promoted integration between theory and practice",
+          "Used agile methodologies (Scrum, Kanban)"
+        ],
+        "technologies": ["UML", "Git", "GitHub", "Jira", "Scrum", "Kanban"]
+      },
+      {
+        "position": "right",
+        "company": "Maranhão State Health Department - SES/MA",
+        "role": "Back-End Development and Data Science Intern",
+        "period": "Jun 2023 - Dec 2023",
+        "location": "São Luís, MA",
+        "description": "I developed back-end functionalities and performed data analysis to support strategic decisions in public health, automating processes and creating technical reports.",
+        "achievements": [
+          "Developed back-end functionalities in PHP",
+          "Created SQL queries for strategic reports",
+          "Analyzed data with Python and Julia",
+          "Automated data extraction and organization",
+          "Supported integration between different data sources"
+        ],
+        "technologies": ["PHP", "MySQL", "PostgreSQL", "Python", "Julia", "Jupyter Notebook"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "highlightsTitle": "Highlights", 
+    "tccTitle": "Final Project",
+    "advisorLabel": "Advisor",
+    "gradeLabel": "Grade",
+    "craLabel": "GPA",
+    "subjectsLabel": "Main Subjects",
+    "technologiesLabel": "Technologies Studied",
+    "knowledgeAreasLabel": "Knowledge Areas", 
+    "contentLabel": "Content",
+    "degrees": [
+      {
+        "position": "right",
+        "institution": "Federal Institute of Mato Grosso (IFMT)",
+        "degree": "Postgraduate in DevOps Engineering",
+        "period": "2025 - Present",
+        "location": "Planaltina, GO",
+        "status": "In Progress",
+        "description": "Specialization focused on modern software development and operations practices, with emphasis on agile methodologies, continuous integration and delivery, test automation, and infrastructure management in DevOps environments.",
+        "highlights": [
+          "Practical continuous integration and delivery projects",
+          "Implementation of automated pipelines focused on quality and performance"
+        ],
+        "subjects": [
+          "Agile Projects and DevOps",
+          "Continuous Integration and Delivery", 
+          "Change and Infrastructure Management",
+          "Application Monitoring",
+          "Automated Software Testing"
+        ],
+        "type": "graduation"
+      },
+      {
+        "position": "left", 
+        "institution": "Federal University of Maranhão (UFMA)",
+        "degree": "Bachelor's in Computer Engineering",
+        "period": "2024 - Present",
+        "location": "São Luís, MA",
+        "status": "In Progress",
+        "description": "Solid foundation in Computer Vision, Machine Learning, Deep Learning, Networks, and Industrial Automation. Active participation in research and extension projects.",
+        "highlights": [
+          "Delivery of Science and Technology Application Network Portal (REACT)",
+          "Delivery of PlanDox app version 2.0"
+        ],
+        "subjects": ["Machine Learning", "Computer Graphics", "Control Engineering", "Networks", "Compilers"],
+        "type": "graduation"
+      },
+      {
+        "position": "right",
+        "institution": "Federal University of Maranhão (UFMA)",
+        "degree": "Bachelor's in Science and Technology",
+        "period": "2021 - 2024", 
+        "location": "São Luís, MA",
+        "status": "Completed",
+        "description": "Solid foundation in computer science fundamentals, algorithms, data structures, software engineering, and web development. Active participation in research and extension projects.",
+        "highlights": [
+          "Projects with Python, C, Java, and PHP"
+        ],
+        "subjects": ["Algorithms", "Database", "Software Engineering", "Programming Paradigms", "AI"],
+        "type": "graduation",
+        "tccInfo": {
+          "title": "Hans+: A Tool for Monitoring and Information About Leprosy",
+          "grade": "10",
+          "advisor": "Prof. Dr. Davi Viana dos Santos"
+        },
+        "academicPerformance": {
+          "cra": "8.6",
+          "maxCra": "10.0"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's create something <span class='text-purple-400'>amazing</span> together!",
+    "form": {
+      "name": "Name *",
+      "email": "Email *",
+      "message": "Message *",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I will get back to you soon.",
+      "error": "❌ Error sending message. Please check your connection and try again."
+    }
+  }
+}

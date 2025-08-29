@@ -5,21 +5,32 @@
       <div class="development-icon">
         <div class="pulse-dot"></div>
       </div>
-      <span class="development-text">Em Desenvolvimento</span>
+      <span class="development-text">{{ $t('projects.inDevelopment') }}</span>
     </div>
 
+    <!-- Imagem / background do projeto -->
     <div :class="projectImageClasses" class="project-image" @click="goToProjectDetails">
       <div class="project-overlay">
-        <div class="text-white text-xl font-bold">Ver Detalhes</div>
+        <div class="text-white text-xl font-bold">{{ $t('projects.details') }}</div>
       </div>
     </div>
+
+    <!-- Conteúdo do projeto -->
     <div class="project-content">
-      <h3 class="text-2xl font-bold text-white mb-3 cursor-pointer hover:text-purple-400 transition-colors duration-300" @click="goToProjectDetails"> 
-        {{ project.title }}
+      <!-- Título traduzido -->
+      <h3 
+        class="text-2xl font-bold text-white mb-3 cursor-pointer hover:text-purple-400 transition-colors duration-300" 
+        @click="goToProjectDetails"
+      >
+        {{ $t(`projects.list.${project.key}.title`) }}
       </h3>
+
+      <!-- Descrição traduzida -->
       <p class="text-gray-400 mb-6 leading-relaxed">
-        {{ project.description }}
+        {{ $t(`projects.list.${project.key}.description`) }}
       </p>
+
+      <!-- Tecnologias -->
       <div class="flex flex-wrap gap-2 mb-6">
         <span 
           v-for="tech in project.technologies" 
@@ -30,15 +41,17 @@
           {{ tech.name }}
         </span>
       </div>
+
+      <!-- Botões -->
       <div class="flex gap-4">
         <a 
           :href="project.projectUrl" 
           class="project-link"
           :class="{ 'opacity-50 pointer-events-none': project.inDevelopment && project.projectUrl === '#' }"
         >
-          Ver Projeto
+          {{ $t('projects.viewProject') }}
         </a>
-        <a :href="project.githubUrl" class="project-link">GitHub</a>
+        <a :href="project.githubUrl" class="project-link">{{ $t('projects.github') }}</a>
       </div>
     </div>
   </div>
@@ -48,10 +61,7 @@
 export default {
   name: 'ProjectCard',
   props: {
-    project: {
-      type: Object,
-      required: true
-    }
+    project: { type: Object, required: true }
   },
   computed: {
     projectImageClasses() {
@@ -60,7 +70,6 @@ export default {
   },
   methods: {
     goToProjectDetails() {
-      // Navegar para a página de detalhes do projeto
       this.$router.push(`/projeto/${this.project.id}`)
     }
   }
@@ -91,14 +100,8 @@ export default {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.2);
-  }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
 }
 
 .project-image {

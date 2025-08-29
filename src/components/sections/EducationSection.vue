@@ -4,7 +4,7 @@
       <!-- Header -->
       <div class="text-center mb-20">
         <h2 class="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Formação
+          {{ $t('education.title') }}
         </h2>
         <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
       </div>
@@ -16,83 +16,20 @@
         <!-- Education Items -->
         <div class="space-y-16">
           <EducationCard
-            :position="'right'"
-            :institution="'Instituto Federal de Mato Grosso (IFMT)'"
-            :degree="'Pós-Graduação em Engenharia DevOps'"
-            :period="'2025 - Presente'"
-            :location="'Planaltina, GO'"
-            :status="'Em andamento'"
-            :description="'Especialização voltada para práticas modernas de desenvolvimento e operações de software, com foco em metodologias ágeis, integração e entrega contínua, automação de testes e gerenciamento de infraestrutura em ambientes de DevOps.'"
-            :highlights="[
-              'Projetos práticos de integração e entrega contínua',
-              'Implantação de pipelines automatizados com foco em qualidade e performance'
-            ]"
-            :subjects="[
-              'Projetos Ágeis e DevOps',
-              'Integração e Entrega Contínua',
-              'Gerenciamento de Mudanças e Infraestrutura',
-              'Monitoramento de Aplicações',
-              'Testes Automatizados de Software'
-            ]"
-            :type="'graduation'"
-          />
-          
-          <EducationCard
-            :position="'left'"
-            :institution="'Universidade Federal do Maranhão (UFMA)'"
-            :degree="'Bacharelado em Engenharia da Computação'"
-            :period="'2024 - Presente'"
-            :location="'São Luís, MA'"
-            :status="'Em andamento'"
-            :description="'Formação sólida em Visão Computacional, Machine Learning, Deep Learning, Redes e Automação Industrial. Participação ativa em projetos de pesquisa e extensão.'"
-            :highlights="[
-              'Entrega de Portal da Rede de Aplicação de Ciência e Tecnologia (REACT)',
-              'Entrega da versão 2.0 do app PlanDox'
-            ]"
-            :subjects="['Machine Learning', 'Computação Gráfica', 'Eng Controle', 'Redes', 'Compiladores']"
-            :type="'graduation'"
-          />
-          
-          <!-- <EducationCard
-            :position="'left'"
-            :institution="'Rocketseat'"
-            :degree="'Ignite - Trilha ReactJS'"
-            :period="'2021'"
-            :location="'Online'"
-            :status="'Certificado'"
-            :description="'Bootcamp intensivo focado em desenvolvimento React moderno, incluindo hooks, context API, Next.js, e melhores práticas de desenvolvimento frontend.'"
-            :highlights="[
-              'Desenvolvimento de 8 projetos práticos',
-              'Aprendizado de TypeScript avançado',
-              'Implementação de testes automatizados',
-              'Deploy e otimização de performance'
-            ]"
-            :subjects="['React', 'Next.js', 'TypeScript', 'Jest', 'Styled Components']"
-            :type="'bootcamp'"
-          /> -->
-          
-          <EducationCard
-            :position="'right'"
-            :institution="'Universidade Federal do Maranhão (UFMA)'"
-            :degree="'Bacharelado em Ciência e Tecnologia'"
-            :period="'2021 - 2024'"
-            :location="'São Luís -MA'"
-            :status="'Concluído'"
-            :description="'Formação sólida em fundamentos da computação, algoritmos, estruturas de dados, engenharia de software e desenvolvimento web. Participação ativa em projetos de pesquisa e extensão.'"
-            :highlights="[
-              'Projetos com Python, C, Java e PHP'
-            ]"
-            :subjects="['Algoritmos', 'Banco de Dados', 'Eng. Software', 'Paradigmas de Programação', 'IA']"
-            :type="'graduation'"
-            :tcc-info="{
-              title: 'Hans+: Uma Ferramenta de Acompanhamento e Informações Sobre a Hanseníase',
-              grade: '10',
-              advisor: 'Prof. Dr. Davi Viana dos Santos'
-            }"
-            :academic-performance="{
-              cra: '8.6',
-              maxCra: '10.0'
-            }"
+            v-for="(education, index) in $tm('education.degrees')"
+            :key="index"
+            :position="education.position"
+            :institution="education.institution"
+            :degree="education.degree"
+            :period="education.period"
+            :location="education.location"
+            :status="education.status"
+            :description="education.description"
+            :highlights="education.highlights"
+            :subjects="education.subjects"
+            :type="education.type"
+            :tcc-info="education.tccInfo || null"
+            :academic-performance="education.academicPerformance || null"
           />
         </div>
       </div>
