@@ -7,7 +7,7 @@
           class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer"
           @click="scrollToSection('home')"
         >
-          {{ $t('nav.logo') }}
+          {{ logoText }}
         </div>
 
         <!-- Desktop Navigation -->
@@ -76,6 +76,12 @@ import LanguageSelector from './LanguageSelector.vue'
 
 export default {
   name: 'AppHeader',
+  props: {
+    logoText: {
+      type: String,
+      default: '{ code & creativity }'
+    }
+  },
   components: {
     LanguageSelector
   },
