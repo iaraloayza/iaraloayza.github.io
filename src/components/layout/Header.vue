@@ -188,13 +188,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .nav-link {
     @apply text-gray-300 hover:text-purple-400 transition-all duration-300 relative bg-transparent border-none cursor-pointer;
   }
 
   .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -4px;
     left: 0;
