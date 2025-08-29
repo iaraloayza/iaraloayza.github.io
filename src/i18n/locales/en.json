@@ -9,6 +9,9 @@
     "education": "Education",
     "contact": "Contact"
   },
+  "footer": {
+    "text": "Ana Iara Loayza. All rights reserved."
+  },
   "hero": {
     "role": "Full Stack Developer",
     "greeting": "Hello, I'm",
@@ -51,6 +54,7 @@
     "viewProject": "View Project",
     "github": "GitHub",
     "inDevelopment": "In Development",
+    "inDev": "In Dev",
     "list": {
       "monitora": {
         "title": "Monitora Saúde",
@@ -101,6 +105,7 @@
       "client": "Client",
       "impact": "Impact",
       "otherProjects": "Other Projects",
+      "back": "Go Back",
       "monitora": {
         "title": "Monitora Saúde",
         "description": "Web system for monitoring and evaluating health indicators and processes, providing updated data to support management, strategic planning, and health promotion in Maranhão.",
@@ -664,6 +669,150 @@
         }
       }
     }
+  },
+  "experience": {
+    "title": "Experience",
+    "activitiesTitle": "Activities and Responsibilities",
+    "technologiesTitle": "Technologies Used",
+    "jobs": [
+      {
+        "position": "left",
+        "company": "Maranhão State Health Department - SES/MA",
+        "role": "Junior Full-Stack Developer",
+        "period": "Jan 2024 - Present",
+        "location": "São Luís, MA",
+        "description": "I develop full-stack web systems for public health using Laravel and PHP, creating solutions that support management and data interoperability between different health areas.",
+        "achievements": [
+          "Developed complete web systems with Laravel and PHP",
+          "Created RESTful APIs for mobile application integration",
+          "Built responsive interfaces prioritizing accessibility",
+          "Automated data interoperability processes",
+          "Structured SQL queries for health reports"
+        ],
+        "technologies": ["Laravel", "PHP", "MySQL", "PostgreSQL", "Vue.js", "Docker", "Git", "GitHub", "Trello", "Linux"]
+      },
+      {
+        "position": "right",
+        "company": "DartiLab - UFMA",
+        "role": "Academic Intern in Software Engineering",
+        "period": "Jun 2025 - Present",
+        "location": "São Luís, MA",
+        "description": "I participate in the modernization of monolithic systems, contributing to decomposition into microservices and development of cross-platform interfaces.",
+        "achievements": [
+          "Support analysis and decomposition of monolithic systems",
+          "Develop cross-platform interfaces with React Native",
+          "Implement microservices in Python with FastAPI",
+          "Use Docker and Kubernetes for containerization",
+          "Contribute to project technical documentation"
+        ],
+        "technologies": ["Python", "React Native", "FastAPI", "Firebase", "Docker", "Kubernetes", "RabbitMQ", "Git", "GitHub", "Linux"]
+      },
+      {
+        "position": "left",
+        "company": "Federal University of Maranhão - UFMA",
+        "role": "Project and Software Development Monitor",
+        "period": "Mar 2024 - Jul 2024",
+        "location": "São Luís, MA",
+        "description": "I assisted students in understanding software engineering concepts, promoting good programming practices and collaboration in practical projects.",
+        "achievements": [
+          "Assisted students with software engineering concepts",
+          "Supported development of practical group projects",
+          "Clarified doubts about UML and software architecture",
+          "Promoted integration between theory and practice",
+          "Used agile methodologies (Scrum, Kanban)"
+        ],
+        "technologies": ["UML", "Git", "GitHub", "Jira", "Scrum", "Kanban"]
+      },
+      {
+        "position": "right",
+        "company": "Maranhão State Health Department - SES/MA",
+        "role": "Back-End Development and Data Science Intern",
+        "period": "Jun 2023 - Dec 2023",
+        "location": "São Luís, MA",
+        "description": "I developed back-end functionalities and performed data analysis to support strategic decisions in public health, automating processes and creating technical reports.",
+        "achievements": [
+          "Developed back-end functionalities in PHP",
+          "Created SQL queries for strategic reports",
+          "Analyzed data with Python and Julia",
+          "Automated data extraction and organization",
+          "Supported integration between different data sources"
+        ],
+        "technologies": ["PHP", "MySQL", "PostgreSQL", "Python", "Julia", "Jupyter Notebook"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "highlightsTitle": "Highlights", 
+    "tccTitle": "Final Project",
+    "advisorLabel": "Advisor",
+    "gradeLabel": "Grade",
+    "craLabel": "GPA",
+    "subjectsLabel": "Main Subjects",
+    "technologiesLabel": "Technologies Studied",
+    "knowledgeAreasLabel": "Knowledge Areas", 
+    "contentLabel": "Content",
+    "degrees": [
+      {
+        "position": "right",
+        "institution": "Federal Institute of Mato Grosso (IFMT)",
+        "degree": "Postgraduate in DevOps Engineering",
+        "period": "2025 - Present",
+        "location": "Planaltina, GO",
+        "status": "In Progress",
+        "description": "Specialization focused on modern software development and operations practices, with emphasis on agile methodologies, continuous integration and delivery, test automation, and infrastructure management in DevOps environments.",
+        "highlights": [
+          "Practical continuous integration and delivery projects",
+          "Implementation of automated pipelines focused on quality and performance"
+        ],
+        "subjects": [
+          "Agile Projects and DevOps",
+          "Continuous Integration and Delivery", 
+          "Change and Infrastructure Management",
+          "Application Monitoring",
+          "Automated Software Testing"
+        ],
+        "type": "graduation"
+      },
+      {
+        "position": "left", 
+        "institution": "Federal University of Maranhão (UFMA)",
+        "degree": "Bachelor's in Computer Engineering",
+        "period": "2024 - Present",
+        "location": "São Luís, MA",
+        "status": "In Progress",
+        "description": "Solid foundation in Computer Vision, Machine Learning, Deep Learning, Networks, and Industrial Automation. Active participation in research and extension projects.",
+        "highlights": [
+          "Delivery of Science and Technology Application Network Portal (REACT)",
+          "Delivery of PlanDox app version 2.0"
+        ],
+        "subjects": ["Machine Learning", "Computer Graphics", "Control Engineering", "Networks", "Compilers"],
+        "type": "graduation"
+      },
+      {
+        "position": "right",
+        "institution": "Federal University of Maranhão (UFMA)",
+        "degree": "Bachelor's in Science and Technology",
+        "period": "2021 - 2024", 
+        "location": "São Luís, MA",
+        "status": "Completed",
+        "description": "Solid foundation in computer science fundamentals, algorithms, data structures, software engineering, and web development. Active participation in research and extension projects.",
+        "highlights": [
+          "Projects with Python, C, Java, and PHP"
+        ],
+        "subjects": ["Algorithms", "Database", "Software Engineering", "Programming Paradigms", "AI"],
+        "type": "graduation",
+        "tccInfo": {
+          "title": "Hans+: A Tool for Monitoring and Information About Leprosy",
+          "grade": "10",
+          "advisor": "Prof. Dr. Davi Viana dos Santos"
+        },
+        "academicPerformance": {
+          "cra": "8.6",
+          "maxCra": "10.0"
+        }
+      }
+    ]
   },
   "contact": {
     "title": "Contact",

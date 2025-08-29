@@ -43,7 +43,7 @@
               </button>
             </a>
             
-            <a href="/Curriculo_Ana_Iara_Loayza.pdf" download>
+            <a :href="cvDownloadUrl" download>
               <button class="group relative overflow-hidden border-2 border-purple-500 hover:border-purple-400 text-purple-400 hover:text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105">
                 <span class="relative z-10 flex items-center justify-center space-x-2">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,7 +95,15 @@
 
 <script>
 export default {
-  name: 'HeroSection'
+  name: 'HeroSection',
+  computed: {
+    cvDownloadUrl() {
+      const currentLocale = this.$i18n.locale
+      return currentLocale === 'pt' 
+        ? '/CV_Ana_Iara_Loayza_PT.pdf'
+        : '/CV_Ana_Iara_Loayza_EN.pdf'
+    }
+  }
 }
 </script>
 

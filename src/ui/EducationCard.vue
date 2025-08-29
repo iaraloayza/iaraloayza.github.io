@@ -57,7 +57,7 @@
                 v-if="type === 'graduation' && academicPerformance"
                 class="text-sm text-green-400 bg-green-900/20 px-3 py-1 rounded-full border border-green-500/30"
               >
-                CR: {{ academicPerformance.cra }}/{{ academicPerformance.maxCra }}
+                {{ $t('education.craLabel') }}: {{ academicPerformance.cra }}/{{ academicPerformance.maxCra }}
               </span>
             </div>
           </div>
@@ -69,16 +69,16 @@
             <svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
             </svg>
-            Trabalho de Conclusão de Curso
+            {{ $t('education.tccTitle') }}
           </h4>
           <div class="space-y-2">
             <p class="text-blue-200 font-medium">{{ tccInfo.title }}</p>
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <span class="text-sm text-gray-400" v-if="tccInfo.advisor">
-                Orientador: {{ tccInfo.advisor }}
+                {{ $t('education.advisorLabel') }}: {{ tccInfo.advisor }}
               </span>
               <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-semibold">
-                Nota: {{ tccInfo.grade }}
+                {{ $t('education.gradeLabel') }}: {{ tccInfo.grade }}
               </span>
             </div>
           </div>
@@ -95,7 +95,7 @@
             <svg class="w-5 h-5 mr-2 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
             </svg>
-            Destaques
+            {{ $t('education.highlightsTitle') }}
           </h4>
           <ul class="space-y-2">
             <li 
@@ -240,14 +240,14 @@ export default {
     subjectsLabel() {
       switch (this.type) {
         case 'graduation':
-          return 'Principais Disciplinas'
+          return this.$t('education.subjectsLabel')
         case 'bootcamp':
         case 'course':
-          return 'Tecnologias Estudadas'
+          return this.$t('education.technologiesLabel')
         case 'certification':
-          return 'Áreas de Conhecimento'
+          return this.$t('education.knowledgeAreasLabel')
         default:
-          return 'Conteúdo'
+          return this.$t('education.contentLabel')
       }
     }
   },

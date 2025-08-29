@@ -9,6 +9,9 @@
     "education": "Formação",
     "contact": "Contato"
   },
+  "footer": {
+    "text": "Ana Iara Loayza. Todos os direitos reservados."
+  },
   "hero": {
     "role": "Desenvolvedora Full Stack",
     "greeting": "Olá, eu sou",
@@ -51,6 +54,7 @@
     "viewProject": "Ver Projeto",
     "github": "GitHub",
     "inDevelopment": "Em Desenvolvimento",
+    "inDev": "Em Dev",
     "list": {
       "monitora": {
         "title": "Monitora Saúde",
@@ -101,6 +105,7 @@
       "client": "Cliente",
       "impact": "Impacto",
       "otherProjects": "Outros Projetos",
+      "back": "Voltar",
       "monitora": {
         "title": "Monitora Saúde",
         "description": "Sistema Web para monitoramento e avaliação de indicadores de saúde e processos, oferecendo dados atualizados para apoiar a gestão, o planejamento estratégico e a promoção da saúde no Maranhão.",
@@ -663,6 +668,150 @@
         }
       }
     }
+  },
+  "experience": {
+    "title": "Experiência",
+    "activitiesTitle": "Atividades e Responsabilidades",
+    "technologiesTitle": "Tecnologias Utilizadas",
+    "jobs": [
+      {
+        "position": "left",
+        "company": "Secretaria de Estado da Saúde do Maranhão - SES/MA",
+        "role": "Desenvolvedora Full-Stack Junior",
+        "period": "Jan 2024 - Presente",
+        "location": "São Luís, MA",
+        "description": "Desenvolvo sistemas web full-stack para saúde pública utilizando Laravel e PHP, criando soluções que apoiam a gestão e interoperabilidade de dados entre diferentes áreas da saúde.",
+        "achievements": [
+          "Desenvolvi sistemas web completos com Laravel e PHP",
+          "Criei APIs RESTful para integração com aplicações móveis",
+          "Construí interfaces responsivas priorizando acessibilidade",
+          "Automatizei processos de interoperabilidade de dados",
+          "Estruturei consultas SQL para relatórios de saúde"
+        ],
+        "technologies": ["Laravel", "PHP", "MySQL", "PostgreSQL", "Vue.js", "Docker", "Git", "GitHub", "Trello", "Linux"]
+      },
+      {
+        "position": "right",
+        "company": "DartiLab - UFMA",
+        "role": "Estagiária Acadêmica em Engenharia de Software",
+        "period": "Jun 2025 - Presente",
+        "location": "São Luís, MA",
+        "description": "Participo da modernização de sistemas monolíticos, contribuindo para a decomposição em microsserviços e desenvolvimento de interfaces multiplataforma.",
+        "achievements": [
+          "Apoio análise e decomposição de sistemas monolíticos",
+          "Desenvolvo interfaces multiplataforma com React Native",
+          "Implemento microsserviços em Python com FastAPI",
+          "Utilizo Docker e Kubernetes para containerização",
+          "Contribuo para documentação técnica do projeto"
+        ],
+        "technologies": ["Python", "React Native", "FastAPI", "Firebase", "Docker", "Kubernetes", "RabbitMQ", "Git", "GitHub", "Linux"]
+      },
+      {
+        "position": "left",
+        "company": "Universidade Federal do Maranhão - UFMA",
+        "role": "Monitora de Projeto e Desenvolvimento de Software",
+        "period": "Mar 2024 - Jul 2024",
+        "location": "São Luís, MA",
+        "description": "Auxiliei estudantes na compreensão de conceitos de engenharia de software, promovendo boas práticas de programação e colaboração em projetos práticos.",
+        "achievements": [
+          "Auxiliei alunos em conceitos de engenharia de software",
+          "Apoiei desenvolvimento de projetos práticos em grupo",
+          "Esclareci dúvidas sobre UML e arquitetura de software",
+          "Promovi integração entre teoria e prática",
+          "Utilizei metodologias ágeis (Scrum, Kanban)"
+        ],
+        "technologies": ["UML", "Git", "GitHub", "Jira", "Scrum", "Kanban"]
+      },
+      {
+        "position": "right",
+        "company": "Secretaria de Estado da Saúde do Maranhão - SES/MA",
+        "role": "Estagiária em Desenvolvimento Back-End e Ciência de Dados",
+        "period": "Jun 2023 - Dez 2023",
+        "location": "São Luís, MA",
+        "description": "Desenvolvi funcionalidades back-end e realizei análise de dados para apoiar decisões estratégicas na saúde pública, automatizando processos e criando relatórios técnicos.",
+        "achievements": [
+          "Desenvolvi funcionalidades back-end em PHP",
+          "Criei consultas SQL para relatórios estratégicos",
+          "Analisei dados com Python e Julia",
+          "Automatizei extração e organização de dados",
+          "Apoiei integração entre diferentes fontes de dados"
+        ],
+        "technologies": ["PHP", "MySQL", "PostgreSQL", "Python", "Julia", "Jupyter Notebook"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Formação",
+    "highlightsTitle": "Destaques",
+    "tccTitle": "Trabalho de Conclusão de Curso",
+    "advisorLabel": "Orientador",
+    "gradeLabel": "Nota",
+    "craLabel": "CR",
+    "subjectsLabel": "Principais Disciplinas",
+    "technologiesLabel": "Tecnologias Estudadas", 
+    "knowledgeAreasLabel": "Áreas de Conhecimento",
+    "contentLabel": "Conteúdo",
+    "degrees": [
+      {
+        "position": "right",
+        "institution": "Instituto Federal de Mato Grosso (IFMT)",
+        "degree": "Pós-Graduação em Engenharia DevOps",
+        "period": "2025 - Presente",
+        "location": "Planaltina, GO",
+        "status": "Em andamento",
+        "description": "Especialização voltada para práticas modernas de desenvolvimento e operações de software, com foco em metodologias ágeis, integração e entrega contínua, automação de testes e gerenciamento de infraestrutura em ambientes de DevOps.",
+        "highlights": [
+          "Projetos práticos de integração e entrega contínua",
+          "Implantação de pipelines automatizados com foco em qualidade e performance"
+        ],
+        "subjects": [
+          "Projetos Ágeis e DevOps",
+          "Integração e Entrega Contínua",
+          "Gerenciamento de Mudanças e Infraestrutura",
+          "Monitoramento de Aplicações",
+          "Testes Automatizados de Software"
+        ],
+        "type": "graduation"
+      },
+      {
+        "position": "left",
+        "institution": "Universidade Federal do Maranhão (UFMA)",
+        "degree": "Bacharelado em Engenharia da Computação",
+        "period": "2024 - Presente",
+        "location": "São Luís, MA",
+        "status": "Em andamento",
+        "description": "Formação sólida em Visão Computacional, Machine Learning, Deep Learning, Redes e Automação Industrial. Participação ativa em projetos de pesquisa e extensão.",
+        "highlights": [
+          "Entrega de Portal da Rede de Aplicação de Ciência e Tecnologia (REACT)",
+          "Entrega da versão 2.0 do app PlanDox"
+        ],
+        "subjects": ["Machine Learning", "Computação Gráfica", "Eng Controle", "Redes", "Compiladores"],
+        "type": "graduation"
+      },
+      {
+        "position": "right",
+        "institution": "Universidade Federal do Maranhão (UFMA)",
+        "degree": "Bacharelado em Ciência e Tecnologia",
+        "period": "2021 - 2024",
+        "location": "São Luís, MA",
+        "status": "Concluído",
+        "description": "Formação sólida em fundamentos da computação, algoritmos, estruturas de dados, engenharia de software e desenvolvimento web. Participação ativa em projetos de pesquisa e extensão.",
+        "highlights": [
+          "Projetos com Python, C, Java e PHP"
+        ],
+        "subjects": ["Algoritmos", "Banco de Dados", "Eng. Software", "Paradigmas de Programação", "IA"],
+        "type": "graduation",
+        "tccInfo": {
+          "title": "Hans+: Uma Ferramenta de Acompanhamento e Informações Sobre a Hanseníase",
+          "grade": "10",
+          "advisor": "Prof. Dr. Davi Viana dos Santos"
+        },
+        "academicPerformance": {
+          "cra": "8.6",
+          "maxCra": "10.0"
+        }
+      }
+    ]
   },
   "contact": {
     "title": "Contato",

@@ -2,22 +2,30 @@
   <div class="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
     <!-- Header com navegação -->
     <header class="relative z-10 bg-black/30 backdrop-blur-lg border-b border-purple-500/20">
-      <div class="container mx-auto px-6 py-4">
+      <div class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <button 
             @click="goBack" 
-            class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors duration-300 group"
+            class="flex items-center gap-2 text-purple-400 hover:text-pink-400 transition-colors duration-300 group flex-shrink-0"
           >
             <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
-            <span class="font-semibold">{{ $t('projects.projectDdetails.backToProjects') }}</span>
+            <span class="font-semibold hidden sm:inline">{{ $t('projects.projectDdetails.backToProjects') }}</span>
+            <span class="font-semibold sm:hidden">{{ $t('projects.projectDdetails.back') }}</span>
           </button>
           
-          <div class="flex items-center gap-4">
-            <span v-if="project?.inDevelopment" class="development-badge">
+          <div class="flex items-center gap-2 sm:gap-4 flex-wrap justify-end">
+            <!-- Language Selector - menor em mobile -->
+            <div class="order-2 sm:order-1">
+              <LanguageSelector @language-changed="onLanguageChanged" />
+            </div>
+            
+            <!-- Development Badge -->
+            <span v-if="project?.inDevelopment" class="development-badge-mobile order-1 sm:order-2">
               <div class="pulse-dot"></div>
-              {{ $t('projects.inDevelopment') }}
+              <span class="hidden sm:inline">{{ $t('projects.inDevelopment') }}</span>
+              <span class="sm:hidden">{{ $t('projects.inDev') }}</span>
             </span>
           </div>
         </div>
@@ -373,8 +381,15 @@
 </template>
 
 <script>
+import LanguageSelector from '../components/layout/LanguageSelector.vue'
+
 export default {
   name: 'ProjectDetails',
+
+  components: {
+    LanguageSelector
+  },
+
   data() {
     return {
       loading: true,
@@ -526,6 +541,7 @@ export default {
     }
   },
   mounted() {
+    this.scrollToTop()
     this.loadProject()
 
     // Listener para navegação por teclado
@@ -536,6 +552,17 @@ export default {
     document.body.style.overflow = 'auto' // Garante que o scroll volte ao normal
   },
   methods: {
+    onLanguageChanged(newLocale) {
+      console.log('Language changed to:', newLocale)
+    },
+
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant' // ou 'smooth' se quiser animação
+      })
+    },
+
     loadProject() {
       const projectId = parseInt(this.$route.params.id)
       
@@ -546,6 +573,11 @@ export default {
           .filter(p => p.id !== projectId)
           .slice(0, 3)
         this.loading = false
+        
+        // Garantir que a página esteja no topo após carregar
+        this.$nextTick(() => {
+          this.scrollToTop()
+        })
       }, 1000)
     },
 
@@ -803,6 +835,10 @@ export default {
   background: rgba(255, 255, 255, 0.5);
 }
 
+.development-badge-mobile {
+  @apply bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1 sm:gap-2 flex-shrink-0;
+}
+
 /* Animações */
 @keyframes galleryFadeIn {
   from {
@@ -866,6 +902,17 @@ export default {
   
   .gallery-main-image {
     max-height: calc(100vh - 120px);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-2;
+  }
+  
+  .development-badge-mobile {
+    font-size: 10px;
+    padding: 4px 8px;
   }
 }
 

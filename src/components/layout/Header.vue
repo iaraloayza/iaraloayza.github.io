@@ -125,7 +125,6 @@ export default {
     const onLanguageChanged = (newLocale) => {
       // Fechar menu mobile se estiver aberto
       isMobileMenuOpen.value = false
-      // Você pode adicionar outras ações aqui se necessário
       console.log('Language changed to:', newLocale)
     }
 
