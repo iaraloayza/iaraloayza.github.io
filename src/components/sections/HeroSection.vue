@@ -32,16 +32,17 @@
           </p>
           
           <div class="flex flex-col sm:flex-row gap-6 pt-4">
-            <a href="#projects">
-              <button class="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 btn-primary">
-                <span class="relative z-10 flex items-center justify-center space-x-2">
-                  <span>{{ $t('hero.buttons.viewProjects') }}</span>
-                  <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </span>
-              </button>
-            </a>
+            <button 
+              @click="scrollToSection('projects')"
+              class="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 btn-primary"
+            >
+              <span class="relative z-10 flex items-center justify-center space-x-2">
+                <span>{{ $t('hero.buttons.viewProjects') }}</span>
+                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </span>
+            </button>
             
             <a :href="cvDownloadUrl" download>
               <button class="group relative overflow-hidden border-2 border-purple-500 hover:border-purple-400 text-purple-400 hover:text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105">
@@ -102,6 +103,20 @@ export default {
       return currentLocale === 'pt' 
         ? '/CV_Ana_Iara_Loayza_PT.pdf'
         : '/CV_Ana_Iara_Loayza_EN.pdf'
+    }
+  },
+  methods: {
+    scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        const headerHeight = 80 // altura do header fixo
+        const elementPosition = element.offsetTop - headerHeight
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        })
+      }
     }
   }
 }
