@@ -86,6 +86,7 @@
     },
     "projectDdetails": {
       "backToProjects": "Voltar aos Projetos",
+      "downloadApk": "Baixar APK",
       "projectNotFound": "Projeto não encontrado",
       "projectNotFoundDescription": "O projeto que você está procurando não existe ou foi removido.",
       "projectLive": "Ver Projeto Live",
