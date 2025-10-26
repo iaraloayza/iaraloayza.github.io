@@ -84,7 +84,7 @@ export default {
       // Apenas chaves e URLs, textos vêm do i18n
       projects: [
         { id: 1, key: 'monitora', gradient: 'from-purple-600 to-purple-800', projectUrl: 'https://monitora.saude.ma.gov.br/', githubUrl: '#', technologies: [{ name: 'Laravel', color: 'bg-red-600' }, { name: 'PostgreSQL', color: 'bg-blue-600' }], inDevelopment: false },
-        { id: 2, key: 'hans', gradient: 'from-pink-600 to-purple-800', projectUrl: 'https://hansmais.netlify.app/', githubUrl: '#', technologies: [{ name: 'Flutter', color: 'bg-purple-600' }, { name: 'Dart', color: 'bg-blue-600' }, { name: 'Firebase', color: 'bg-yellow-600' }] },
+        { id: 2, key: 'hans', gradient: 'from-pink-600 to-purple-800', projectUrl: 'https://hansmais.netlify.app/', githubUrl: '#', apkUrl: '/apk/hans-plus.apk',technologies: [{ name: 'Flutter', color: 'bg-purple-600' }, { name: 'Dart', color: 'bg-blue-600' }, { name: 'Firebase', color: 'bg-yellow-600' }] },
         { id: 3, key: 'renaveh', gradient: 'from-purple-500 to-pink-600', projectUrl: 'https://renaveh.saude.ma.gov.br/', githubUrl: '#', technologies: [{ name: 'Laravel', color: 'bg-red-600' }, { name: 'MySQL', color: 'bg-cyan-600' }], inDevelopment: false },
         { id: 4, key: 'masemfome', gradient: 'from-purple-500 to-pink-600', projectUrl: 'https://maranhaolivredafome.saude.ma.gov.br/', githubUrl: '#', technologies: [{ name: 'Laravel', color: 'bg-red-600' }, { name: 'MySQL', color: 'bg-cyan-600' }], inDevelopment: true },
         { id: 5, key: 'cadserv', gradient: 'from-purple-500 to-pink-600', projectUrl: 'https://cadserv.saude.ma.gov.br/', githubUrl: '#', technologies: [{ name: 'Laravel', color: 'bg-red-600' }, { name: 'MySQL', color: 'bg-cyan-600' }] },

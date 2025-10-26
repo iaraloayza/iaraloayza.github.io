@@ -171,6 +171,18 @@
                   </svg>
                   {{ $t('projects.projectDdetails.projectLive') }}
                 </a>
+
+                <a 
+                  v-if="project.apkUrl && project.apkUrl !== '#'"
+                  :href="project.apkUrl" 
+                  download
+                  class="action-btn apk"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  {{ $t('projects.projectDdetails.downloadApk') }}
+                </a>
                 
                 <a 
                   v-if="project.githubUrl && project.githubUrl !== '#'"
@@ -424,6 +436,7 @@ export default {
           title: 'projects.list.hans.title',
           description: 'projects.projectDdetails.hans.description',
           previewImage: '/images/hans+/logo_hans+.jpeg',
+          apkUrl: '/apk/hans-plus.apk',
           gallery: 'projects.projectDdetails.hans.gallery',
           detailedDescription: 'projects.projectDdetails.hans.detailedDescription',
           gradient: 'from-pink-600 to-purple-800',
@@ -710,6 +723,10 @@ export default {
 
 .action-btn.secondary {
   @apply border-2 border-purple-500/50 text-purple-400 hover:border-purple-400 hover:text-pink-400 hover:bg-purple-500/10;
+}
+
+.action-btn.apk {
+  @apply bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-500 hover:to-emerald-500;
 }
 
 .project-preview {
